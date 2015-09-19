@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3DE6EA02-4B94-43A7-A511-5B7BBC5EBDD6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CoreCerradura</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>12F38FB327716B7895CF61666B41920A578D627D</key>
+		<string>https://github.com/colemancda/CoreCerradura.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CoreCerradura/CoreCerradura.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>12F38FB327716B7895CF61666B41920A578D627D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/colemancda/CoreCerradura.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>12F38FB327716B7895CF61666B41920A578D627D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>12F38FB327716B7895CF61666B41920A578D627D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CoreCerradura</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Action" representedClassName="CoreCerradura.Action" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <attribute name="status" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="lock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lock" inverseName="actions" inverseEntity="Lock" syncable="YES"/>
+        <relationship name="permission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Permission" inverseName="actions" inverseEntity="Permission" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="actions" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Lock" representedClassName="CoreCerradura.Lock" syncable="YES">
+        <attribute name="archived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="created" attributeType="Date" syncable="YES"/>
+        <attribute name="firmwareBuild" attributeType="Integer 64" minValueString="1" defaultValueString="1" syncable="YES"/>
+        <attribute name="model" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" defaultValueString="Lock" syncable="YES"/>
+        <attribute name="secret" attributeType="String" minValueString="10" syncable="YES"/>
+        <attribute name="version" attributeType="String" defaultValueString="1.0.0" syncable="YES"/>
+        <relationship name="actions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Action" inverseName="lock" inverseEntity="Action" syncable="YES"/>
+        <relationship name="permissions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permission" inverseName="lock" inverseEntity="Permission" syncable="YES"/>
+    </entity>
+    <entity name="Permission" representedClassName="CoreCerradura.Permission" syncable="YES">
+        <attribute name="archived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="created" attributeType="Date" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="permissionType" attributeType="String" syncable="YES"/>
+        <attribute name="scheduledEndTime" optional="YES" attributeType="Integer 32" minValueString="0" maxValueString="86400" syncable="YES"/>
+        <attribute name="scheduledStartTime" optional="YES" attributeType="Integer 32" minValueString="0" maxValueString="86400" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="actions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Action" inverseName="permission" inverseEntity="Action" syncable="YES"/>
+        <relationship name="derivedPermissions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permission" inverseName="parentPermission" inverseEntity="Permission" syncable="YES"/>
+        <relationship name="lock" maxCount="1" deletionRule="Nullify" destinationEntity="Lock" inverseName="permissions" inverseEntity="Lock" syncable="YES"/>
+        <relationship name="parentPermission" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Permission" inverseName="derivedPermissions" inverseEntity="Permission" syncable="YES"/>
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="permissions" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="CoreCerradura.User" syncable="YES">
+        <attribute name="archived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="created" attributeType="Date" syncable="YES"/>
+        <attribute name="email" attributeType="String" minValueString="6" maxValueString="256" regularExpressionString="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" syncable="YES"/>
+        <attribute name="emailValidated" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="password" attributeType="String" minValueString="6" maxValueString="256" regularExpressionString="([a-z0-9_-])+" syncable="YES"/>
+        <attribute name="username" attributeType="String" minValueString="6" maxValueString="256" regularExpressionString="([a-z0-9_-])+" syncable="YES"/>
+        <relationship name="actions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Action" inverseName="user" inverseEntity="Action" syncable="YES"/>
+        <relationship name="permissions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permission" inverseName="user" inverseEntity="Permission" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Action" positionX="-27" positionY="72" width="128" height="135"/>
+        <element name="Lock" positionX="-36" positionY="36" width="128" height="180"/>
+        <element name="Permission" positionX="-54" positionY="27" width="128" height="225"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="165"/>
+    </elements>
+</model>

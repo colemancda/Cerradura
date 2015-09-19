@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BC82D3C5-CAA8-4E99-A97E-3A8A0B4D8E24</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A68612D16629ED34AF576BD1E5D94391B7182E11</key>
+		<string>https://github.com/ColemanCDA/NetworkObjectsUI.git</string>
+		<key>ACFD7193FD9E2A3F48E6D0863F74951FF595FC16</key>
+		<string>https://github.com/colemancda/Cerradura-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cerradura/Cerradura.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A68612D16629ED34AF576BD1E5D94391B7182E11</key>
+		<string>../../..Carthage/Checkouts/NetworkObjectsUI/</string>
+		<key>ACFD7193FD9E2A3F48E6D0863F74951FF595FC16</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/colemancda/Cerradura-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ACFD7193FD9E2A3F48E6D0863F74951FF595FC16</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ACFD7193FD9E2A3F48E6D0863F74951FF595FC16</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cerradura-iOS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A68612D16629ED34AF576BD1E5D94391B7182E11</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NetworkObjectsUI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
