@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E07936C1B17604400153064 /* LockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E07936B1B17604400153064 /* LockResponse.swift */; };
 		6E0AB6731AE5D58400AAAF50 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AB6721AE5D58400AAAF50 /* ServerManager.swift */; };
 		6E4642AA1AD9561A005BDBA7 /* CoreCerraduraServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642A91AD9561A005BDBA7 /* CoreCerraduraServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E4642B01AD9561A005BDBA7 /* CoreCerraduraServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4642A41AD9561A005BDBA7 /* CoreCerraduraServer.framework */; };
@@ -33,10 +32,37 @@
 			remoteGlobalIDString = 6E4642A31AD9561A005BDBA7;
 			remoteInfo = CoreCerraduraServer;
 		};
+		6ED5F0C51BAE6EBE009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E4642EE1AD9E045005BDBA7;
+			remoteInfo = "CoreCerradura OS X";
+		};
+		6ED5F0C71BAE6EBE009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E95D20E1B2B2EBD000DD4DA;
+			remoteInfo = "CoreCerradura iOS";
+		};
+		6ED5F0C91BAE6EBE009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E4642F91AD9E045005BDBA7;
+			remoteInfo = CoreCerraduraTests;
+		};
+		6ED5F0CB1BAE6ECA009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4642ED1AD9E045005BDBA7;
+			remoteInfo = "CoreCerradura OS X";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E07936B1B17604400153064 /* LockResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockResponse.swift; sourceTree = "<group>"; };
 		6E0AB6721AE5D58400AAAF50 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		6E4642A41AD9561A005BDBA7 /* CoreCerraduraServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreCerraduraServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642A81AD9561A005BDBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +74,7 @@
 		6E8D77B21AE9DD8100370898 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		6E8D77C41AE9E05700370898 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		6E93CE4E1B28E7F5004C7D93 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreCerradura.xcodeproj; path = ../CoreCerradura/CoreCerradura.xcodeproj; sourceTree = "<group>"; };
 		6EDA15BD1AFBE0EB00C74B51 /* AccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessControl.swift; sourceTree = "<group>"; };
 		6EDA15C01AFBE68A00C74B51 /* UserAccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccessControl.swift; sourceTree = "<group>"; };
 		6EDA15FC1AFD0E0700C74B51 /* LockAccessControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockAccessControl.swift; sourceTree = "<group>"; };
@@ -79,6 +106,7 @@
 		6E46429A1AD9561A005BDBA7 = {
 			isa = PBXGroup;
 			children = (
+				6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */,
 				6E4642A61AD9561A005BDBA7 /* CoreCerraduraServer */,
 				6E4642B31AD9561A005BDBA7 /* CoreCerraduraServerTests */,
 				6E4642A51AD9561A005BDBA7 /* Products */,
@@ -103,7 +131,6 @@
 				6EF11EA41AEFD4B100A7C4BC /* AuthenticationManager.swift */,
 				6E8D77B21AE9DD8100370898 /* File.swift */,
 				6E8D77C41AE9E05700370898 /* Settings.swift */,
-				6E07936B1B17604400153064 /* LockResponse.swift */,
 				6E93CE4E1B28E7F5004C7D93 /* Log.swift */,
 				6EDA16161AFD184C00C74B51 /* InitialValues */,
 				6EDA15BF1AFBE63E00C74B51 /* Access Control */,
@@ -135,6 +162,16 @@
 				6E4642B51AD9561A005BDBA7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6ED5F0C01BAE6EBE009DC5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ED5F0C61BAE6EBE009DC5CB /* CoreCerradura.framework */,
+				6ED5F0C81BAE6EBE009DC5CB /* CoreCerradura.framework */,
+				6ED5F0CA1BAE6EBE009DC5CB /* CoreCerraduraTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		6EDA15BF1AFBE63E00C74B51 /* Access Control */ = {
@@ -183,6 +220,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6ED5F0CC1BAE6ECA009DC5CB /* PBXTargetDependency */,
 			);
 			name = CoreCerraduraServer;
 			productName = CoreCerraduraServer;
@@ -235,6 +273,12 @@
 			mainGroup = 6E46429A1AD9561A005BDBA7;
 			productRefGroup = 6E4642A51AD9561A005BDBA7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6ED5F0C01BAE6EBE009DC5CB /* Products */;
+					ProjectRef = 6ED5F0BF1BAE6EBE009DC5CB /* CoreCerradura.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6E4642A31AD9561A005BDBA7 /* CoreCerraduraServer */,
@@ -242,6 +286,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6ED5F0C61BAE6EBE009DC5CB /* CoreCerradura.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CoreCerradura.framework;
+			remoteRef = 6ED5F0C51BAE6EBE009DC5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6ED5F0C81BAE6EBE009DC5CB /* CoreCerradura.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CoreCerradura.framework;
+			remoteRef = 6ED5F0C71BAE6EBE009DC5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6ED5F0CA1BAE6EBE009DC5CB /* CoreCerraduraTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreCerraduraTests.xctest;
+			remoteRef = 6ED5F0C91BAE6EBE009DC5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6E4642A21AD9561A005BDBA7 /* Resources */ = {
@@ -275,7 +343,6 @@
 				6E93CE4F1B28E7F5004C7D93 /* Log.swift in Sources */,
 				6EDA16151AFD171800C74B51 /* InitialValues.swift in Sources */,
 				6E8D77C51AE9E05700370898 /* Settings.swift in Sources */,
-				6E07936C1B17604400153064 /* LockResponse.swift in Sources */,
 				6EDA16131AFD14F200C74B51 /* PermissionAccessControl.swift in Sources */,
 				6EDA16111AFD14D900C74B51 /* ActionAccessControl.swift in Sources */,
 			);
@@ -296,6 +363,11 @@
 			isa = PBXTargetDependency;
 			target = 6E4642A31AD9561A005BDBA7 /* CoreCerraduraServer */;
 			targetProxy = 6E4642B11AD9561A005BDBA7 /* PBXContainerItemProxy */;
+		};
+		6ED5F0CC1BAE6ECA009DC5CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CoreCerradura OS X";
+			targetProxy = 6ED5F0CB1BAE6ECA009DC5CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -7,13 +7,12 @@
 //
 
 import Foundation
+import SwiftFoundation
+import CoreModel
 import CoreData
 import NetworkObjects
 import CoreCerradura
-import CocoaAsyncSocket
-import CocoaHTTPServer
 import RoutingHTTPServer
-import ExSwift
 
 /* Manages incoming connections to the server. */
 @objc final public class ServerManager: ServerDataSource, ServerDelegate {

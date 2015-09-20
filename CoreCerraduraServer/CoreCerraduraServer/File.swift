@@ -8,9 +8,20 @@
 
 import Foundation
 
-// MARK: - Constants
-
-public let ServerApplicationSupportFolderURL: NSURL = NSFileManager.defaultManager().URLForDirectory(.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.LocalDomainMask, appropriateForURL: nil, create: false, error: nil)!.URLByAppendingPathComponent("CerraduraServer")
+public let ServerApplicationSupportFolderURL: NSURL = {
+    
+    let folderURL = try! NSFileManager.defaultManager().URLForDirectory(.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.LocalDomainMask, appropriateForURL: nil, create: false).URLByAppendingPathComponent("CerraduraServer")
+    
+    let fileExists = NSFileManager.defaultManager().fileExistsAtPath(folderURL.path!, isDirectory: nil)
+    
+    if fileExists == false {
+        
+        // create directory
+        try! NSFileManager.defaultManager().createDirectoryAtURL(folderURL, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    return folderURL
+}()
 
 public let ServerSQLiteFileURL = ServerApplicationSupportFolderURL.URLByAppendingPathComponent("data.sqlite")
 
