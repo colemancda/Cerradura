@@ -15,13 +15,10 @@ public struct Model {
        
         var model = CoreModel.Model()
         
-        model += [Lock.entityName: Lock.entity]
-        
-        model += [User.entityName: User.entity]
-        
-        model += [Action.entityName: Action.entity]
-        
-        model += [Permission.entityName: Permission.entity]
+        model[Lock.entityName]          = Lock.entity
+        model[User.entityName]          = User.entity
+        model[Action.entityName]        = Action.entity
+        model[Permission.entityName]    = Permission.entity
         
         return model
     }()
@@ -35,6 +32,24 @@ public extension Model {
     public struct Lock {
         
         public static let entityName = "Lock"
+        
+        public static let entity: Entity = {
+           
+            var entity = Entity()
+            
+            entity.attributes[Attribute.Archived.name]      = Attribute.Archived.property
+            entity.attributes[Attribute.Created.name]       = Attribute.Created.property
+            entity.attributes[Attribute.Name.name]          = Attribute.Name.property
+            entity.attributes[Attribute.Secret.name]        = Attribute.Secret.property
+            entity.attributes[Attribute.Model.name]         = Attribute.Model.property
+            entity.attributes[Attribute.Version.name]       = Attribute.Version.property
+            entity.attributes[Attribute.FirmwareBuild.name] = Attribute.FirmwareBuild.property
+            
+            entity.relationships[Relationship.Actions.name] = Relationship.Actions.property
+            entity.relationships[Relationship.Permissions.name] = Relationship.Permissions.property
+            
+            return entity
+        }()
         
         public struct Attribute {
             
@@ -63,16 +78,32 @@ public extension Model {
             public static let Version = (name: "version", property: CoreModel.Attribute(type: .String))
             
             /// The build number of the firmware loaded on the lock.
-            public static let FirmwareBuild     = "firmwareBuild"
+            public static let FirmwareBuild = (name: "firmwareBuild", property: CoreModel.Attribute(type: .Number(.Integer)))
         }
         
         public struct Relationship {
             
             /// Actions involving this lock.
-            public static let Actions           = "actions"
+            public static let Actions: (name: String, property: CoreModel.Relationship) = {
+                
+                let property = CoreModel.Relationship(type: RelationshipType.ToMany,
+                    optional: true,
+                    destinationEntityName: Action.entityName,
+                    inverseRelationshipName: Action.Relationship.Lock.name)
+               
+                return (name: "actions", property: property)
+            }()
             
             /// Permissions granted for this lock.
-            public static let Permissions       = "permissions"
+            public static let Permissions: (name: String, property: CoreModel.Relationship) = {
+                
+                let property = CoreModel.Relationship(type: RelationshipType.ToMany,
+                    optional: true,
+                    destinationEntityName: Permission.entityName,
+                    inverseRelationshipName: Permission.Relationship.Lock.name)
+                
+                return (name: "permissions", property: property)
+                }()
         }
         
         public struct Function {
@@ -157,7 +188,15 @@ public extension Model {
         public struct Relationship {
             
             /// The lock associated with this action.
-            public static let lock              = "lock"
+            public static let Lock: (name: String, property: CoreModel.Relationship) = {
+                
+                let property = CoreModel.Relationship(type: RelationshipType.ToMany,
+                    optional: true,
+                    destinationEntityName: Model.Lock.entityName,
+                    inverseRelationshipName: Model.Lock.Relationship.Actions.name)
+                
+                return (name: "lock", property: property)
+                }()
             
             /// The user associated with this action.
             public static let User              = "user"
@@ -210,8 +249,16 @@ public extension Model {
         
         public struct Relationship {
             
-            /// The lock this permission is granting access for. 
-            public static let Lock              = "lock"
+            /// The lock this permission is granting access for.
+            public static let Lock: (name: String, property: CoreModel.Relationship) = {
+                
+                let property = CoreModel.Relationship(type: RelationshipType.ToMany,
+                    optional: false,
+                    destinationEntityName: Model.Lock.entityName,
+                    inverseRelationshipName: Model.Lock.Relationship.Permissions.name)
+                
+                return (name: "lock", property: property)
+                }()
             
             /// The user this permssion is granting access to. 
             public static let User              = "user"
