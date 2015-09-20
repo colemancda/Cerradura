@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public class User: NSManagedObject, Archivable {
+public class User: NSManagedObject {
     
     // MARK: - Properties
     

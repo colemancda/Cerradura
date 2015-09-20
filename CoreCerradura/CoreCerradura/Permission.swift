@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 /** A permission encapsulates access control for a specified lock and user. */
-public class Permission: NSManagedObject, Archivable {
+public class Permission: NSManagedObject {
     
     // MARK: - Properties
 
@@ -63,6 +63,7 @@ public class Permission: NSManagedObject, Archivable {
         self.created = NSDate()
     }
     
+    /*
     // MARK: - Validation
     
     public override func validateForInsert(error: NSErrorPointer) -> Bool {
@@ -101,6 +102,6 @@ public class Permission: NSManagedObject, Archivable {
         }
         
         return true
-    }
+    }*/
 }
 
