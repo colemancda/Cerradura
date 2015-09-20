@@ -19,3 +19,5 @@ public func ManagedObjectModel() -> NSManagedObjectModel {
 
 /** The bundle identifier of CoreCerradura. */
 public let BundleIdentifier = "com.colemancda.CoreCerradura"
+
+public let CoreDataResourceIDAttributeName = "id"

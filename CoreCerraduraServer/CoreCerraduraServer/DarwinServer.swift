@@ -20,7 +20,7 @@ public func StartServer() {
     
 }
 
-public func StoreForRequest(request: Server.RequestContext) -> Store {
+public func StoreForRequest(request: RequestMessage) -> CoreModel.Store {
     
     // create a new managed object context
     let managedObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
@@ -28,22 +28,20 @@ public func StoreForRequest(request: Server.RequestContext) -> Store {
     managedObjectContext.undoManager = nil
     
     // setup persistent store coordinator
-    managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+    managedObjectContext.persistentStoreCoordinator = PersistentStoreCoordinator
     
-    guard let store = CoreDataStore(model: self.server.model, managedObjectContext: managedObjectContext, resourceIDAttributeName: CoreMessages.ResourceIDAttributeName) else {
-        
-        fatalError("Could not create Store for request: \(request)")
-    }
+    guard let store = CoreDataStore(model: CoreCerradura.Model.entities, managedObjectContext: managedObjectContext, resourceIDAttributeName: CoreCerradura.CoreDataResourceIDAttributeName)
+        else { fatalError("Could not create Store for request: \(request)") }
     
     return store
 }
 
 public let PersistentStoreCoordinator: NSPersistentStoreCoordinator = {
     
-    let managedObjectModel = CoreMessages.ManagedObjectModel()
+    let managedObjectModel = CoreCerradura.ManagedObjectModel()
     
     // add resource ID attribute
-    managedObjectModel.addResourceIDAttribute(CoreMessages.ResourceIDAttributeName)
+    managedObjectModel.addResourceIDAttribute(CoreCerradura.CoreDataResourceIDAttributeName)
     
     let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
     
@@ -78,7 +76,7 @@ public let HTTPServer: RoutingHTTPServer = {
         }
         
         // process request
-        let httpResponse = self.server.input(httpRequest)
+        let httpResponse = ServerManager.sharedManager.server.input(httpRequest)
         
         routeResponse.statusCode = httpResponse.statusCode
         

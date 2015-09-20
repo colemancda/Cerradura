@@ -15,7 +15,7 @@ import CoreCerradura
 import RoutingHTTPServer
 
 /* Manages incoming connections to the server. */
-@objc final public class ServerManager: ServerDataSource, ServerDelegate {
+@objc final public class DarwinServerManager: ServerDataSource, ServerDelegate {
     
     // MARK: - Properties
     

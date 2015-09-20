@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E0AB6731AE5D58400AAAF50 /* DarwinServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AB6721AE5D58400AAAF50 /* DarwinServerManager.swift */; };
 		6E4642AA1AD9561A005BDBA7 /* CoreCerraduraServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642A91AD9561A005BDBA7 /* CoreCerraduraServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E4642B01AD9561A005BDBA7 /* CoreCerraduraServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4642A41AD9561A005BDBA7 /* CoreCerraduraServer.framework */; };
 		6E4642B71AD9561A005BDBA7 /* CoreCerraduraServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4642B61AD9561A005BDBA7 /* CoreCerraduraServerTests.swift */; };
@@ -15,7 +14,6 @@
 		6E8D77C51AE9E05700370898 /* DarwinSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D77C41AE9E05700370898 /* DarwinSettings.swift */; };
 		6ED5F0DD1BAE7636009DC5CB /* DarwinServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0DC1BAE7636009DC5CB /* DarwinServer.swift */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0DF1BAE7739009DC5CB /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0DE1BAE7739009DC5CB /* ServerManager.swift */; settings = {ASSET_TAGS = (); }; };
-		6EF11EA51AEFD4B100A7C4BC /* DarwinAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF11EA41AEFD4B100A7C4BC /* DarwinAuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,8 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E8D77B31AE9DD8100370898 /* DarwinFile.swift in Sources */,
-				6EF11EA51AEFD4B100A7C4BC /* DarwinAuthenticationManager.swift in Sources */,
-				6E0AB6731AE5D58400AAAF50 /* DarwinServerManager.swift in Sources */,
 				6ED5F0DF1BAE7739009DC5CB /* ServerManager.swift in Sources */,
 				6ED5F0DD1BAE7636009DC5CB /* DarwinServer.swift in Sources */,
 				6E8D77C51AE9E05700370898 /* DarwinSettings.swift in Sources */,

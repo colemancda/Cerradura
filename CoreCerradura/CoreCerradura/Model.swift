@@ -11,7 +11,7 @@ import CoreModel
 /// CoreCerradura Model
 public struct Model {
     
-    public static let entites: CoreModel.Model = {
+    public static let entities: CoreModel.Model = {
        
         var model = CoreModel.Model()
         
@@ -22,7 +22,6 @@ public struct Model {
         
         return model
     }()
-
 }
 
 // MARK: - Lock
