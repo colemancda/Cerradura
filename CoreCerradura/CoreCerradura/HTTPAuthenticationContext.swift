@@ -6,6 +6,8 @@
 //  Copyright © 2015 ColemanCDA. All rights reserved.
 //
 
+import SwiftFoundation
+
 /** Provides the context for HTTP authorization. */
 public struct HTTPAuthenticationContext: AuthenticationContext {
     
@@ -28,22 +30,17 @@ public struct HTTPAuthenticationContext: AuthenticationContext {
         self.path = path
         self.dateString = dateString
         
-        let date = HTTPDateFormatter.dateFromString(dateString)
+        guard let date = HTTPDateFormatter.valueFromString(dateString) else { return nil }
         
-        if date == nil {
-            
-            return nil
-        }
-        
-        self.date = date!
+        self.date = date
     }
     
-    public init(verb: String, path: String, date: NSDate) {
+    public init(verb: String, path: String, date: Date) {
         
         self.verb = verb
         self.path = path
         self.date = date
-        self.dateString = HTTPDateFormatter.stringFromDate(date)
+        self.dateString = HTTPDateFormatter.stringFromValue(date)
     }
     
     // MARK: - AuthenticationContext
@@ -53,16 +50,9 @@ public struct HTTPAuthenticationContext: AuthenticationContext {
         return verb + path + dateString
     }
     
-    public let date: NSDate
+    public let date: Date
 }
 
 // MARK: - Private Constants
 
-private let HTTPDateFormatter: NSDateFormatter = {
-    
-    let dateFormatter = NSDateFormatter()
-    
-    dateFormatter.dateFormat = "EEE',' dd' 'MMM' 'yyyy HH':'mm':'ss zzz"
-    
-    return dateFormatter
-    }()
+private let HTTPDateFormatter = DateFormatter(format: "EEE',' dd' 'MMM' 'yyyy HH':'mm':'ss zzz")

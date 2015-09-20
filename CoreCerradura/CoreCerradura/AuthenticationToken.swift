@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 ColemanCDA. All rights reserved.
 //
 
-import Foundation
-import IDZSwiftCommonCrypto
+import SwiftFoundation
+import OpenSSL
 
 /// Generates the authentication token used for authenticating requests.
 /// Modeled after [AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html#UsingTemporarySecurityCredentials)
@@ -20,13 +20,47 @@ public func GenerateAuthenticationToken(identifier: String, secret: String, cont
     
     let stringToSign = context.concatenatedString
     
-    let secretData = (secret as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+    let signedKey: Data
     
-    let signedKeyBytes = HMAC(algorithm: HMAC.Algorithm.SHA512, key: secretData).update(stringToSign)!.final()
+    do {
+        
+        let hmacContext = UnsafeMutablePointer<HMAC_CTX>()
+        
+        HMAC_CTX_init(hmacContext)
+        
+        let secretData = secret.utf8.map { (codeUnit) -> Byte in return codeUnit }
+        
+        HMAC_Init_ex(hmacContext, secretData, Int32(secretData.count), EVP_sha512(), nil)
+        
+        let identifierData = identifier.utf8.map { (codeUnit) -> Byte in return codeUnit }
+        
+        HMAC_Update(hmacContext, identifierData, identifierData.count)
+        
+        let digestLength = Int(SHA512_DIGEST_LENGTH)
+        
+        let result = UnsafeMutablePointer<Byte>.alloc(digestLength)
+        
+        defer { result.dealloc(digestLength) }
+        
+        var resultLength = UInt32(digestLength) // SHA512 digest length
+        
+        HMAC_Final(hmacContext, result, &resultLength)
+        
+        var resultData = Data()
+        
+        for byteIndex in 0...Int(resultLength) - 1 {
+            
+            let byte = result[byteIndex]
+            
+            resultData.append(byte)
+        }
+        
+        assert(resultData.count == Int(resultLength))
+        
+        signedKey = resultData
+    }
     
-    let signedKey = NSData(bytes: signedKeyBytes, length: signedKeyBytes.count)
-    
-    let base64Signature = signedKey.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.allZeros)
+    let base64Signature = Base64.encode(signedKey)
     
     return "{\(identifier):\(base64Signature)}"
 }

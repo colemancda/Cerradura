@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 
 /** The managed object model for the CoreCerradura framework. */
-public func CoreCerraduraManagedObjectModel() -> NSManagedObjectModel {
+public func ManagedObjectModel() -> NSManagedObjectModel {
     
-    return NSManagedObjectModel(contentsOfURL: NSBundle(identifier: CoreCerraduraBundleIdentifier)!.URLForResource("Model", withExtension: "momd")!)!
+    return NSManagedObjectModel(contentsOfURL: NSBundle(identifier: CoreCerradura.BundleIdentifier)!.URLForResource("Model", withExtension: "momd")!)!
 }
 
 // MARK: - Internal
