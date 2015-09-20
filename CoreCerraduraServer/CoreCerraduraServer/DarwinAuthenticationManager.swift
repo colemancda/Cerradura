@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 import CoreCerradura
-import ExSwift
 
 /** Handles the authentication for the NetworkObjects API consumers. */
 public final class AuthenticationManager {

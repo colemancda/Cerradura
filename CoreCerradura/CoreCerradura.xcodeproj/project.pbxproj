@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		6E05BD311AF65763008FFF84 /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */; };
 		6E0AB66E1AE4502D00AAAF50 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E98212E1AE2D5B400D393DF /* Permission.swift */; };
+		6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253941BAE7B1E00D1B37D /* libcrypto.a */; };
+		6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253951BAE7B1E00D1B37D /* libssl.a */; };
+		6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		6E4642F41AD9E045005BDBA7 /* CoreCerradura.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642F31AD9E045005BDBA7 /* CoreCerradura.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E4642FA1AD9E045005BDBA7 /* CoreCerradura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4642EE1AD9E045005BDBA7 /* CoreCerradura.framework */; };
 		6E4643011AD9E045005BDBA7 /* CoreCerraduraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4643001AD9E045005BDBA7 /* CoreCerraduraTests.swift */; };
-		6E4643201AD9E953005BDBA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; };
 		6E7474681B3B0AAB0039596D /* LockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474641B3B0AAB0039596D /* LockMode.swift */; };
 		6E7474691B3B0AAB0039596D /* LockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474641B3B0AAB0039596D /* LockMode.swift */; };
 		6E74746A1B3B0AAB0039596D /* LockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474651B3B0AAB0039596D /* LockCommand.swift */; };
@@ -86,6 +88,8 @@
 
 /* Begin PBXFileReference section */
 		6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
+		6E2253941BAE7B1E00D1B37D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libcrypto.a; sourceTree = "<group>"; };
+		6E2253951BAE7B1E00D1B37D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libssl.a; sourceTree = "<group>"; };
 		6E4642EE1AD9E045005BDBA7 /* CoreCerradura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreCerradura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642F21AD9E045005BDBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4642F31AD9E045005BDBA7 /* CoreCerradura.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreCerradura.h; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */,
+				6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +145,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E2253981BAE7B2400D1B37D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				6E2253991BAE7B2C00D1B37D /* OS X */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		6E2253991BAE7B2C00D1B37D /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				6E2253941BAE7B1E00D1B37D /* libcrypto.a */,
+				6E2253951BAE7B1E00D1B37D /* libssl.a */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		6E4642E41AD9E045005BDBA7 = {
 			isa = PBXGroup;
 			children = (
+				6E2253981BAE7B2400D1B37D /* Dependencies */,
 				6E4642F01AD9E045005BDBA7 /* CoreCerradura */,
 				6E4642FD1AD9E045005BDBA7 /* CoreCerraduraTests */,
 				6E4642EF1AD9E045005BDBA7 /* Products */,
@@ -387,8 +411,8 @@
 				6E9821311AE2D5B400D393DF /* Action.swift in Sources */,
 				6ED5F0BD1BAE35CC009DC5CB /* PermissionType.swift in Sources */,
 				6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */,
-				6E4643201AD9E953005BDBA7 /* Model.xcdatamodeld in Sources */,
 				6E7474681B3B0AAB0039596D /* LockMode.swift in Sources */,
+				6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */,
 				6E74746A1B3B0AAB0039596D /* LockCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

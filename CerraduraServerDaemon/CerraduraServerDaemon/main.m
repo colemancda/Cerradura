@@ -15,16 +15,7 @@ int main(int argc, const char * argv[]) {
 
         NSLog(@"Starting Cerradura Server Daemon...");
         
-        NSError *error = [[ServerManager sharedManager] start];
-        
-        if (error != nil) {
-            
-            NSLog(@"Could not start server on port %lu (%@)", [ServerManager sharedManager].serverPort, error.localizedDescription);
-            
-            return 1;
-        }
-        
-        NSLog(@"Started server on port %lu", [ServerManager sharedManager].serverPort);
+        StartServer()
     }
     
     [[NSRunLoop currentRunLoop] run];

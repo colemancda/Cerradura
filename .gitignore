@@ -5,3 +5,7 @@ Cerradura.xcworkspace/xcuserdata/*
 
 
 Cerradura Server/Cerradura Server.xcodeproj/*
+
+*.a
+
+Carthage/Build/*

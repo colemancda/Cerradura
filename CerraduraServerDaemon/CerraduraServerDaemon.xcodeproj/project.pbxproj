@@ -19,6 +19,27 @@
 			remoteGlobalIDString = 6E46428F1AD95552005BDBA7;
 			remoteInfo = CerraduraServerDaemon;
 		};
+		6ED5F0D61BAE73EC009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E4642A41AD9561A005BDBA7;
+			remoteInfo = CoreCerraduraServer;
+		};
+		6ED5F0D81BAE73EC009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E4642AF1AD9561A005BDBA7;
+			remoteInfo = CoreCerraduraServerTests;
+		};
+		6ED5F0DA1BAE73F5009DC5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4642A31AD9561A005BDBA7;
+			remoteInfo = CoreCerraduraServer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +70,7 @@
 		6E4642931AD95552005BDBA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E4642D71AD96422005BDBA7 /* CerraduraServerDaemon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CerraduraServerDaemon.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642DA1AD96422005BDBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CoreCerraduraServer.xcodeproj; sourceTree = "<group>"; };
+		6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreCerraduraServer.xcodeproj; path = ../CoreCerraduraServer/CoreCerraduraServer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +94,7 @@
 		6E4642871AD95552005BDBA7 = {
 			isa = PBXGroup;
 			children = (
-				6E95D3FA1B2B3B7A000DD4DA /* Frameworks */,
+				6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */,
 				6E4642D81AD96422005BDBA7 /* CerraduraServerDaemonBundle */,
 				6E4642921AD95552005BDBA7 /* CerraduraServerDaemon */,
 				6E4642911AD95552005BDBA7 /* Products */,
@@ -113,13 +134,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E95D3FA1B2B3B7A000DD4DA /* Frameworks */ = {
+		6ED5F0D21BAE73EC009DC5CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */,
+				6ED5F0D71BAE73EC009DC5CB /* CoreCerraduraServer.framework */,
+				6ED5F0D91BAE73EC009DC5CB /* CoreCerraduraServerTests.xctest */,
 			);
-			name = Frameworks;
-			path = ../CoreCerraduraServer;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +156,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6ED5F0DB1BAE73F5009DC5CB /* PBXTargetDependency */,
 			);
 			name = CerraduraServerDaemon;
 			productName = CerraduraServerDaemon;
@@ -188,6 +210,12 @@
 			mainGroup = 6E4642871AD95552005BDBA7;
 			productRefGroup = 6E4642911AD95552005BDBA7 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6ED5F0D21BAE73EC009DC5CB /* Products */;
+					ProjectRef = 6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6E4642D61AD96422005BDBA7 /* CerraduraServerDaemonBundle */,
@@ -195,6 +223,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6ED5F0D71BAE73EC009DC5CB /* CoreCerraduraServer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CoreCerraduraServer.framework;
+			remoteRef = 6ED5F0D61BAE73EC009DC5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6ED5F0D91BAE73EC009DC5CB /* CoreCerraduraServerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreCerraduraServerTests.xctest;
+			remoteRef = 6ED5F0D81BAE73EC009DC5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6E4642D51AD96422005BDBA7 /* Resources */ = {
@@ -229,6 +274,11 @@
 			isa = PBXTargetDependency;
 			target = 6E46428F1AD95552005BDBA7 /* CerraduraServerDaemon */;
 			targetProxy = 6E4642DE1AD9647C005BDBA7 /* PBXContainerItemProxy */;
+		};
+		6ED5F0DB1BAE73F5009DC5CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CoreCerraduraServer;
+			targetProxy = 6ED5F0DA1BAE73F5009DC5CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
