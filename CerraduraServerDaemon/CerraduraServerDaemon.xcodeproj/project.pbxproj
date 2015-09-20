@@ -7,17 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E093A641B2B4E9C00DB7C76 /* CocoaAsyncSocket.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A5B1B2B4E5700DB7C76 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A651B2B4E9C00DB7C76 /* CocoaHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A5C1B2B4E5700DB7C76 /* CocoaHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A671B2B4E9C00DB7C76 /* CoreCerradura.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A5F1B2B4E5700DB7C76 /* CoreCerradura.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A681B2B4E9C00DB7C76 /* ExSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A601B2B4E5700DB7C76 /* ExSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A691B2B4E9C00DB7C76 /* IDZSwiftCommonCrypto.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A611B2B4E5700DB7C76 /* IDZSwiftCommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A6A1B2B4E9C00DB7C76 /* NetworkObjects.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A621B2B4E5700DB7C76 /* NetworkObjects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E093A6B1B2B4E9C00DB7C76 /* RoutingHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E093A631B2B4E5700DB7C76 /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E4642941AD95552005BDBA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4642931AD95552005BDBA7 /* main.m */; };
 		6E4642E11AD9649B005BDBA7 /* CerraduraServerDaemon in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E4642901AD95552005BDBA7 /* CerraduraServerDaemon */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		6EEE75311B2B42620052B4F4 /* CoreCerraduraServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEE752E1B2B42420052B4F4 /* CoreCerraduraServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6EEE75341B2B42A40052B4F4 /* CoreCerraduraServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEE752E1B2B42420052B4F4 /* CoreCerraduraServer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,27 +18,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6E46428F1AD95552005BDBA7;
 			remoteInfo = CerraduraServerDaemon;
-		};
-		6EEE752D1B2B42420052B4F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6E4642A41AD9561A005BDBA7;
-			remoteInfo = CoreCerraduraServer;
-		};
-		6EEE752F1B2B42420052B4F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6E4642AF1AD9561A005BDBA7;
-			remoteInfo = CoreCerraduraServerTests;
-		};
-		6EEE75321B2B42A00052B4F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E4642A31AD9561A005BDBA7;
-			remoteInfo = CoreCerraduraServer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -68,14 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6E093A641B2B4E9C00DB7C76 /* CocoaAsyncSocket.framework in Copy Frameworks */,
-				6E093A651B2B4E9C00DB7C76 /* CocoaHTTPServer.framework in Copy Frameworks */,
-				6E093A671B2B4E9C00DB7C76 /* CoreCerradura.framework in Copy Frameworks */,
-				6E093A681B2B4E9C00DB7C76 /* ExSwift.framework in Copy Frameworks */,
-				6E093A691B2B4E9C00DB7C76 /* IDZSwiftCommonCrypto.framework in Copy Frameworks */,
-				6E093A6A1B2B4E9C00DB7C76 /* NetworkObjects.framework in Copy Frameworks */,
-				6E093A6B1B2B4E9C00DB7C76 /* RoutingHTTPServer.framework in Copy Frameworks */,
-				6EEE75311B2B42620052B4F4 /* CoreCerraduraServer.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,14 +45,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E093A5B1B2B4E5700DB7C76 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		6E093A5C1B2B4E5700DB7C76 /* CocoaHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaHTTPServer.framework; path = ../Carthage/Build/Mac/CocoaHTTPServer.framework; sourceTree = "<group>"; };
-		6E093A5E1B2B4E5700DB7C76 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = ../Carthage/Build/Mac/CommonCrypto.framework; sourceTree = "<group>"; };
-		6E093A5F1B2B4E5700DB7C76 /* CoreCerradura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreCerradura.framework; path = ../Carthage/Build/Mac/CoreCerradura.framework; sourceTree = "<group>"; };
-		6E093A601B2B4E5700DB7C76 /* ExSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExSwift.framework; path = ../Carthage/Build/Mac/ExSwift.framework; sourceTree = "<group>"; };
-		6E093A611B2B4E5700DB7C76 /* IDZSwiftCommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDZSwiftCommonCrypto.framework; path = ../Carthage/Build/Mac/IDZSwiftCommonCrypto.framework; sourceTree = "<group>"; };
-		6E093A621B2B4E5700DB7C76 /* NetworkObjects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkObjects.framework; path = ../Carthage/Build/Mac/NetworkObjects.framework; sourceTree = "<group>"; };
-		6E093A631B2B4E5700DB7C76 /* RoutingHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutingHTTPServer.framework; path = ../Carthage/Build/Mac/RoutingHTTPServer.framework; sourceTree = "<group>"; };
 		6E4642901AD95552005BDBA7 /* CerraduraServerDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CerraduraServerDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642931AD95552005BDBA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E4642D71AD96422005BDBA7 /* CerraduraServerDaemon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CerraduraServerDaemon.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EEE75341B2B42A40052B4F4 /* CoreCerraduraServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,26 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */,
-				6E093A5B1B2B4E5700DB7C76 /* CocoaAsyncSocket.framework */,
-				6E093A5C1B2B4E5700DB7C76 /* CocoaHTTPServer.framework */,
-				6E093A5E1B2B4E5700DB7C76 /* CommonCrypto.framework */,
-				6E093A5F1B2B4E5700DB7C76 /* CoreCerradura.framework */,
-				6E093A601B2B4E5700DB7C76 /* ExSwift.framework */,
-				6E093A611B2B4E5700DB7C76 /* IDZSwiftCommonCrypto.framework */,
-				6E093A621B2B4E5700DB7C76 /* NetworkObjects.framework */,
-				6E093A631B2B4E5700DB7C76 /* RoutingHTTPServer.framework */,
 			);
 			name = Frameworks;
 			path = ../CoreCerraduraServer;
-			sourceTree = "<group>";
-		};
-		6EEE75291B2B42420052B4F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6EEE752E1B2B42420052B4F4 /* CoreCerraduraServer.framework */,
-				6EEE75301B2B42420052B4F4 /* CoreCerraduraServerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +135,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6EEE75331B2B42A00052B4F4 /* PBXTargetDependency */,
 			);
 			name = CerraduraServerDaemon;
 			productName = CerraduraServerDaemon;
@@ -253,12 +188,6 @@
 			mainGroup = 6E4642871AD95552005BDBA7;
 			productRefGroup = 6E4642911AD95552005BDBA7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6EEE75291B2B42420052B4F4 /* Products */;
-					ProjectRef = 6EEE75281B2B42420052B4F4 /* CoreCerraduraServer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6E4642D61AD96422005BDBA7 /* CerraduraServerDaemonBundle */,
@@ -266,23 +195,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6EEE752E1B2B42420052B4F4 /* CoreCerraduraServer.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CoreCerraduraServer.framework;
-			remoteRef = 6EEE752D1B2B42420052B4F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6EEE75301B2B42420052B4F4 /* CoreCerraduraServerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CoreCerraduraServerTests.xctest;
-			remoteRef = 6EEE752F1B2B42420052B4F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6E4642D51AD96422005BDBA7 /* Resources */ = {
@@ -317,11 +229,6 @@
 			isa = PBXTargetDependency;
 			target = 6E46428F1AD95552005BDBA7 /* CerraduraServerDaemon */;
 			targetProxy = 6E4642DE1AD9647C005BDBA7 /* PBXContainerItemProxy */;
-		};
-		6EEE75331B2B42A00052B4F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CoreCerraduraServer;
-			targetProxy = 6EEE75321B2B42A00052B4F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

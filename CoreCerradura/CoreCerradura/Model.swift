@@ -1,0 +1,214 @@
+//
+//  Model.swift
+//  CoreCerradura
+//
+//  Created by Alsey Coleman Miller on 9/19/15.
+//  Copyright © 2015 ColemanCDA. All rights reserved.
+//
+
+/// CoreCerradura Model
+public struct Model { }
+
+// MARK: - Lock
+public extension Model {
+    
+    /// Entity representing an instance of a physical lock.
+    public struct Lock {
+        
+        public static let EntityName = "Lock"
+        
+        public struct Attribute {
+            
+            /// Whether this entity is archived or not. 
+            ///
+            /// Archived entities are basically deleted, but still stored for historical purposes.
+            public static let Archived          = "archived"
+            
+            /// Date the lock was created.
+            public static let Created           = "created"
+            
+            /// Human-readable name for the lock.
+            public static let Name              = "name"
+            
+            /// The lock´s secret. 
+            ///
+            /// -Note: Only the owner can see this.
+            public static let Secret            = "secret"
+            
+            /// The model of the lock. 
+            ///
+            /// Raw value for ```LockModel```.
+            public static let Model             = "model"
+            
+            /// The version of the software currently on the lock.
+            public static let Version           = "version"
+            
+            /// The build number of the firmware loaded on the lock.
+            public static let FirmwareBuild     = "firmwareBuild"
+        }
+        
+        public struct Relationship {
+            
+            /// Actions involving this lock.
+            public static let Actions           = "actions"
+            
+            /// Permissions granted for this lock.
+            public static let Permissions       = "permissions"
+        }
+        
+        public struct Function {
+            
+            /// Archives the entity.
+            public static let Archive           = "archive"
+            
+            /// Unlocks the lock.
+            public static let Unlock            = "unlock"
+        }
+    }
+}
+
+// MARK: - User
+public extension Model {
+    
+    public struct User {
+        
+        public static let EntityName = "User"
+        
+        public struct Attribute {
+            
+            /// Whether this entity is archived or not.
+            ///
+            /// Archived entities are basically deleted, but still stored for historical purposes.
+            public static let Archived          = "archived"
+            
+            /// Date the user was created.
+            public static let Created           = "created"
+            
+            /// User's email address.
+            public static let Email             = "email"
+            
+            /// Whether the email was validated.
+            public static let EmailValidated    = "emailValidated"
+            
+            /// User's password (Used for authentication).
+            public static let Password          = "password"
+            
+            /// User's username (Used for authentication).
+            public static let Username          = "username"
+        }
+        
+        public struct Relationship {
+            
+            /// Actions involving this user.
+            public static let Actions           = "actions"
+            
+            /// Permissions granted for this user.
+            public static let Permissions       = "permissions"
+        }
+        
+        public struct Function {
+            
+            /// Archives the entity.
+            public static let Archive           = "archive"
+        }
+    }
+}
+
+// MARK: - Action
+public extension Model {
+    
+    public struct Action {
+        
+        public static let EntityName = "Action"
+        
+        public struct Attribute {
+            
+            /// Date this action ocurred.
+            public static let Date              = "date"
+            
+            /// Type of action. Raw value of ```ActionType```.
+            public static let Type              =  "type"
+            
+            /// Whether the action has been completed. 
+            ///
+            /// Raw value of ```ActionStatus```.
+            public static let Status            = "status"
+        }
+        
+        public struct Relationship {
+            
+            /// The lock associated with this action.
+            public static let lock              = "lock"
+            
+            /// The user associated with this action.
+            public static let User              = "user"
+            
+            /// The permission associated with this action.
+            public static let Permission        = "permission"
+        }
+    }
+}
+
+// MARK: - Permission
+
+public extension Model {
+    
+    public struct Permission {
+        
+        public static let EntityName = "Permission"
+        
+        public struct Attribute {
+            
+            /// Whether this entity is archived or not.
+            ///
+            /// Archived entities are basically deleted, but still stored for historical purposes.
+            public static let Archived          = "archived"
+            
+            /// Date the permission was created.
+            public static let Created           = "created"
+            
+            /// The date this permission goes into effect.
+            public static let StartDate         = "startDate"
+            
+            /// The date this permission becomes invalid.
+            public static let EndDate           = "endDate"
+            
+            /// The starting time of the time interval the lock can be unlocked.
+            ///
+            /// -Note: Not applicable for admin / anytime permissions.
+            public static let ScheduledStartTime = "scheduledStartTime"
+            
+            /// The ending time of the time interval the lock can be unlocked. 
+            ///
+            /// -Note: Not applicable for admin / anytime permissions.
+            public static let ScheduledEndTime  = "scheduledEndTime"
+            
+            /// Type of permission. 
+            ///
+            /// Raw value for ```PermissionType```.
+            public static let PermissionType    = "permissionType"
+        }
+        
+        public struct Relationship {
+            
+            /// The lock this permission is granting access for. 
+            public static let Lock              = "lock"
+            
+            /// The user this permssion is granting access to. 
+            public static let User              = "user"
+            
+            /// Permissions derived from this permission. 
+            public static let DerivedPermissions = "derivedPermissions"
+            
+            /// Permission this permission was derived from. 
+            public static let ParentPermission  = "parentPermission"
+            
+            /// Actions involving this permission. 
+            public static let Actions           = "actions"
+        }
+    }
+}
+
+
+
+

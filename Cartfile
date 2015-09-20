@@ -1,3 +1,4 @@
 github "ColemanCDA/NetworkObjects" "develop"
 github "ColemanCDA/NetworkObjectsUI" "develop"
 github "ColemanCDA/RoutingHTTPServer" "develop"
+github "PureSwift/OpenSSL" "master"

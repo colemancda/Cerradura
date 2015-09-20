@@ -6,7 +6,7 @@
 //  Copyright © 2015 ColemanCDA. All rights reserved.
 //
 
-/** Encapsulates a lock command. */
+/// Encapsulates a lock command.
 public struct LockCommand {
     
     public let shouldUnlock: Bool

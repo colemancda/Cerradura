@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 ColemanCDA. All rights reserved.
 //
 
-/** Standard HTTP headers. */
+/// Standard HTTP headers.
 public enum RequestHeader: String {
     
     case Date = "Date"
     case Authorization = "Authorization"
 }
 
-/** HTTP Headers used with requests from lock devices. */
+/// HTTP Headers used with requests from lock devices.
 public enum LockRequestHeader: String {
     
     case FirmwareBuild = "x-cerradura-firmware"

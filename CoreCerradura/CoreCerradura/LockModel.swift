@@ -6,17 +6,18 @@
 //  Copyright © 2015 ColemanCDA. All rights reserved.
 //
 
-/** The different Lock models. */
+/// The different Lock models.
 public enum LockModel: String {
     
-    /** Simulator model. Used in development. */
+    /// Simulator model. Used in development.
     case Simulator
     
-    /** Lock model based on Intel Edison board. */
+    /// Lock model based on Intel Edison board.
     case Edison
     
-    /** Lock model based on C.H.I.P. board. */
+    /// Lock model based on C.H.I.P. board.
     case Chip
     
+    /// Lock model based on BeagleBone.
     case Beaglebone
 }

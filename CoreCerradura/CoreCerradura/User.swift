@@ -18,7 +18,7 @@ public class User: NSManagedObject, Archivable {
     /** Whether this entity is archived or not. Archived entities are basically deleted, but still stored for historical purposes. */
     @NSManaged public var archived: NSNumber
     
-    /** Date the permission was created. */
+    /** Date the user was created. */
     @NSManaged public var created: NSDate
     
     @NSManaged public var email: String
@@ -34,25 +34,4 @@ public class User: NSManagedObject, Archivable {
     @NSManaged public var actions: Set<Action>?
     
     @NSManaged public var permissions: Set<Permission>?
-    
-    // MARK: - Initialization
-    
-    public override func awakeFromInsert() {
-        
-        self.created = NSDate()
-    }
-    
-    // MARK: - Archiveable
-    
-    public func didArchive() {
-        
-        // archive permissions
-        if self.permissions != nil {
-            
-            for permission in self.permissions! {
-                
-                Archive(permission)
-            }
-        }
-    }
 }

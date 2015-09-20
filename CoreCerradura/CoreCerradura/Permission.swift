@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import ExSwift
 
 /** A permission encapsulates access control for a specified lock and user. */
 public class Permission: NSManagedObject, Archivable {
@@ -29,7 +28,9 @@ public class Permission: NSManagedObject, Archivable {
     /** The date this permission becomes invalid. */
     @NSManaged public var endDate: NSDate?
     
-    /** The starting time of the time interval the lock can be unlocked. Not applicable for admin / anytime permissions. */
+    /// The starting time of the time interval the lock can be unlocked.
+    ///
+    /// -Note: Not applicable for admin / anytime permissions.
     @NSManaged public var scheduledStartTime: NSNumber?
     
     /** The ending time of the time interval the lock can be unlocked. Not applicable for admin / anytime permissions. */
@@ -60,20 +61,6 @@ public class Permission: NSManagedObject, Archivable {
     public override func awakeFromInsert() {
         
         self.created = NSDate()
-    }
-    
-    // MARK: - Archiveable
-    
-    public func didArchive() {
-        
-        // archive permissions
-        if self.derivedPermissions != nil {
-            
-            for permission in self.derivedPermissions! {
-                
-                Archive(permission)
-            }
-        }
     }
     
     // MARK: - Validation
@@ -117,16 +104,3 @@ public class Permission: NSManagedObject, Archivable {
     }
 }
 
-// MARK: - Enumeration
-
-public enum PermissionType: String {
-    
-    /// Admin permissions have unlimited access and can distribute keys.
-    case Admin
-    
-    /// Anytime permissions have unlimited access but cannot distribute keys.
-    case Anytime
-    
-    //// Schduled permissions have access during certain hours and can expire.
-    case Scheduled
-}

@@ -44,49 +44,5 @@ public class Lock: NSManagedObject, Archivable {
     
     /** Permissions granted for this lock. */
     @NSManaged public var permissions: Set<Permission>?
-    
-    // MARK: - Initialization
-    
-    public override func awakeFromInsert() {
-        
-        self.created = NSDate()
-    }
-    
-    // MARK: - Archiveable
-    
-    public func didArchive() {
-        
-        // archive permissions
-        if self.permissions != nil {
-            
-            for permission in self.permissions! {
-                
-                Archive(permission)
-            }
-        }
-    }
-    
-    // MARK: - Validation
-    
-    public override func validateForInsert(error: NSErrorPointer) -> Bool {
-        
-        if !super.validateForInsert(error) {
-            
-            return false
-        }
-        
-        // omit validation for client
-        if !CoreCerraduraServerMode {
-            
-            return true
-        }
-        
-        if LockModel(rawValue: self.model) == nil {
-            
-            return false
-        }
-        
-        return true
-    }
 }
 
