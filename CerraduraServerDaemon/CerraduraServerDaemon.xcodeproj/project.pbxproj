@@ -189,7 +189,7 @@
 		6E4642881AD95552005BDBA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ColemanCDA;
 				TargetAttributes = {
 					6E46428F1AD95552005BDBA7 = {
@@ -303,6 +303,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -389,10 +390,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/Mac,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -400,6 +398,7 @@
 				INFOPLIST_FILE = CerraduraServerDaemonBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.colemancda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CerraduraServerDaemon;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -411,13 +410,11 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/Mac,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CerraduraServerDaemonBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.colemancda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CerraduraServerDaemon;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;

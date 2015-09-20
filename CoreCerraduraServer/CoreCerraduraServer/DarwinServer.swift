@@ -14,10 +14,16 @@ import NetworkObjects
 import CoreCerradura
 import RoutingHTTPServer
 
-public func StartServer() {
+@objc public class CerraduraServer: NSObject {
     
-    
-    
+    public static func startServer() {
+        
+        do { try HTTPServer.start() }
+            
+        catch { fatalError("Could not start HTTP Server: \(error)") }
+        
+        print("Started server on port \(HTTPServer.port())")
+    }
 }
 
 public func StoreForRequest(request: RequestMessage) -> CoreModel.Store {
@@ -55,6 +61,8 @@ public let PersistentStoreCoordinator: NSPersistentStoreCoordinator = {
 public let HTTPServer: RoutingHTTPServer = {
     
     let HTTPServer = RoutingHTTPServer()
+    
+    HTTPServer.setPort(UInt16(Setting.ServerPort.value))
     
     let handler = { (routeRequest: RouteRequest!, routeResponse: RouteResponse!) -> Void in
         

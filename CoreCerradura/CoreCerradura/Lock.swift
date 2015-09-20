@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 /** Entity representing an instance of a physical lock. */
-public class Lock: NSManagedObject {
+final public class Lock: NSManagedObject {
     
     // MARK: - Properties
     

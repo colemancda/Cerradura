@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 /** Encapsulates an action. Used for activity history. */
-public class Action: NSManagedObject {
+final public class Action: NSManagedObject {
     
     // MARK: - Properties
     

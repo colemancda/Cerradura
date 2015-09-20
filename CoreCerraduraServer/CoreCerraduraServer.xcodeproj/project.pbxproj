@@ -425,8 +425,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/Mac,
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/Mac,
-					/Users/Coleman/Developer/MyProjects/CerraduraServer/Carthage/Build/Mac,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = CoreCerraduraServer/Info.plist;
@@ -453,8 +451,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/Mac,
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/Mac,
-					/Users/Coleman/Developer/MyProjects/CerraduraServer/Carthage/Build/Mac,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = CoreCerraduraServer/Info.plist;

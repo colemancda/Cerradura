@@ -22,6 +22,19 @@ public struct Model {
         
         return model
     }()
+    
+    public static let functions: [String: [String]] = {
+       
+        var functions = [String: [String]]()
+        
+        functions[Lock.entityName]      = [Lock.Function.Archive, Lock.Function.Unlock]
+        
+        functions[User.entityName]      = [User.Function.Archive]
+        
+        functions[Permission.entityName] = [Permission.Function.Archive]
+        
+        return functions
+    }()
 }
 
 // MARK: - Lock
@@ -388,6 +401,12 @@ public extension Model {
                 
                 return (name: "actions", property: property)
                 }()
+        }
+        
+        public struct Function {
+            
+            /// Archives the entity.
+            public static let Archive           = "archive"
         }
     }
 }

@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
 
         NSLog(@"Starting Cerradura Server Daemon...");
         
-        StartServer()
+        [CerraduraServer startServer];
     }
     
     [[NSRunLoop currentRunLoop] run];
