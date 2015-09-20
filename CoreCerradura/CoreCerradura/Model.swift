@@ -6,8 +6,27 @@
 //  Copyright © 2015 ColemanCDA. All rights reserved.
 //
 
+import CoreModel
+
 /// CoreCerradura Model
-public struct Model { }
+public struct Model {
+    
+    public static let entites: CoreModel.Model = {
+       
+        var model = CoreModel.Model()
+        
+        model += [Lock.entityName: Lock.entity]
+        
+        model += [User.entityName: User.entity]
+        
+        model += [Action.entityName: Action.entity]
+        
+        model += [Permission.entityName: Permission.entity]
+        
+        return model
+    }()
+
+}
 
 // MARK: - Lock
 public extension Model {
@@ -15,33 +34,33 @@ public extension Model {
     /// Entity representing an instance of a physical lock.
     public struct Lock {
         
-        public static let EntityName = "Lock"
+        public static let entityName = "Lock"
         
         public struct Attribute {
             
             /// Whether this entity is archived or not. 
             ///
             /// Archived entities are basically deleted, but still stored for historical purposes.
-            public static let Archived          = "archived"
+            public static let Archived = (name: "archived", property: CoreModel.Attribute(type: .Number(.Boolean)))
             
             /// Date the lock was created.
-            public static let Created           = "created"
+            public static let Created = (name: "created", property: CoreModel.Attribute(type: .Date))
             
             /// Human-readable name for the lock.
-            public static let Name              = "name"
+            public static let Name = (name: "name", property: CoreModel.Attribute(type: .String))
             
             /// The lock´s secret. 
             ///
             /// -Note: Only the owner can see this.
-            public static let Secret            = "secret"
+            public static let Secret = (name: "secret", property: CoreModel.Attribute(type: .String))
             
             /// The model of the lock. 
             ///
             /// Raw value for ```LockModel```.
-            public static let Model             = "model"
+            public static let Model = (name: "model", property: CoreModel.Attribute(type: .String))
             
             /// The version of the software currently on the lock.
-            public static let Version           = "version"
+            public static let Version = (name: "version", property: CoreModel.Attribute(type: .String))
             
             /// The build number of the firmware loaded on the lock.
             public static let FirmwareBuild     = "firmwareBuild"
@@ -72,7 +91,7 @@ public extension Model {
     
     public struct User {
         
-        public static let EntityName = "User"
+        public static let entityName = "User"
         
         public struct Attribute {
             
@@ -119,7 +138,7 @@ public extension Model {
     
     public struct Action {
         
-        public static let EntityName = "Action"
+        public static let entityName = "Action"
         
         public struct Attribute {
             
@@ -155,7 +174,7 @@ public extension Model {
     
     public struct Permission {
         
-        public static let EntityName = "Permission"
+        public static let entityName = "Permission"
         
         public struct Attribute {
             
