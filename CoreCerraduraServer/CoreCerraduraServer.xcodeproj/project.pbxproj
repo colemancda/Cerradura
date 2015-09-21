@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2253E71BAF80CE00D1B37D /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253E61BAF80CE00D1B37D /* ServerModel.swift */; settings = {ASSET_TAGS = (); }; };
 		6E4642AA1AD9561A005BDBA7 /* CoreCerraduraServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642A91AD9561A005BDBA7 /* CoreCerraduraServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E4642B01AD9561A005BDBA7 /* CoreCerraduraServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4642A41AD9561A005BDBA7 /* CoreCerraduraServer.framework */; };
 		6E4642B71AD9561A005BDBA7 /* CoreCerraduraServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4642B61AD9561A005BDBA7 /* CoreCerraduraServerTests.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		6E0AB6721AE5D58400AAAF50 /* DarwinServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarwinServerManager.swift; sourceTree = "<group>"; };
+		6E2253E61BAF80CE00D1B37D /* ServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		6E4642A41AD9561A005BDBA7 /* CoreCerraduraServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreCerraduraServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642A81AD9561A005BDBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E4642A91AD9561A005BDBA7 /* CoreCerraduraServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreCerraduraServer.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				6ED5F0DE1BAE7739009DC5CB /* ServerManager.swift */,
+				6E2253E61BAF80CE00D1B37D /* ServerModel.swift */,
 				6E4642A71AD9561A005BDBA7 /* Darwin Support */,
 			);
 			path = CoreCerraduraServer;
@@ -299,6 +302,7 @@
 			files = (
 				6E8D77B31AE9DD8100370898 /* DarwinFile.swift in Sources */,
 				6ED5F0DF1BAE7739009DC5CB /* ServerManager.swift in Sources */,
+				6E2253E71BAF80CE00D1B37D /* ServerModel.swift in Sources */,
 				6ED5F0DD1BAE7636009DC5CB /* DarwinServer.swift in Sources */,
 				6E8D77C51AE9E05700370898 /* DarwinSettings.swift in Sources */,
 			);

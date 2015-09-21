@@ -60,7 +60,6 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
             
             return (StatusCode.OK.rawValue, nil)
             
-            
         default: fatalError("Unhandled function: \(functionName)")
         }
     }
@@ -74,7 +73,10 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     public func server<T : ServerType>(server: T, willCreateResource resource: Resource, var initialValues: ValuesObject, context: Server.RequestContext) -> ValuesObject {
         
-        
+        switch resource.entityName {
+            
+        case CoreCerradura.Model.Lock
+        }
         
         return initialValues
     }
