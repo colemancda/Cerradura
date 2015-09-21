@@ -68,15 +68,20 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     public func server<T : ServerType>(server: T, statusCodeForRequest context: Server.RequestContext) -> Int {
         
+        // get authentication
+        
+        
+        
+        // check if authentication is required
+        
+        
+        
         return StatusCode.OK.rawValue
     }
     
-    public func server<T : ServerType>(server: T, willCreateResource resource: Resource, var initialValues: ValuesObject, context: Server.RequestContext) -> ValuesObject {
+    public func server<T : ServerType>(server: T, willCreateResource resource: Resource, initialValues: ValuesObject, context: Server.RequestContext) -> ValuesObject {
         
-        switch resource.entityName {
-            
-        case CoreCerradura.Model.Lock
-        }
+        
         
         return initialValues
     }

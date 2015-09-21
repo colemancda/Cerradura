@@ -25,8 +25,6 @@ final public class User: NSManagedObject {
     
     @NSManaged public var emailValidated: NSNumber
     
-    @NSManaged public var password: String
-    
     @NSManaged public var username: String
     
     // MARK: Relationships
