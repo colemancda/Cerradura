@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Structs
 
 /** Settings for Cerradura Server. */
-public struct Setting {
+public struct DarwinSetting {
     
     public static let ServerPort = SettingInfo<UInt>(key: "ServerPort", defaultValue: 8080)
     

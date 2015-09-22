@@ -23,6 +23,15 @@ extension CoreCerradura.Model.Permission: ServerModel {
         return true
     }
     
+    public static func initialValues(var initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
+        
+        let dateCreated = Date()
+        
+        initialValues[CoreCerradura.Model.Permission.Attribute.Created.name] = Value.Attribute(.Date(dateCreated))
+        
+        return initialValues
+    }
+    
     public static func willEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
         
         return true

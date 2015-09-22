@@ -23,7 +23,11 @@ extension CoreCerradura.Model.User: ServerModel {
         return true
     }
     
-    public static func initialValues(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
+    public static func initialValues(var initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
+        
+        let dateCreated = Date()
+        
+        initialValues[CoreCerradura.Model.User.Attribute.Created.name] = Value.Attribute(.Date(dateCreated))
         
         return initialValues
     }

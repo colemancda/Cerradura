@@ -20,12 +20,22 @@ extension CoreCerradura.Model.Action: ServerModel {
     
     public static func willCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
         
-        return true
+        // Cannot be created through NetworkObjects, only internally
+        return false
+    }
+    
+    public static func initialValues(var initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
+        
+        let dateCreated = Date()
+        
+        initialValues[CoreCerradura.Model.Action.Attribute.Date.name] = Value.Attribute(.Date(dateCreated))
+        
+        return initialValues
     }
     
     public static func willEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
         
-        return true
+        return false
     }
     
     public static func omittedProperties(resourceID: String, context: Server.RequestContext) -> [String] {

@@ -74,6 +74,12 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         
         // check if authentication is required
         
+        // check validate initial values
+        //serverModelType.willCreate(initialValues, resourceID: resource.resourceID, context: context)
+        
+        // validate edit
+        
+        // check if fetch request can be performed
         
         
         return StatusCode.OK.rawValue
@@ -81,14 +87,50 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     public func server<T : ServerType>(server: T, willCreateResource resource: Resource, initialValues: ValuesObject, context: Server.RequestContext) -> ValuesObject {
         
+        let serverModelType = ServerModelForEntity(resource.entityName)
         
-        
-        return initialValues
+        return serverModelType.initialValues(initialValues, resourceID: resource.resourceID, context: context)
     }
     
-    public func server<T : ServerType>(server: T, willPerformRequest context: Server.RequestContext, withResponse response: ResponseMessage) -> ResponseMessage {
+    public func server<T : ServerType>(server: T, willPerformRequest context: Server.RequestContext, var withResponse responseMessage: ResponseMessage) -> ResponseMessage {
         
-        return response
+        func omitValues(var values: ValuesObject, resourceID: String) -> ValuesObject {
+            
+            let serverModelType = ServerModelForEntity(context.requestMessage.request.entityName)
+            
+            let ommitedKeys = serverModelType.omittedProperties(resourceID, context: context)
+            
+            for (key, _) in values {
+                
+                for ommitedKey in ommitedKeys {
+                    
+                    if key == ommitedKey {
+                        
+                        values[key] = nil
+                        
+                        break
+                    }
+                }
+            }
+            
+            return values
+        }
+        
+        switch (context.requestMessage.request, responseMessage.response) {
+            
+        case let (.Get(resource), .Get(values)):
+            responseMessage.response = .Get(omitValues(values, resourceID: resource.resourceID))
+            
+        case let (.Edit(resource, _), .Edit(values)):
+            responseMessage.response = .Edit(omitValues(values, resourceID: resource.resourceID))
+            
+        case let (.Create(_, _), .Create(resourceID, values)):
+            responseMessage.response = .Create(resourceID, omitValues(values, resourceID: resourceID))
+            
+        default: break
+        }
+        
+        return responseMessage
     }
     
     public func server<T : ServerType>(server: T, didEncounterInternalError error: ErrorType, context: Server.RequestContext) {
