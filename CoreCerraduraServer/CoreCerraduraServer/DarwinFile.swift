@@ -25,8 +25,4 @@ public let ServerApplicationSupportFolderURL: NSURL = {
 
 public let ServerSQLiteFileURL = ServerApplicationSupportFolderURL.URLByAppendingPathComponent("data.sqlite")
 
-public let ServerLastResourceIDByEntityNameFileURL = ServerApplicationSupportFolderURL.URLByAppendingPathComponent("lastResourceIDByEntityName.plist")
-
-public let ServerSettingsFileURL = ServerApplicationSupportFolderURL.URLByAppendingPathComponent("serverSettings.plist")
-
-
+public let ServerSettingsFilePath = ServerApplicationSupportFolderURL.URLByAppendingPathComponent("serverSettings.json").path!
