@@ -28,7 +28,7 @@ extension CoreCerradura.Model.Action: ServerModel {
         
         let dateCreated = Date()
         
-        initialValues[CoreCerradura.Model.Action.Attribute.Date.name] = Value.Attribute(.Date(dateCreated))
+        initialValues[CoreCerradura.Model.Action.Attribute.Date.name] = .Attribute(.Date(dateCreated))
         
         return initialValues
     }
@@ -48,3 +48,4 @@ extension CoreCerradura.Model.Action: ServerModel {
         return true
     }
 }
+

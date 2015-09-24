@@ -56,6 +56,8 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
             
             // create action
             
+            //var actionValues = ValuesObject()
+            
             
             
             return (StatusCode.OK.rawValue, nil)
@@ -70,7 +72,16 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         
         // get authentication
         
-        
+        if let _ = context.requestMessage.metadata[RequestHeader.Authorization.rawValue] {
+            
+            do { try AuthenticateWithHeader(RequestHeader.Authorization.rawValue,
+                identifierKey: CoreCerradura.Model.User.Attribute.Username.name,
+                secretKey: CoreCerradura.Model.User.Attribute.Password.name,
+                entityName: CoreCerradura.Model.User.entityName,
+                context: context) }
+            
+            catch { return HTTP.StatusCode.Unauthorized.rawValue }
+        }
         
         // check if authentication is required
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6E05BD311AF65763008FFF84 /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */; };
 		6E0AB66E1AE4502D00AAAF50 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E98212E1AE2D5B400D393DF /* Permission.swift */; };
+		6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
+		6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
 		6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253941BAE7B1E00D1B37D /* libcrypto.a */; };
 		6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253951BAE7B1E00D1B37D /* libssl.a */; };
 		6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
@@ -90,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
+		6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthenticationContext.swift; sourceTree = "<group>"; };
 		6E2253941BAE7B1E00D1B37D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libcrypto.a; sourceTree = "<group>"; };
 		6E2253951BAE7B1E00D1B37D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libssl.a; sourceTree = "<group>"; };
 		6E2253C01BAF6AE500D1B37D /* Archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 			children = (
 				6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */,
 				6E7474711B3B0AD80039596D /* AuthenticationContext.swift */,
+				6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */,
 				6E7474721B3B0AD80039596D /* HTTPAuthenticationContext.swift */,
 			);
 			name = Authentication;
@@ -405,6 +409,7 @@
 				6E0AB66E1AE4502D00AAAF50 /* Permission.swift in Sources */,
 				6E7474731B3B0AD80039596D /* AuthenticationContext.swift in Sources */,
 				6E74747B1B3B0E560039596D /* LockDevice.swift in Sources */,
+				6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */,
 				6E7474751B3B0AD80039596D /* HTTPAuthenticationContext.swift in Sources */,
 				6E74746E1B3B0AAB0039596D /* RequestHeader.swift in Sources */,
 				6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */,
@@ -440,6 +445,7 @@
 				6E95D1FF1B2B2EBD000DD4DA /* Permission.swift in Sources */,
 				6E7474741B3B0AD80039596D /* AuthenticationContext.swift in Sources */,
 				6E74747C1B3B0E560039596D /* LockDevice.swift in Sources */,
+				6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */,
 				6E7474761B3B0AD80039596D /* HTTPAuthenticationContext.swift in Sources */,
 				6E74746F1B3B0AAB0039596D /* RequestHeader.swift in Sources */,
 				6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */,
