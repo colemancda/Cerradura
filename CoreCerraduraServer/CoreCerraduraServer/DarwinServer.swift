@@ -62,7 +62,7 @@ public let HTTPServer: RoutingHTTPServer = {
     
     let HTTPServer = RoutingHTTPServer()
     
-    HTTPServer.setPort(UInt16(Setting.ServerPort.value))
+    HTTPServer.setPort(UInt16(Settings.sharedSettings.serverPort))
     
     let handler = { (routeRequest: RouteRequest!, routeResponse: RouteResponse!) -> Void in
         

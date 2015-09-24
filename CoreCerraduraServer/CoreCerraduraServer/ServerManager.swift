@@ -74,13 +74,22 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         
         if let _ = context.requestMessage.metadata[RequestHeader.Authorization.rawValue] {
             
-            do { try AuthenticateWithHeader(RequestHeader.Authorization.rawValue,
+            let authenticatedUser: Resource
+            
+            do {
+                guard let resource = try AuthenticateWithHeader(RequestHeader.Authorization.rawValue,
                 identifierKey: CoreCerradura.Model.User.Attribute.Username.name,
                 secretKey: CoreCerradura.Model.User.Attribute.Password.name,
                 entityName: CoreCerradura.Model.User.entityName,
-                context: context) }
+                    context: context) else { return HTTP.StatusCode.Unauthorized.rawValue }
+                
+                authenticatedUser = resource
+            }
             
             catch { return HTTP.StatusCode.Unauthorized.rawValue }
+            
+            // set in user info
+            context.userInfo[ServerUserInfoKey.AuthenticatedUser.rawValue] = authenticatedUser
         }
         
         // check if authentication is required
@@ -149,3 +158,12 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         print("Internal Server Error: \(error)")
     }
 }
+
+
+// MARK: - Supporting Types
+
+public enum ServerUserInfoKey: String {
+    
+    case AuthenticatedUser
+}
+
