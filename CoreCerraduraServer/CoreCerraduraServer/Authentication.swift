@@ -40,6 +40,8 @@ public func AuthenticateWithHeader(header: String, identifierKey: String, secret
     
     var fetchRequest = FetchRequest(entityName: entityName, sortDescriptors: sort)
     
+    fetchRequest.fetchLimit = 1
+    
     let predicate = ComparisonPredicate(propertyName: identifierKey, value: CoreModel.Value.Attribute(.String(identifier)))
     
     fetchRequest.predicate = CoreModel.Predicate.Comparison(predicate)

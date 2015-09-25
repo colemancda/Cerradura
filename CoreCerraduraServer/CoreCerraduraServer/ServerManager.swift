@@ -26,6 +26,11 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         return StoreForRequest(request)
     }
     
+    public func server<T : ServerType>(server: T, newResourceIDForEntity entity: String) -> String {
+        
+        return NewResourceID(entity)
+    }
+    
     public func server<T : ServerType>(server: T, functionsForEntity entity: String) -> [String] {
         
         return CoreCerradura.Model.functions[entity] ?? []
@@ -37,6 +42,8 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         
         // Archive
         case CoreCerradura.ArchiveFunctionName:
+            
+            guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
             
             let changes = [CoreCerradura.ArchivePropertyName: Value.Attribute(.Number(.Boolean(true)))]
             
@@ -54,13 +61,20 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         // Unlock
         case CoreCerradura.Model.Lock.Function.Unlock:
             
-            // create action
+            guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
             
-            //var actionValues = ValuesObject()
+            let functionCode: Int
             
+            do { functionCode = try UnlockFunction(resource, context: context) }
             
+            catch {
+                
+                self.server(server, didEncounterInternalError: error, context: context)
+                
+                return (StatusCode.InternalServerError.rawValue, nil)
+            }
             
-            return (StatusCode.OK.rawValue, nil)
+            return (functionCode, nil)
             
         default: fatalError("Unhandled function: \(functionName)")
         }
@@ -81,12 +95,19 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
                 identifierKey: CoreCerradura.Model.User.Attribute.Username.name,
                 secretKey: CoreCerradura.Model.User.Attribute.Password.name,
                 entityName: CoreCerradura.Model.User.entityName,
-                    context: context) else { return HTTP.StatusCode.Unauthorized.rawValue }
+                    context: context)
+                    
+                else { return HTTP.StatusCode.Unauthorized.rawValue }
                 
                 authenticatedUser = resource
             }
             
-            catch { return HTTP.StatusCode.Unauthorized.rawValue }
+            catch {
+                
+                self.server(self.server, didEncounterInternalError: error, context: context)
+                
+                return HTTP.StatusCode.InternalServerError.rawValue
+            }
             
             // set in user info
             context.userInfo[ServerUserInfoKey.AuthenticatedUser.rawValue] = authenticatedUser
