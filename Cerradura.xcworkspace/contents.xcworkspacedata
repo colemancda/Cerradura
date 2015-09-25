@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Cerradura/Cerradura.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CoreCerradura/CoreCerradura.xcodeproj">
    </FileRef>
    <FileRef

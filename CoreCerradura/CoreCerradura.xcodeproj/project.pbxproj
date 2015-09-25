@@ -11,6 +11,8 @@
 		6E0AB66E1AE4502D00AAAF50 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E98212E1AE2D5B400D393DF /* Permission.swift */; };
 		6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
 		6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
+		6E10FCDD1BB54612007CB984 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDB1BB54612007CB984 /* libcrypto.a */; settings = {ASSET_TAGS = (); }; };
+		6E10FCDE1BB54612007CB984 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDC1BB54612007CB984 /* libssl.a */; settings = {ASSET_TAGS = (); }; };
 		6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253941BAE7B1E00D1B37D /* libcrypto.a */; };
 		6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253951BAE7B1E00D1B37D /* libssl.a */; };
 		6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationToken.swift; sourceTree = "<group>"; };
 		6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthenticationContext.swift; sourceTree = "<group>"; };
+		6E10FCDB1BB54612007CB984 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks/libcrypto.a; sourceTree = "<group>"; };
+		6E10FCDC1BB54612007CB984 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks/libssl.a; sourceTree = "<group>"; };
 		6E2253941BAE7B1E00D1B37D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libcrypto.a; sourceTree = "<group>"; };
 		6E2253951BAE7B1E00D1B37D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../Carthage/Build/Mac/OpenSSL.framework/Versions/A/SharedFrameworks/libssl.a; sourceTree = "<group>"; };
 		6E2253C01BAF6AE500D1B37D /* Archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
@@ -145,16 +149,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E10FCDE1BB54612007CB984 /* libssl.a in Frameworks */,
+				6E10FCDD1BB54612007CB984 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E10FCDF1BB54616007CB984 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E10FCDB1BB54612007CB984 /* libcrypto.a */,
+				6E10FCDC1BB54612007CB984 /* libssl.a */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		6E2253981BAE7B2400D1B37D /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				6E2253991BAE7B2C00D1B37D /* OS X */,
+				6E10FCDF1BB54616007CB984 /* iOS */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
