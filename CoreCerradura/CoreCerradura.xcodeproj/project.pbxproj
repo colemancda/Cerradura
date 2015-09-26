@@ -44,7 +44,6 @@
 		6E95D2021B2B2EBD000DD4DA /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D77B41AE9DF3C00370898 /* Define.swift */; };
 		6E95D2031B2B2EBD000DD4DA /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821341AE2D5B500D393DF /* Lock.swift */; };
 		6E95D2041B2B2EBD000DD4DA /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821301AE2D5B400D393DF /* Action.swift */; };
-		6E95D2051B2B2EBD000DD4DA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; };
 		6E95D2091B2B2EBD000DD4DA /* CoreCerradura.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642F31AD9E045005BDBA7 /* CoreCerradura.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E9821311AE2D5B400D393DF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821301AE2D5B400D393DF /* Action.swift */; };
 		6E9821331AE2D5B400D393DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821321AE2D5B400D393DF /* User.swift */; };
@@ -473,7 +472,6 @@
 				6E95D2041B2B2EBD000DD4DA /* Action.swift in Sources */,
 				6ED5F0BE1BAE35CC009DC5CB /* PermissionType.swift in Sources */,
 				6ED5F0B81BAE353D009DC5CB /* ActionType.swift in Sources */,
-				6E95D2051B2B2EBD000DD4DA /* Model.xcdatamodeld in Sources */,
 				6E7474691B3B0AAB0039596D /* LockMode.swift in Sources */,
 				6E74746B1B3B0AAB0039596D /* LockCommand.swift in Sources */,
 			);
@@ -698,6 +696,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
@@ -726,6 +725,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
