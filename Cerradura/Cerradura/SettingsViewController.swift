@@ -38,7 +38,7 @@ class SettingsViewController: UITableViewController {
         
         
         
-        AuthenticationController.sharedController.logout()
+        //AuthenticationController.sharedController.logout()
     }
     
     // MARK: - UITableViewDelegate

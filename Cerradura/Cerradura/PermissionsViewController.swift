@@ -12,6 +12,7 @@ import CoreData
 import CoreCerradura
 import NetworkObjectsUI
 
+/*
 class PermissionsViewController: ArchivableFetchedResultsViewController {
         
     // MARK: - Initialization
@@ -179,6 +180,7 @@ class PermissionsViewController: ArchivableFetchedResultsViewController {
         permissionVC.permission = permission
     }
 }
+*/
 
 // MARK: - Table View Cell
 

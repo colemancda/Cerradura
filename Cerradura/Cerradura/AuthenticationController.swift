@@ -17,9 +17,7 @@ final class AuthenticationController {
     // MARK: - Class Properties
     
     static let sharedController = AuthenticationController()
-    
-    static let preferencesUserIDKey = "UserID"
-    
+        
     // MARK: - Properties
     
     var delegate: AuthenticationControllerDelegate?

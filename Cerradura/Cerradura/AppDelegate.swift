@@ -10,7 +10,7 @@ import UIKit
 import NetworkObjectsUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -23,18 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationControllerD
         NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true
         
         // load authentication manager
-        AuthenticationController.sharedController.delegate = self
+        //AuthenticationController.sharedController.delegate = self
         
         // set app appearance
         ConfigureAppearance()
         
+        /*
         // show logged in UI cache if the user is logged in
         if AuthenticationController.sharedController.isAuthenticated {
             
             let loginVC = self.window!.rootViewController as! LoginViewController
             
             loginVC.performSegueWithIdentifier(R.segue.loginSegue, sender: self)
-        }
+        }*/
         
         return true
     }
@@ -59,20 +60,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationControllerD
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-    // MARK: - AuthenticationControllerDelegate
-    
-    func authenticationControllerDidLogout(controller: AuthenticationController) {
-        
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-            
-            let loginVC = self.window!.rootViewController as! LoginViewController
-            
-            loginVC.dismissViewControllerAnimated(true, completion: { () -> Void in
-                
-                
-            })
-        }
     }
 }

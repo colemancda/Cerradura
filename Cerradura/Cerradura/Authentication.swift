@@ -65,7 +65,7 @@ public final class Authentication {
     
     // MARK: - Initialization
     
-    public init(keychainIdentifier: String = NSBundle.mainBundle().infoDictionary![kCFBundleIdentifierKey] as! String, accessGroup: String? = nil) {
+    public init(keychainIdentifier: String = NSBundle.mainBundle().infoDictionary![kCFBundleIdentifierKey as String] as! String, accessGroup: String? = nil) {
         
         // set keychain
         

@@ -19,21 +19,19 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var serverURLTextField: UITextField!
-    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
     
     // MARK: - Actions
     
     @IBAction func login(sender: AnyObject) {
         
-        let serverURL = NSUserDefaults.standardUserDefaults().stringForKey(PreferenceKey.ServerURL.rawValue)!
-        
+        /*
         AuthenticationController.sharedController.login(self.usernameTextField.text!.lowercaseString, password: self.passwordTextField.text!, server: serverURL, completion: { (error: NSError?) -> Void in
             
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
@@ -43,8 +41,7 @@ class LoginViewController: UIViewController {
                     // override unauthorized error message
                     let errorText: String = {
                        
-                        if error!.domain == NetworkObjectsErrorDomain &&
-                            error!.code == NetworkObjects.ErrorCode.ServerStatusCodeUnauthorized.rawValue {
+                        if error!.code == NetworkObjects.ErrorCode.ServerStatusCodeUnauthorized.rawValue {
                             
                             return NSLocalizedString("Invalid username or password.", value: "Invalid username or password.", comment: "Invalid username or password.")
                         }
@@ -65,6 +62,7 @@ class LoginViewController: UIViewController {
                 self.performSegueWithIdentifier(R.segue.loginSegue, sender: self)
             })
         })
+        */
     }
     
     // MARK: - Segues

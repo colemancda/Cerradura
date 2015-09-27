@@ -53,7 +53,7 @@ extension UIViewController {
         else {
             
             // pop to root VC if top if second VC
-            if self.navigationController!.viewControllers[1] as? UIViewController == self {
+            if self.navigationController!.viewControllers[1] == self {
                 
                 self.navigationController!.popToRootViewControllerAnimated(true)
             }

@@ -455,29 +455,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szn-hz-uxU" userLabel="Login View">
-                                            <rect key="frame" x="222" y="218" width="155" height="165"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szn-hz-uxU" userLabel="Login View">
+                                            <rect key="frame" x="200" y="231" width="200" height="139"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZD5-XR-4Bx">
-                                                    <rect key="frame" x="0.0" y="8" width="155" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZD5-XR-4Bx">
+                                                    <rect key="frame" x="0.0" y="8" width="200" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUX-DX-2ga">
-                                                    <rect key="frame" x="0.0" y="46" width="155" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUX-DX-2ga">
+                                                    <rect key="frame" x="0.0" y="46" width="200" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://localhost:8080" borderStyle="roundedRect" placeholder="Server URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MST-gP-KTc">
-                                                    <rect key="frame" x="0.0" y="84" width="155" height="30"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy7-TG-dfN">
-                                                    <rect key="frame" x="54" y="122" width="47" height="35"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy7-TG-dfN">
+                                                    <rect key="frame" x="77" y="96" width="47" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="Login">
@@ -493,22 +487,18 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="KUX-DX-2ga" firstAttribute="top" secondItem="ZD5-XR-4Bx" secondAttribute="bottom" constant="8" id="2tk-b7-QFz"/>
-                                                <constraint firstItem="Vy7-TG-dfN" firstAttribute="top" secondItem="MST-gP-KTc" secondAttribute="bottom" constant="8" id="6H9-mg-POz"/>
                                                 <constraint firstAttribute="centerX" secondItem="ZD5-XR-4Bx" secondAttribute="centerX" id="9n0-5n-C67"/>
                                                 <constraint firstAttribute="trailing" secondItem="KUX-DX-2ga" secondAttribute="trailing" id="Aqj-Mp-pBX"/>
-                                                <constraint firstItem="MST-gP-KTc" firstAttribute="leading" secondItem="Szn-hz-uxU" secondAttribute="leading" id="DYv-aU-zw7"/>
                                                 <constraint firstItem="KUX-DX-2ga" firstAttribute="leading" secondItem="Szn-hz-uxU" secondAttribute="leading" id="IgR-Ev-d2c"/>
                                                 <constraint firstAttribute="bottom" secondItem="Vy7-TG-dfN" secondAttribute="bottom" constant="8" id="JSY-Aw-dGq"/>
                                                 <constraint firstAttribute="centerX" secondItem="KUX-DX-2ga" secondAttribute="centerX" id="N5h-04-Wjo"/>
-                                                <constraint firstAttribute="trailing" secondItem="MST-gP-KTc" secondAttribute="trailing" id="PSq-jA-gcy"/>
                                                 <constraint firstItem="KUX-DX-2ga" firstAttribute="top" secondItem="ZD5-XR-4Bx" secondAttribute="bottom" constant="8" id="UKi-EC-TPL"/>
                                                 <constraint firstItem="ZD5-XR-4Bx" firstAttribute="top" secondItem="Szn-hz-uxU" secondAttribute="top" constant="8" id="VAz-Ui-p6T"/>
                                                 <constraint firstItem="ZD5-XR-4Bx" firstAttribute="leading" secondItem="Szn-hz-uxU" secondAttribute="leading" id="WU4-VL-0mE"/>
                                                 <constraint firstAttribute="centerX" secondItem="Vy7-TG-dfN" secondAttribute="centerX" id="Wer-uT-Qi1"/>
-                                                <constraint firstItem="MST-gP-KTc" firstAttribute="top" secondItem="KUX-DX-2ga" secondAttribute="bottom" constant="8" id="gUF-zc-086"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZD5-XR-4Bx" secondAttribute="trailing" id="kDO-ie-Bca"/>
-                                                <constraint firstItem="MST-gP-KTc" firstAttribute="top" secondItem="KUX-DX-2ga" secondAttribute="bottom" constant="8" id="tj9-dK-cC0"/>
-                                                <constraint firstAttribute="centerX" secondItem="MST-gP-KTc" secondAttribute="centerX" id="v8H-tM-unf"/>
+                                                <constraint firstAttribute="width" constant="200" id="tUo-l4-UMd"/>
+                                                <constraint firstItem="Vy7-TG-dfN" firstAttribute="top" secondItem="KUX-DX-2ga" secondAttribute="bottom" constant="20" id="zm7-tt-caF"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -544,7 +534,6 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="KUX-DX-2ga" id="vvb-Nk-bX9"/>
-                        <outlet property="serverURLTextField" destination="MST-gP-KTc" id="qXe-xB-Ibi"/>
                         <outlet property="usernameTextField" destination="ZD5-XR-4Bx" id="gIL-pT-iaQ"/>
                         <segue destination="Wf0-2u-5JN" kind="presentation" identifier="LoginSegue" modalTransitionStyle="flipHorizontal" id="jJU-Ja-Rwt"/>
                         <segue destination="T60-4c-oJL" kind="unwind" identifier="LogoutFromSplitVC" unwindAction="logoutSegue:" id="iaC-k3-ygI"/>

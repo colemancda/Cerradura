@@ -42,7 +42,7 @@ internal extension NetworkObjects.Store {
         // Log error, try to delete file, and crash
         if persistentStore == nil {
             
-            println("Failed to load SQLite file.\n\(addPersistentStoreError)")
+            print("Failed to load SQLite file.\n\(addPersistentStoreError)")
             
             self.removeSharedStore()
             
