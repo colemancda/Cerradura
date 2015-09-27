@@ -1,57 +1,162 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nkq-vX-hB6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lT1-nk-s1n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="4UF-xl-TPE">
+        <!--Locks-->
+        <scene sceneID="fuz-wf-A5d">
             <objects>
-                <navigationController id="nkq-vX-hB6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="koa-Iz-usn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <tableViewController storyboardIdentifier="Permissions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lT1-nk-s1n" customClass="PermissionsViewController" customModule="Cerradura" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="dh3-MS-8u9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="67" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PermissionCell" rowHeight="68" id="FoJ-xd-3E0" customClass="PermissionCell" customModule="Cerradura" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FoJ-xd-3E0" id="cFi-EU-TLw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anytime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at4-yA-hfn">
+                                            <rect key="frame" x="67" y="39" width="525" height="17"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-O8-a7P" customClass="StyleKitView" customModule="Cerradura" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="8" width="51" height="51"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="paU-PE-0yz">
+                                                    <rect key="frame" x="15" y="16" width="20" height="20"/>
+                                                    <animations/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="paU-PE-0yz" secondAttribute="centerY" id="7dZ-hh-7Bh"/>
+                                                <constraint firstAttribute="centerX" secondItem="paU-PE-0yz" secondAttribute="centerX" id="Nsr-pM-lQz"/>
+                                                <constraint firstAttribute="width" secondItem="lBq-O8-a7P" secondAttribute="height" multiplier="1:1" id="P81-cr-iT8"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="canvasName" value="PermissionBadgeAnytime"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Door" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05f-cG-6hE">
+                                            <rect key="frame" x="67" y="8" width="525" height="23"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="at4-yA-hfn" firstAttribute="leading" secondItem="lBq-O8-a7P" secondAttribute="trailing" constant="20" id="4ZF-Lf-zrK"/>
+                                        <constraint firstItem="05f-cG-6hE" firstAttribute="leading" secondItem="at4-yA-hfn" secondAttribute="leading" id="7FX-HL-XPe"/>
+                                        <constraint firstItem="lBq-O8-a7P" firstAttribute="top" secondItem="cFi-EU-TLw" secondAttribute="topMargin" id="Hga-B6-2WZ"/>
+                                        <constraint firstItem="05f-cG-6hE" firstAttribute="leading" secondItem="lBq-O8-a7P" secondAttribute="trailing" constant="8" id="Oyb-Zi-XGY"/>
+                                        <constraint firstItem="lBq-O8-a7P" firstAttribute="leading" secondItem="cFi-EU-TLw" secondAttribute="leading" constant="8" id="PYX-Nr-yUK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lBq-O8-a7P" secondAttribute="bottom" id="Wa5-8T-n1n"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="05f-cG-6hE" secondAttribute="trailing" id="Zyk-Iv-VWr"/>
+                                        <constraint firstItem="05f-cG-6hE" firstAttribute="top" secondItem="cFi-EU-TLw" secondAttribute="topMargin" id="jC2-d1-hqb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="at4-yA-hfn" secondAttribute="trailing" id="kuQ-fW-LsE"/>
+                                        <constraint firstItem="05f-cG-6hE" firstAttribute="trailing" secondItem="at4-yA-hfn" secondAttribute="trailing" id="sOu-gP-5IJ"/>
+                                        <constraint firstItem="at4-yA-hfn" firstAttribute="top" secondItem="05f-cG-6hE" secondAttribute="bottom" constant="8" id="uDW-M5-1lV"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="kuQ-fW-LsE"/>
+                                            <exclude reference="4ZF-Lf-zrK"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <inset key="separatorInset" minX="67" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="activityIndicatorView" destination="paU-PE-0yz" id="uib-JX-FlU"/>
+                                    <outlet property="permissionImageView" destination="lBq-O8-a7P" id="AJH-ju-Hvg"/>
+                                    <outlet property="permissionLockNameLabel" destination="05f-cG-6hE" id="vBN-eu-73F"/>
+                                    <outlet property="permissionTypeLabel" destination="at4-yA-hfn" id="X4z-Dz-du6"/>
+                                    <segue destination="6ae-Vx-dF1" kind="showDetail" identifier="ShowPermissionDetail" id="1hN-i7-KLk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lT1-nk-s1n" id="l4a-Xv-lve"/>
+                            <outlet property="delegate" destination="lT1-nk-s1n" id="WSz-wK-9HX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locks" id="02r-rE-Rbf"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0ml-eF-ge5">
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="24k-Tx-VKJ" kind="relationship" relationship="rootViewController" id="IjN-V3-dCI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t26-Zg-Keh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <animations/>
+                        <connections>
+                            <action selector="refresh:" destination="lT1-nk-s1n" eventType="valueChanged" id="Een-iw-WiY"/>
+                        </connections>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfu-AQ-lXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3390" y="-692"/>
+            <point key="canvasLocation" x="2207" y="-532"/>
         </scene>
         <!--Lock Name-->
-        <scene sceneID="dpx-Oz-DOa">
+        <scene sceneID="Bzm-j7-QZI">
             <objects>
-                <viewController id="24k-Tx-VKJ" customClass="PermissionViewController" customModule="Cerradura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6ae-Vx-dF1" customClass="PermissionViewController" customModule="Cerradura" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nun-pO-Xt0"/>
-                        <viewControllerLayoutGuide type="bottom" id="fnv-jU-gry"/>
+                        <viewControllerLayoutGuide type="top" id="rb5-QT-Eaf"/>
+                        <viewControllerLayoutGuide type="bottom" id="HYu-bY-BQX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qfr-Vn-gGA">
+                    <view key="view" contentMode="scaleToFill" id="Smt-nO-6j5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cty-Iw-rf4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMT-qN-KK6">
                                 <rect key="frame" x="276" y="285" width="48" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Unlock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="cty-Iw-rf4" secondAttribute="centerY" id="0ki-fo-6j5"/>
-                            <constraint firstAttribute="centerX" secondItem="cty-Iw-rf4" secondAttribute="centerX" id="3j1-PY-M2b"/>
+                            <constraint firstAttribute="centerY" secondItem="hMT-qN-KK6" secondAttribute="centerY" id="41D-hE-wAp"/>
+                            <constraint firstAttribute="centerX" secondItem="hMT-qN-KK6" secondAttribute="centerX" id="XYm-a1-EQV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lock Name" id="v7Z-Bk-634">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="daW-aS-IAb"/>
+                    <navigationItem key="navigationItem" title="Lock Name" id="UaA-df-5X4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="yoT-pu-GjO"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="aRm-a6-D8r" kind="presentation" identifier="EmptyPermission" animates="NO" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="Hov-ts-tah"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OFx-fK-Fph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fi4-VT-AU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4218" y="-692"/>
+            <point key="canvasLocation" x="3032" y="-532"/>
+        </scene>
+        <!--EmptySelection-->
+        <scene sceneID="Gf9-q5-p1x">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EmptySelection" id="aRm-a6-D8r" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5XV-A6-4BA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032.5" y="-73"/>
         </scene>
     </scenes>
 </document>

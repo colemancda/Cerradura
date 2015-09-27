@@ -30,7 +30,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-SS-m2D" userLabel="Login View">
                                             <rect key="frame" x="200" y="231" width="200" height="139"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-xr-Dz5">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UsernameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-xr-Dz5">
                                                     <rect key="frame" x="0.0" y="8" width="200" height="30"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -107,11 +107,20 @@
                     <connections>
                         <outlet property="passwordTextField" destination="ZgH-wR-2zJ" id="AdB-a5-jNP"/>
                         <outlet property="usernameTextField" destination="J2h-xr-Dz5" id="Qus-6z-NLL"/>
+                        <segue destination="FkJ-YH-1kw" kind="presentation" identifier="Login" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="uId-j1-GpU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHm-vk-NCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-987" y="-532"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="qdL-ww-KDR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="FkJ-YH-1kw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aG5-fc-e4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-497" y="-532"/>
         </scene>
     </scenes>
     <resources>
