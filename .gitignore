@@ -3,9 +3,11 @@ Carthage/*
 
 Cerradura.xcworkspace/xcuserdata/*
 
-
 Cerradura Server/Cerradura Server.xcodeproj/*
 
 *.a
 
+*.generated.swift
+
 Carthage/Build/*
+
