@@ -36,7 +36,6 @@
 		6EB5860A1B2C8234009E7250 /* NewLock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB586091B2C8234009E7250 /* NewLock.storyboard */; };
 		6EDF7C1B1BB65CA900245473 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF7C191BB65CA900245473 /* libcrypto.a */; };
 		6EDF7C1C1BB65CA900245473 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF7C1A1BB65CA900245473 /* libssl.a */; };
-		6EDF7C201BB65E4600245473 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF7C1F1BB65E4600245473 /* Register.storyboard */; settings = {ASSET_TAGS = (); }; };
 		6EDF7C221BB65F4E00245473 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDF7C211BB65F4E00245473 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -142,7 +141,6 @@
 		6EB586341B2CE4AE009E7250 /* ManagedObjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		6EDF7C191BB65CA900245473 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks/libcrypto.a; sourceTree = "<group>"; };
 		6EDF7C1A1BB65CA900245473 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks/libssl.a; sourceTree = "<group>"; };
-		6EDF7C1F1BB65E4600245473 /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		6EDF7C211BB65F4E00245473 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,7 +320,6 @@
 			children = (
 				6E11B2E91AFE6A9400EEAF37 /* Main.storyboard */,
 				6EAE1E121BB7BFF900F18F8A /* Login.storyboard */,
-				6EDF7C1F1BB65E4600245473 /* Register.storyboard */,
 				6E94F0191BB7E28100C4BE24 /* Permission.storyboard */,
 				6EB586091B2C8234009E7250 /* NewLock.storyboard */,
 			);
@@ -458,7 +455,6 @@
 				6EDF7C221BB65F4E00245473 /* Settings.bundle in Resources */,
 				6E11B2EB1AFE6A9400EEAF37 /* Main.storyboard in Resources */,
 				6E11B2F01AFE6A9400EEAF37 /* LaunchScreen.xib in Resources */,
-				6EDF7C201BB65E4600245473 /* Register.storyboard in Resources */,
 				6EB5860A1B2C8234009E7250 /* NewLock.storyboard in Resources */,
 				6E11B2ED1AFE6A9400EEAF37 /* Images.xcassets in Resources */,
 				6EAE1E131BB7BFF900F18F8A /* Login.storyboard in Resources */,

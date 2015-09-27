@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // start network activity indicator manager
         NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true
         
-        // load authentication manager
-        //AuthenticationController.sharedController.delegate = self
-        
         // set app appearance
         ConfigureAppearance()
         
+        // load authentication manager
+        //AuthenticationController.sharedController.delegate = self
+                
         /*
         // show logged in UI cache if the user is logged in
         if AuthenticationController.sharedController.isAuthenticated {
