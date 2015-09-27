@@ -31,34 +31,6 @@ final class AuthenticationController {
     
     private(set) var authenticatedUser: User?
     
-    /** Stored resource ID for the authenticated user. */
-    private(set) var userResourceID: UInt? {
-        
-        get {
-            
-            return NSUserDefaults.standardUserDefaults().objectForKey(AuthenticationController.preferencesUserIDKey) as? UInt
-        }
-        
-        set {
-            
-            if self.userResourceID == nil {
-                
-                NSUserDefaults.standardUserDefaults().removeObjectForKey(AuthenticationController.preferencesUserIDKey)
-            }
-            else {
-                
-                NSUserDefaults.standardUserDefaults().setInteger(Int(self.userResourceID!), forKey: AuthenticationController.preferencesUserIDKey)
-            }
-            
-            let success = NSUserDefaults.standardUserDefaults().synchronize()
-            
-            if !success {
-                
-                fatalError("Could not save resource ID to user defaults")
-            }
-        }
-    }
-    
     // MARK: - Private Properties
     
     /** Manages storing the credentials. */
@@ -67,7 +39,7 @@ final class AuthenticationController {
     // MARK: - Methods
     
     /** Creates a new shared store, authenticates with the server, and saves credentials. */
-    func login(username: String, password: String, server serverURL: NSURL, completion: (NSError?) -> Void) {
+    func login(username: String, password: String, server serverURL: String, completion: (NSError?) -> Void) {
         
         // create store
         Store.loadSharedStore(username, password: password, server: serverURL)

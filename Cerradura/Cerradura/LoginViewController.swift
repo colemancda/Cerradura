@@ -32,9 +32,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: AnyObject) {
         
-        let serverURL = NSURL(string: self.serverURLTextField.text)
+        let serverURL = NSUserDefaults.standardUserDefaults().stringForKey(PreferenceKey.ServerURL.rawValue)!
         
-        AuthenticationController.sharedController.login(self.usernameTextField.text.lowercaseString, password: self.passwordTextField.text, server: serverURL!, completion: { (error: NSError?) -> Void in
+        AuthenticationController.sharedController.login(self.usernameTextField.text!.lowercaseString, password: self.passwordTextField.text!, server: serverURL, completion: { (error: NSError?) -> Void in
             
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 
