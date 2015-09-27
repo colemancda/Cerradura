@@ -107,20 +107,11 @@
                     <connections>
                         <outlet property="passwordTextField" destination="ZgH-wR-2zJ" id="AdB-a5-jNP"/>
                         <outlet property="usernameTextField" destination="J2h-xr-Dz5" id="Qus-6z-NLL"/>
-                        <segue destination="FkJ-YH-1kw" kind="presentation" identifier="Login" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="uId-j1-GpU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHm-vk-NCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-987" y="-532"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="qdL-ww-KDR">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="FkJ-YH-1kw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aG5-fc-e4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-497" y="-532"/>
         </scene>
     </scenes>
     <resources>
