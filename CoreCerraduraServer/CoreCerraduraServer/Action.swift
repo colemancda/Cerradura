@@ -13,15 +13,25 @@ import CoreCerradura
 
 extension CoreCerradura.Model.Action: ServerModel {
     
-    public static func validateAuthentication(context: Server.RequestContext) -> Bool {
+    public static func canGet(resourceID: String, context: Server.RequestContext) -> Bool {
         
         return true
     }
     
-    public static func willCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+    public static func canCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
         
         // Cannot be created through NetworkObjects, only internally
         return false
+    }
+    
+    public static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+        
+        return true
+    }
+    
+    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool {
+        
+        return true
     }
     
     public static func initialValues(var initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
@@ -33,19 +43,9 @@ extension CoreCerradura.Model.Action: ServerModel {
         return initialValues
     }
     
-    public static func willEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
-        
-        return false
-    }
-    
     public static func omittedProperties(resourceID: String, context: Server.RequestContext) -> [String] {
         
         return []
-    }
-    
-    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool {
-        
-        return true
     }
 }
 

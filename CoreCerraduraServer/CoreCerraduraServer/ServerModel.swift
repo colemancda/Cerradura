@@ -18,9 +18,6 @@ public protocol ServerModel {
     /// Whether authentication is required to access the entity. 
     static func canGet(resourceID: String, context: Server.RequestContext) -> Bool
     
-    /// Whether authentication is required to delete the entity.
-    static func canDelete(resourceID: String, context: Server.RequestContext) -> Bool
-    
     /// Asks the reciever whether the initial values are valid.
     static func canCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool
     
@@ -43,17 +40,17 @@ public func ServerModelForEntity(entityName: String) -> ServerModel.Type {
     
     switch entityName {
         
-    case CoreCerradura.Model.Lock.entityName:
-        return CoreCerradura.Model.Lock.self
+    case Model.Lock.entityName:
+        return Model.Lock.self
         
-    case CoreCerradura.Model.User.entityName:
-        return CoreCerradura.Model.User.self
+    case Model.User.entityName:
+        return Model.User.self
         
-    case CoreCerradura.Model.Permission.entityName:
-        return CoreCerradura.Model.Permission.self
+    case Model.Permission.entityName:
+        return Model.Permission.self
         
-    case CoreCerradura.Model.Action.entityName:
-        return CoreCerradura.Model.Action.self
+    case Model.Action.entityName:
+        return Model.Action.self
         
     default: fatalError("Invalid entity name: \(entityName)")
     }

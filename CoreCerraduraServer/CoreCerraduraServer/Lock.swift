@@ -18,7 +18,17 @@ extension CoreCerradura.Model.Lock: ServerModel {
         return true
     }
     
-    public static func willCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+    public static func canCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+        
+        return true
+    }
+    
+    public static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+        
+        return true
+    }
+    
+    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool {
         
         return true
     }
@@ -32,18 +42,8 @@ extension CoreCerradura.Model.Lock: ServerModel {
         return initialValues
     }
     
-    public static func willEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
-        
-        return true
-    }
-    
     public static func omittedProperties(resourceID: String, context: Server.RequestContext) -> [String] {
         
         return []
-    }
-    
-    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool {
-        
-        return true
     }
 }
