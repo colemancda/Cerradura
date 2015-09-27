@@ -27,7 +27,7 @@ final public class ManagedObjectController: NSObject {
             
             if deletionHandler != nil {
                 
-                self.managedObject.addObserver(self, forKeyPath: ManagedObjectKey.Deleted.rawValue, options: .Initial | .New, context: self.KVOContext)
+                self.managedObject.addObserver(self, forKeyPath: ManagedObjectKey.Deleted.rawValue, options: [.Initial, .New], context: self.KVOContext)
             }
             else {
                 
@@ -95,7 +95,7 @@ final public class ManagedObjectController: NSObject {
         
         // register for notifications
         
-        self.managedObject.addObserver(self, forKeyPath: propertyName, options: .Initial | .New | .Old, context: self.KVOContext)
+        self.managedObject.addObserver(self, forKeyPath: propertyName, options: [.Initial, .New, .Old], context: self.KVOContext)
         
         // set handler
         self.observedProperties[propertyName] = {(oldValue: Any?, newValue: Any?) -> Void in
@@ -115,7 +115,7 @@ final public class ManagedObjectController: NSObject {
     
     // MARK: - KVO
     
-    @objc public override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    @objc public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         if context == self.KVOContext {
             

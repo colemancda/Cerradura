@@ -41,8 +41,8 @@ extension UIViewController {
         if regularLayout {
             
             // show empty selection if root VC and visible detail VC
-            if self.navigationController!.viewControllers.first! as! UIViewController == self &&
-                self.splitViewController!.viewControllers[1] as! UIViewController == self.navigationController! {
+            if self.navigationController!.viewControllers.first! == self &&
+                self.splitViewController!.viewControllers[1] == self.navigationController! {
                     
                     // set detailVC
                     self.splitViewController!.showDetailViewController(R.storyboard.main.emptySelectionNavigationStack!, sender: self)

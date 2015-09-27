@@ -38,46 +38,38 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     public func server<T : ServerType>(server: T, performFunction functionName: String, forResource resource: Resource, recievedJSON: JSONObject?, context: Server.RequestContext) -> (Int, JSONObject?) {
         
-        switch functionName {
+        let functionCode: Int
         
-        // Archive
-        case CoreCerradura.ArchiveFunctionName:
+        do {
             
-            guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
-            
-            let changes = [CoreCerradura.ArchivePropertyName: Value.Attribute(.Number(.Boolean(true)))]
-            
-            do { try context.store.edit(resource, changes: changes) }
-            
-            catch {
+            switch functionName {
                 
-                self.server(server, didEncounterInternalError: error, context: context)
+            // Archive
+            case CoreCerradura.ArchiveFunctionName:
                 
-                return (StatusCode.InternalServerError.rawValue, nil)
+                guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
+                
+                functionCode = try ArchiveFunction(resource, context: context)
+                
+            // Unlock
+            case CoreCerradura.Model.Lock.Function.Unlock:
+                
+                guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
+                
+                functionCode = try UnlockFunction(resource, context: context)
+                
+            default: fatalError("Unhandled function: \(functionName)")
             }
-            
-            return (StatusCode.OK.rawValue, nil)
-            
-        // Unlock
-        case CoreCerradura.Model.Lock.Function.Unlock:
-            
-            guard recievedJSON == nil else { return (HTTP.StatusCode.BadRequest.rawValue, nil) }
-            
-            let functionCode: Int
-            
-            do { functionCode = try UnlockFunction(resource, context: context) }
-            
-            catch {
-                
-                self.server(server, didEncounterInternalError: error, context: context)
-                
-                return (StatusCode.InternalServerError.rawValue, nil)
-            }
-            
-            return (functionCode, nil)
-            
-        default: fatalError("Unhandled function: \(functionName)")
         }
+        
+        catch {
+            
+            self.server(server, didEncounterInternalError: error, context: context)
+            
+            return (StatusCode.InternalServerError.rawValue, nil)
+        }
+        
+        return (functionCode, nil)
     }
     
     // MARK: - ServerDelegate

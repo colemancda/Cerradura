@@ -13,7 +13,7 @@ import CoreCerradura
 
 extension CoreCerradura.Model.Permission: ServerModel {
     
-    public static func authenticationRequired(context: Server.RequestContext) -> Bool {
+    public static func validateAuthentication(context: Server.RequestContext) -> Bool {
         
         return true
     }

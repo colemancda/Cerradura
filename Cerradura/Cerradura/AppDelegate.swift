@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationControllerD
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // print app info
-        println("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
+        print("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
         
         // start network activity indicator manager
         NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true

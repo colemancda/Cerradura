@@ -13,7 +13,7 @@ import CoreCerradura
 
 extension CoreCerradura.Model.Lock: ServerModel {
     
-    public static func authenticationRequired(context: Server.RequestContext) -> Bool {
+    public static func canGet(resourceID: String, context: Server.RequestContext) -> Bool {
         
         return true
     }

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 import CoreCerradura
-import CoreCerraduraClient
 
 /** Controls the Store and the UI for authentication events. */
 final class AuthenticationController {

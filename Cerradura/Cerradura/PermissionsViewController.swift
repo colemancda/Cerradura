@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 import CoreCerradura
-import CoreCerraduraClient
 import NetworkObjectsUI
 
 class PermissionsViewController: ArchivableFetchedResultsViewController {

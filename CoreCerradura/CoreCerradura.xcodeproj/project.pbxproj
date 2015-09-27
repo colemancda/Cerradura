@@ -48,6 +48,7 @@
 		6E9821311AE2D5B400D393DF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821301AE2D5B400D393DF /* Action.swift */; };
 		6E9821331AE2D5B400D393DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821321AE2D5B400D393DF /* User.swift */; };
 		6E9821351AE2D5B500D393DF /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821341AE2D5B500D393DF /* Lock.swift */; };
+		6EAE1E0B1BB7324E00F18F8A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; settings = {ASSET_TAGS = (); }; };
@@ -471,6 +472,7 @@
 				6E95D2031B2B2EBD000DD4DA /* Lock.swift in Sources */,
 				6E95D2041B2B2EBD000DD4DA /* Action.swift in Sources */,
 				6ED5F0BE1BAE35CC009DC5CB /* PermissionType.swift in Sources */,
+				6EAE1E0B1BB7324E00F18F8A /* Model.xcdatamodeld in Sources */,
 				6ED5F0B81BAE353D009DC5CB /* ActionType.swift in Sources */,
 				6E7474691B3B0AAB0039596D /* LockMode.swift in Sources */,
 				6E74746B1B3B0AAB0039596D /* LockCommand.swift in Sources */,
@@ -682,15 +684,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/iOS,
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/iOS,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = CoreCerradura/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.colemancda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CoreCerradura;
 				SDKROOT = iphoneos;
@@ -711,15 +714,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/iOS,
-					/Users/Coleman/Developer/MyProjects/CoreCerradura/Carthage/Build/iOS,
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = CoreCerradura/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS/OpenSSL.framework/SharedFrameworks;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.colemancda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CoreCerradura;
 				SDKROOT = iphoneos;

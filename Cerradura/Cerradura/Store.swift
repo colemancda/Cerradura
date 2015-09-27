@@ -8,11 +8,12 @@
 
 import Foundation
 import CoreData
-import CoreCerraduraClient
+import NetworkObjects
+import CoreCerradura
 
 // MARK: - Extensions
 
-internal extension Store {
+internal extension NetworkObjects.Store {
     
     /** Shared store that may be nil. App must ensure that this class property is initialized before use. */
     private(set) static var sharedStore: Store!
@@ -73,11 +74,10 @@ internal extension Store {
 
 internal let SharedStoreFileURL: NSURL = {
     
-    let cacheURL = NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory,
+    let cacheURL = try! NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory,
         inDomain: NSSearchPathDomainMask.UserDomainMask,
         appropriateForURL: nil,
-        create: false,
-        error: nil)!
+        create: false)
     
     let fileURL = cacheURL.URLByAppendingPathComponent("data.sqlite")
     
