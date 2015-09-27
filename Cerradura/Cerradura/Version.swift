@@ -12,4 +12,4 @@ import Foundation
 public let AppVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
 
 /** Build of the app. */
-public let AppBuild = NSBundle.mainBundle().infoDictionary![kCFBundleVersionKey as String] as! String
+public let AppBuild = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String

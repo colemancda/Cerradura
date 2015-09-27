@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AO0-OC-Y0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="-1159"/>
+            <point key="canvasLocation" x="2892" y="-1157"/>
         </scene>
         <!--Permission-->
         <scene sceneID="WPY-Yu-BhY">
@@ -31,13 +31,32 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92l-Mt-mey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2644" y="-1159"/>
+            <point key="canvasLocation" x="2892.5" y="-679"/>
+        </scene>
+        <!--Locks-->
+        <scene sceneID="YC9-WZ-tWW">
+            <objects>
+                <navigationController id="daw-jT-4ob" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locks" image="LockTabBarIcon" selectedImage="lockTabBarIconSelected" id="oxP-ow-mfg"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dlt-BD-oOC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gdG-iY-dLT" kind="relationship" relationship="rootViewController" id="dNg-Ay-kt0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhf-4M-tNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290" y="-532"/>
         </scene>
         <!--Locks-->
         <scene sceneID="oYm-bl-l2n">
             <objects>
                 <splitViewController id="gdG-iY-dLT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locks" image="LockTabBarIcon" selectedImage="lockTabBarIconSelected" id="G09-Gk-4BO"/>
+                    <navigationItem key="navigationItem" title="Locks" id="gkZ-Ds-AFv"/>
                     <connections>
                         <segue destination="kdO-cK-mmQ" kind="relationship" relationship="masterViewController" id="uHH-VQ-gt5"/>
                         <segue destination="KZ6-Sy-WOE" kind="relationship" relationship="detailViewController" id="6mf-bC-7Rh"/>
@@ -45,7 +64,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rT-7w-Mtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311" y="-532"/>
+            <point key="canvasLocation" x="2113" y="-532"/>
         </scene>
         <!--PermissionDetail-->
         <scene sceneID="F3g-yz-nMU">
@@ -55,7 +74,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgV-q7-cxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2003.5" y="-532"/>
+            <point key="canvasLocation" x="2709.5" y="-532"/>
         </scene>
         <!--Settings-->
         <scene sceneID="nC1-BW-LUC">
@@ -260,7 +279,7 @@
         <scene sceneID="ZMk-9e-1Jn">
             <objects>
                 <navigationController storyboardIdentifier="ActionsNavigationStack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hN2-us-aQL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="ActivityTabBarIcon" id="3aV-sW-Y17"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="ActivityTabBarIcon" selectedImage="ActivityTabBarIconSelected" id="3aV-sW-Y17"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3VM-d6-ylU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -287,7 +306,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gdG-iY-dLT" kind="relationship" relationship="viewControllers" id="zOC-7h-If0"/>
+                        <segue destination="daw-jT-4ob" kind="relationship" relationship="viewControllers" id="9So-jL-UrT"/>
                         <segue destination="hN2-us-aQL" kind="relationship" relationship="viewControllers" id="xGv-j4-ikN"/>
                         <segue destination="5UA-jR-8i2" kind="relationship" relationship="viewControllers" id="E3Z-tY-HHe"/>
                     </connections>
@@ -299,6 +318,7 @@
     </scenes>
     <resources>
         <image name="ActivityTabBarIcon" width="25" height="25"/>
+        <image name="ActivityTabBarIconSelected" width="25" height="25"/>
         <image name="LockTabBarIcon" width="25" height="25"/>
         <image name="SettingsTabBarIcon" width="25" height="25"/>
         <image name="SettingsTabBarIconSelected" width="25" height="25"/>
