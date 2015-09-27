@@ -50,3 +50,4 @@ public func UnlockFunction(lock: Resource, context: Server.RequestContext) throw
     
     return StatusCode.OK.rawValue
 }
+

@@ -16,16 +16,19 @@ public protocol ServerModel {
     // MARK: - Authentication Validation
     
     /// Whether authentication is required to access the entity. 
-    static func canGet(resourceID: String, context: Server.RequestContext) -> Bool
+    static func canGet(resourceID: String, context: Server.RequestContext) throws -> Int
+    
+    /// Whether authentication is required to delete the entity. 
+    static func canDelete(resourceID: String, context: Server.RequestContext) throws -> Int
     
     /// Asks the reciever whether the initial values are valid.
-    static func canCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool
+    static func canCreate(initialValues: ValuesObject, context: Server.RequestContext) throws -> Int
     
     /// Asks the reciever whether the changed values are valid.
-    static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool
+    static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) throws -> Int
     
     /// Asks the reciever whether the fetch request can be performed.
-    static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool
+    static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) throws -> Int
     
     // MARK: - Modify Request / Response
     

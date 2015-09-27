@@ -17,7 +17,7 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     // MARK: - Properties
     
-    public lazy var server: NetworkObjects.Server.HTTP = NetworkObjects.Server.HTTP(model: CoreCerradura.Model.entities, dataSource: self, delegate: self)
+    public lazy var server: NetworkObjects.Server.HTTP = NetworkObjects.Server.HTTP(model: Model.entities, dataSource: self, delegate: self)
     
     // MARK: - ServerDataSource
     
@@ -33,7 +33,7 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     public func server<T : ServerType>(server: T, functionsForEntity entity: String) -> [String] {
         
-        return CoreCerradura.Model.functions[entity] ?? []
+        return Model.functions[entity] ?? []
     }
     
     public func server<T : ServerType>(server: T, performFunction functionName: String, forResource resource: Resource, recievedJSON: JSONObject?, context: Server.RequestContext) -> (Int, JSONObject?) {
@@ -74,9 +74,9 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     // MARK: - ServerDelegate
     
-    public func server<T : ServerType>(server: T, statusCodeForRequest context: Server.RequestContext) -> Int {
+    public func server<T : ServerType>(server: T, statusCodeForRequest context: Server.RequestContext) throws -> Int  {
         
-        // get authentication
+        // get user authentication
         
         if let _ = context.requestMessage.metadata[RequestHeader.Authorization.rawValue] {
             
@@ -107,15 +107,56 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
         
         // check if authentication is required
         
-        // check validate initial values
-        //serverModelType.willCreate(initialValues, resourceID: resource.resourceID, context: context)
+        let statusCode: Int
         
-        // validate edit
+        do {
+            
+            switch context.requestMessage.request {
+                
+            case let .Get(resource):
+                
+                let serverModelType = ServerModelForEntity(resource.entityName)
+                
+                statusCode = try serverModelType.canGet(resource.resourceID, context: context)
+                
+            case let .Delete(resource):
+                
+                let serverModelType = ServerModelForEntity(resource.entityName)
+                
+                statusCode = try serverModelType.canDelete(resource.resourceID, context: context)
+                
+            case let .Edit(resource, changes):
+                
+                let serverModelType = ServerModelForEntity(resource.entityName)
+                
+                statusCode = try serverModelType.canEdit(changes, resourceID: resource.resourceID, context: context)
+                
+            case let .Create(entityName, initialValues):
+                
+                let serverModelType = ServerModelForEntity(entityName)
+                
+                statusCode = try serverModelType.canCreate(initialValues ?? ValuesObject(), context: context)
+                
+            case let .Search(fetchRequest):
+                
+                let serverModelType = ServerModelForEntity(fetchRequest.entityName)
+                
+                statusCode = try serverModelType.canPerformFetchRequest(fetchRequest, context: context)
+                
+            case .Function(_):
+                
+                return HTTP.StatusCode.OK.rawValue
+            }
+        }
         
-        // check if fetch request can be performed
+        catch {
+            
+            self.server(self.server, didEncounterInternalError: error, context: context)
+            
+            return HTTP.StatusCode.InternalServerError.rawValue
+        }
         
-        
-        return StatusCode.OK.rawValue
+        return statusCode
     }
     
     public func server<T : ServerType>(server: T, willCreateResource resource: Resource, initialValues: ValuesObject, context: Server.RequestContext) -> ValuesObject {

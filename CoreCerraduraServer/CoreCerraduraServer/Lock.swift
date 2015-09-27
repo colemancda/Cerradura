@@ -13,31 +13,42 @@ import CoreCerradura
 
 extension CoreCerradura.Model.Lock: ServerModel {
     
-    public static func canGet(resourceID: String, context: Server.RequestContext) -> Bool {
+    public static func canGet(resourceID: String, context: Server.RequestContext) throws -> Int {
         
-        return true
+        guard let _ = context.userInfo[ServerUserInfoKey.AuthenticatedUser.rawValue] as? Resource
+            else { return HTTP.StatusCode.Unauthorized.rawValue }
+        
+        return HTTP.StatusCode.OK.rawValue
     }
     
-    public static func canCreate(initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+    public static func canDelete(resourceID: String, context: Server.RequestContext) throws -> Int {
         
-        return true
+        return HTTP.StatusCode.Forbidden.rawValue
     }
     
-    public static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) -> Bool {
+    public static func canCreate(initialValues: ValuesObject, context: Server.RequestContext) throws -> Int   {
         
-        return true
+        return HTTP.StatusCode.OK.rawValue
     }
     
-    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) -> Bool {
+    public static func canEdit(changes: ValuesObject, resourceID: String, context: Server.RequestContext) throws -> Int   {
         
-        return true
+        return HTTP.StatusCode.OK.rawValue
+    }
+    
+    public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) throws -> Int   {
+        
+        guard let _ = context.userInfo[ServerUserInfoKey.AuthenticatedUser.rawValue] as? Resource
+            else { return HTTP.StatusCode.Unauthorized.rawValue }
+        
+        return HTTP.StatusCode.OK.rawValue
     }
     
     public static func initialValues(var initialValues: ValuesObject, resourceID: String, context: Server.RequestContext) -> ValuesObject {
         
         let dateCreated = Date()
         
-        initialValues[CoreCerradura.Model.Lock.Attribute.Created.name] = Value.Attribute(.Date(dateCreated))
+        initialValues[Model.Lock.Attribute.Created.name] = Value.Attribute(.Date(dateCreated))
         
         return initialValues
     }
@@ -47,3 +58,4 @@ extension CoreCerradura.Model.Lock: ServerModel {
         return []
     }
 }
+
