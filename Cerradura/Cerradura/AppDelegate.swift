@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set app appearance
         ConfigureAppearance()
         
+        // Initialize client
+        let _ = Store
+        
         return true
     }
 

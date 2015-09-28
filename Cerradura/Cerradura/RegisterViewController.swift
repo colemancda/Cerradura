@@ -56,7 +56,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func cancel(sender: AnyObject) {
         
-        progressHUD.dismissAnimated(true)
+        progressHUD.dismissAnimated(false)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -74,6 +74,31 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
+        
+        // create user
+        
+        NewRequest({ () -> (Resource, ValuesObject) in
+            
+            try Store.create(Model.User.entityName, initialValues: values)
+            
+            }, error: { [weak self] (error) -> () in
+                
+                guard let controller = self else { return }
+                
+                controller.showErrorAlert("\(error)")
+                
+                controller.progressHUD.dismissAnimated(false)
+                
+                controller.tableView.scrollEnabled = true
+                
+            }, success: { [weak self] (Resource) -> () in
+                
+                guard let controller = self else { return }
+                
+                controller.progressHUD.dismiss()
+                
+                
+        })
     }
     
     // MARK: - UITextFieldDelegate

@@ -14,6 +14,8 @@ public final class Authentication {
     
     // MARK: - Class Properties
     
+    public static let sharedAuthentication = Authentication()
+    
     /** Key for storing the password in the keychain. */
     public static let keychainPasswordKey = "Password"
     

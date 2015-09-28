@@ -13,16 +13,6 @@ import NetworkObjects
 import CoreCerradura
 import CoreData
 
-/// **Cerradura** request queue
-let RequestQueue: NSOperationQueue = {
-   
-    let queue = NSOperationQueue()
-    
-    queue.name = "Cerradura Request Queue"
-    
-    return queue
-}()
-
 let Store: NetworkObjects.Client.HTTP = {
     
     guard let serverURL = Preference.ServerURL.value as? String
@@ -32,6 +22,12 @@ let Store: NetworkObjects.Client.HTTP = {
     
     return client
 }()
+
+var managedObjectContext: NSManagedObjectContext!
+
+var persistentStore: NSPersistentStore!
+
+private var privateManagedObjectContext: NSManagedObjectContext!
 
 /*
 internal extension NetworkObjects.Store {

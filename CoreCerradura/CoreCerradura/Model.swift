@@ -99,9 +99,8 @@ public extension Model {
             public static let Actions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Action.entityName,
-                    inverseRelationshipName: Action.Relationship.Lock.name)
+                    inverseRelationshipName: "lock")
                
                 return (name: "actions", property: property)
             }()
@@ -110,9 +109,8 @@ public extension Model {
             public static let Permissions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Permission.entityName,
-                    inverseRelationshipName: Permission.Relationship.Lock.name)
+                    inverseRelationshipName: "lock")
                 
                 return (name: "permissions", property: property)
                 }()
@@ -182,9 +180,8 @@ public extension Model {
             public static let Actions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Action.entityName,
-                    inverseRelationshipName: Action.Relationship.User.name)
+                    inverseRelationshipName: "user")
                 
                 return (name: "actions", property: property)
                 }()
@@ -193,9 +190,8 @@ public extension Model {
             public static let Permissions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Permission.entityName,
-                    inverseRelationshipName: Permission.Relationship.User.name)
+                    inverseRelationshipName: "user")
                 
                 return (name: "permissions", property: property)
                 }()
@@ -251,9 +247,8 @@ public extension Model {
             public static let Lock: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: true,
                     destinationEntityName: Model.Lock.entityName,
-                    inverseRelationshipName: Model.Lock.Relationship.Actions.name)
+                    inverseRelationshipName: "actions")
                 
                 return (name: "lock", property: property)
                 }()
@@ -262,9 +257,8 @@ public extension Model {
             public static let User: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: true,
                     destinationEntityName: Model.User.entityName,
-                    inverseRelationshipName: Model.User.Relationship.Actions.name)
+                    inverseRelationshipName: "actions")
                 
                 return (name: "user", property: property)
                 }()
@@ -273,9 +267,8 @@ public extension Model {
             public static let Permission: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: true,
                     destinationEntityName: Model.Permission.entityName,
-                    inverseRelationshipName: Model.Permission.Relationship.Actions.name)
+                    inverseRelationshipName: "actions")
                 
                 return (name: "permission", property: property)
                 }()
@@ -327,17 +320,17 @@ public extension Model {
             
             
             /// The date this permission becomes invalid.
-            public static let EndDate = (name: "endDate", property: CoreModel.Attribute(type: .Date, optional: true))
+            public static let EndDate = (name: "endDate", property: CoreModel.Attribute(type: .Date))
             
             /// The starting time of the time interval the lock can be unlocked.
             ///
             /// -Note: Not applicable for admin / anytime permissions.
-            public static let ScheduledStartTime = (name: "scheduledStartTime", property: CoreModel.Attribute(type: .Number(.Integer), optional: true))
+            public static let ScheduledStartTime = (name: "scheduledStartTime", property: CoreModel.Attribute(type: .Number(.Integer)))
             
             /// The ending time of the time interval the lock can be unlocked. 
             ///
             /// -Note: Not applicable for admin / anytime permissions.
-            public static let ScheduledEndTime = (name: "scheduledEndTime", property: CoreModel.Attribute(type: .Number(.Integer), optional: true))
+            public static let ScheduledEndTime = (name: "scheduledEndTime", property: CoreModel.Attribute(type: .Number(.Integer)))
             
             /// Type of permission. 
             ///
@@ -351,9 +344,8 @@ public extension Model {
             public static let Lock: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: false,
                     destinationEntityName: Model.Lock.entityName,
-                    inverseRelationshipName: Model.Lock.Relationship.Permissions.name)
+                    inverseRelationshipName: "permissions")
                 
                 return (name: "lock", property: property)
                 }()
@@ -362,9 +354,8 @@ public extension Model {
             public static let User: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: false,
                     destinationEntityName: Model.User.entityName,
-                    inverseRelationshipName: Model.User.Relationship.Permissions.name)
+                    inverseRelationshipName: "permissions")
                 
                 return (name: "user", property: property)
                 }()
@@ -373,9 +364,8 @@ public extension Model {
             public static let DerivedPermissions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Model.Permission.entityName,
-                    inverseRelationshipName: Model.Permission.Relationship.ParentPermission.name)
+                    inverseRelationshipName: "parentPermission")
                 
                 return (name: "derivedPermissions", property: property)
                 }()
@@ -384,9 +374,8 @@ public extension Model {
             public static let ParentPermission: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToOne,
-                    optional: true,
                     destinationEntityName: Model.Permission.entityName,
-                    inverseRelationshipName: Model.Permission.Relationship.DerivedPermissions.name)
+                    inverseRelationshipName: "derivedPermissions")
                 
                 return (name: "parentPermission", property: property)
                 }()
@@ -395,9 +384,8 @@ public extension Model {
             public static let Actions: (name: String, property: CoreModel.Relationship) = {
                 
                 let property = CoreModel.Relationship(type: RelationshipType.ToMany,
-                    optional: true,
                     destinationEntityName: Action.entityName,
-                    inverseRelationshipName: Action.Relationship.Permission.name)
+                    inverseRelationshipName: "permission")
                 
                 return (name: "actions", property: property)
                 }()
