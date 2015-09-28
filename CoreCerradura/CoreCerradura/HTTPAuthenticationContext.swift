@@ -7,6 +7,7 @@
 //
 
 import SwiftFoundation
+import SwiftCF
 
 /** Provides the context for HTTP authorization. */
 public struct HTTPAuthenticationContext: AuthenticationContext {

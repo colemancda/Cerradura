@@ -9,6 +9,7 @@
 import SwiftFoundation
 import CoreModel
 import NetworkObjects
+import SwiftCF
 
 public struct RequestAuthenticationContext: AuthenticationContext {
     

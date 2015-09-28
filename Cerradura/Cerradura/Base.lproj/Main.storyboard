@@ -258,7 +258,7 @@
         <scene sceneID="ZMk-9e-1Jn">
             <objects>
                 <navigationController storyboardIdentifier="ActionsNavigationStack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hN2-us-aQL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="ActivityTabBarIcon" selectedImage="ActivityTabBarIconSelected" id="3aV-sW-Y17"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="ActivityTabBarIcon" selectedImage="ActivityTabBarIcon" id="3aV-sW-Y17"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3VM-d6-ylU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -450,7 +450,6 @@
     </scenes>
     <resources>
         <image name="ActivityTabBarIcon" width="25" height="25"/>
-        <image name="ActivityTabBarIconSelected" width="25" height="25"/>
         <image name="LockTabBarIcon" width="25" height="25"/>
         <image name="SettingsTabBarIcon" width="25" height="25"/>
         <image name="SettingsTabBarIconSelected" width="25" height="25"/>

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppGradient" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-dE-I1e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appGradient" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-dE-I1e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -28,7 +28,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-SS-m2D" userLabel="Login View">
-                                            <rect key="frame" x="200" y="231" width="200" height="139"/>
+                                            <rect key="frame" x="200" y="40" width="200" height="139"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UsernameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-xr-Dz5">
                                                     <rect key="frame" x="0.0" y="8" width="200" height="30"/>
@@ -74,7 +74,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZZ-mO-e5J">
-                                            <rect key="frame" x="272" y="550" width="57" height="30"/>
+                                            <rect key="frame" x="272" y="187" width="57" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="Register">
@@ -88,10 +88,10 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="gZZ-mO-e5J" firstAttribute="top" secondItem="JKR-SS-m2D" secondAttribute="bottom" constant="8" id="70r-SO-bpN"/>
                                         <constraint firstItem="gZZ-mO-e5J" firstAttribute="centerX" secondItem="bSr-a0-Oi9" secondAttribute="centerX" id="Qhs-6g-VMo"/>
                                         <constraint firstAttribute="centerX" secondItem="JKR-SS-m2D" secondAttribute="centerX" id="jg7-9b-KXV"/>
-                                        <constraint firstAttribute="bottom" secondItem="gZZ-mO-e5J" secondAttribute="bottom" constant="20" id="n1q-We-836"/>
-                                        <constraint firstAttribute="centerY" secondItem="JKR-SS-m2D" secondAttribute="centerY" id="wnb-Iw-QXh"/>
+                                        <constraint firstItem="JKR-SS-m2D" firstAttribute="top" secondItem="bSr-a0-Oi9" secondAttribute="top" constant="40" id="twO-di-9Vh"/>
                                     </constraints>
                                 </view>
                                 <animations/>
@@ -130,8 +130,8 @@
         <!--Register-->
         <scene sceneID="YRa-kO-n1x">
             <objects>
-                <tableViewController id="NYC-Rd-9vM" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fEL-AJ-gXh">
+                <tableViewController id="NYC-Rd-9vM" customClass="RegisterViewController" customModule="Cerradura" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fEL-AJ-gXh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -139,41 +139,184 @@
                         <sections>
                             <tableViewSection id="DH3-Zx-Qfi">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aOr-qZ-ZeM">
-                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="aOr-qZ-ZeM">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOr-qZ-ZeM" id="kzG-ad-pNf">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZ5-M4-uMY">
-                                                    <rect key="frame" x="46" y="7" width="97" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bni-8M-2DY" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="66"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.10980392160000001" green="0.57254901960000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NYC-Rd-9vM" id="tps-dg-E3C"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bni-8M-2DY" secondAttribute="trailing" constant="8" id="0gh-pK-qd2"/>
+                                                <constraint firstAttribute="bottom" secondItem="bni-8M-2DY" secondAttribute="bottom" id="IaT-jz-a8h"/>
+                                                <constraint firstItem="bni-8M-2DY" firstAttribute="leading" secondItem="kzG-ad-pNf" secondAttribute="leading" constant="8" id="LGP-GQ-sMh"/>
+                                                <constraint firstItem="bni-8M-2DY" firstAttribute="top" secondItem="kzG-ad-pNf" secondAttribute="top" id="fX6-hH-Age"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BGi-Cz-aby">
-                                        <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Vvk-D1-miw">
+                                        <rect key="frame" x="0.0" y="110" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGi-Cz-aby" id="wfV-QA-mYS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vvk-D1-miw" id="H45-hi-pbQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euN-80-zam" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="66"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.10980392160000001" green="0.57254901960000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NYC-Rd-9vM" id="Jcl-pj-WmX"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="euN-80-zam" secondAttribute="bottom" id="731-ta-Ied"/>
+                                                <constraint firstItem="euN-80-zam" firstAttribute="top" secondItem="H45-hi-pbQ" secondAttribute="top" id="SSu-KL-g0M"/>
+                                                <constraint firstAttribute="trailing" secondItem="euN-80-zam" secondAttribute="trailing" constant="8" id="XQr-Uw-G5M"/>
+                                                <constraint firstItem="euN-80-zam" firstAttribute="leading" secondItem="H45-hi-pbQ" secondAttribute="leading" constant="8" id="liY-HZ-sqR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TV6-wt-fIw">
-                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="N8o-Zc-5gn">
+                                        <rect key="frame" x="0.0" y="176" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TV6-wt-fIw" id="vFR-Pd-hTH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N8o-Zc-5gn" id="MR0-MV-ABa">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSX-4p-KxR" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="66"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.10980392160000001" green="0.57254901960000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NYC-Rd-9vM" id="tax-4q-yXn"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="DSX-4p-KxR" secondAttribute="trailing" constant="8" id="6qR-gW-F4J"/>
+                                                <constraint firstItem="DSX-4p-KxR" firstAttribute="top" secondItem="MR0-MV-ABa" secondAttribute="top" id="9mF-cj-oot"/>
+                                                <constraint firstAttribute="bottom" secondItem="DSX-4p-KxR" secondAttribute="bottom" id="bdZ-rE-Rm6"/>
+                                                <constraint firstItem="DSX-4p-KxR" firstAttribute="leading" secondItem="MR0-MV-ABa" secondAttribute="leading" constant="8" id="mmx-rg-aTS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="TKn-Pp-R0z">
+                                        <rect key="frame" x="0.0" y="242" width="600" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TKn-Pp-R0z" id="utx-gB-JpD">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zhk-IN-Uo4" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="66"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                            <color key="value" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.10980392160000001" green="0.57254901960000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NYC-Rd-9vM" id="fKl-2u-VzO"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Zhk-IN-Uo4" secondAttribute="bottom" id="JgZ-dN-Tcd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zhk-IN-Uo4" secondAttribute="trailing" constant="8" id="QkJ-kh-kg1"/>
+                                                <constraint firstItem="Zhk-IN-Uo4" firstAttribute="leading" secondItem="utx-gB-JpD" secondAttribute="leading" constant="8" id="ioX-DK-G0J"/>
+                                                <constraint firstItem="Zhk-IN-Uo4" firstAttribute="top" secondItem="utx-gB-JpD" secondAttribute="top" id="xHV-Qr-LyT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="wWZ-yK-c6t">
+                                        <rect key="frame" x="0.0" y="308" width="600" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wWZ-yK-c6t" id="ILa-0K-JMM">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdv-cg-RPX">
+                                                    <rect key="frame" x="266" y="16" width="68" height="35"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <state key="normal" title="Sign Up"/>
+                                                    <connections>
+                                                        <action selector="register:" destination="NYC-Rd-9vM" eventType="touchUpInside" id="COS-Uj-b2L"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Jdv-cg-RPX" firstAttribute="centerY" secondItem="ILa-0K-JMM" secondAttribute="centerY" id="OvY-s5-2KG"/>
+                                                <constraint firstItem="Jdv-cg-RPX" firstAttribute="centerX" secondItem="ILa-0K-JMM" secondAttribute="centerX" id="k7f-E4-FYM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -186,15 +329,29 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Register" id="u0d-MX-BDt">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Sac-z7-h9C">
+                        <barButtonItem key="leftBarButtonItem" image="CloseX" id="Sac-z7-h9C">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                     <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancel:" destination="NYC-Rd-9vM" id="E29-RP-1ba"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="Zhk-IN-Uo4" id="Elz-eD-dd6"/>
+                        <outlet property="emailTextField" destination="euN-80-zam" id="gkY-TT-Cpc"/>
+                        <outlet property="passwordTextField" destination="DSX-4p-KxR" id="aFe-VW-NrM"/>
+                        <outlet property="registerButton" destination="Jdv-cg-RPX" id="oL2-sG-1q3"/>
+                        <outlet property="usernameTextField" destination="bni-8M-2DY" id="xTP-6m-DX6"/>
+                        <outletCollection property="textFields" destination="bni-8M-2DY" collectionClass="NSMutableArray" id="fmV-ay-fpS"/>
+                        <outletCollection property="textFields" destination="euN-80-zam" collectionClass="NSMutableArray" id="3bD-b4-sP5"/>
+                        <outletCollection property="textFields" destination="DSX-4p-KxR" collectionClass="NSMutableArray" id="Weh-Cg-MuD"/>
+                        <outletCollection property="textFields" destination="Zhk-IN-Uo4" collectionClass="NSMutableArray" id="104-QG-YTp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEx-B0-Fk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppGradient" width="25" height="25"/>
+        <image name="CloseX" width="19" height="19"/>
+        <image name="appGradient" width="500" height="500"/>
     </resources>
 </document>
