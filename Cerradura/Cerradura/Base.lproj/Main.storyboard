@@ -240,7 +240,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yR9-P2-JSq">
             <objects>
-                <navigationController id="Tp0-Cg-so2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EmptySelectionNavigationStack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tp0-Cg-so2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Icl-7y-sSn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -403,7 +403,7 @@
         <!--Empty Selection-->
         <scene sceneID="fEM-rb-2c1">
             <objects>
-                <viewController storyboardIdentifier="EmptySelection" title="Empty Selection" id="Kf0-9w-XOJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmptySelection" title="Empty Selection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kf0-9w-XOJ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QMw-GI-8gg"/>
                         <viewControllerLayoutGuide type="bottom" id="p6f-Cn-NJc"/>

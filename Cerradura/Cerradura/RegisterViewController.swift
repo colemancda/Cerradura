@@ -44,12 +44,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.validateFields()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.usernameTextField.becomeFirstResponder()
-    }
-    
     // MARK: - Actions
     
     @IBAction func cancel(sender: AnyObject) {
@@ -117,8 +111,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             
             return true
         }
-        
-        textField.resignFirstResponder()
         
         let nextTextField = self.textFields[index + 1]
         

@@ -18,11 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // print app info
         print("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
         
+        // Initialize client
+        print("Using Server URL: \(Store.serverURL)")
+        
         // set app appearance
         ConfigureAppearance()
         
-        // Initialize client
-        print("Using Server URL: \(Store.serverURL)")
+        if Authentication.sharedAuthentication.credentials != nil {
+            
+            //R.storyboard.main.
+        }
         
         return true
     }

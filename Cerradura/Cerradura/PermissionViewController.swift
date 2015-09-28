@@ -10,9 +10,8 @@ import Foundation
 import CoreData
 import UIKit
 import CoreCerradura
-import NetworkObjectsUI
 
-class PermissionViewController: UIViewController {
+class PermissionViewController: UIViewController {/*
     
     // MARK: - IB Outlets
     
@@ -64,6 +63,7 @@ class PermissionViewController: UIViewController {
         
         weak var weakSelf = self
         
+        /*
         Store.sharedStore.fetchEntity("Permission", resourceID: self.permission.valueForKey("id") as! UInt, completionBlock: { (error: NSError?, managedObject: NSManagedObject?) -> Void in
             
             if weakSelf == nil {
@@ -87,7 +87,7 @@ class PermissionViewController: UIViewController {
                 
             })
             
-        })
+        })*/
     }
     
     // MARK: - Private Methods
@@ -133,5 +133,5 @@ class PermissionViewController: UIViewController {
     private func configureLoadingUI() {
         
         
-    }
+    }*/
 }

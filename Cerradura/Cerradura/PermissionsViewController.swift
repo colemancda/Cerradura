@@ -11,9 +11,10 @@ import UIKit
 import CoreData
 import CoreCerradura
 
-/*
-class PermissionsViewController: ArchivableFetchedResultsViewController {
-        
+
+class PermissionsViewController: UITableViewController {
+    
+    /*
     // MARK: - Initialization
     override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
@@ -177,9 +178,9 @@ class PermissionsViewController: ArchivableFetchedResultsViewController {
         let permissionVC = permissionNavigationStack.topViewController as! PermissionViewController
         
         permissionVC.permission = permission
-    }
+    }*/
 }
-*/
+
 
 // MARK: - Table View Cell
 

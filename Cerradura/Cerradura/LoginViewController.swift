@@ -28,45 +28,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.usernameTextField.setPlaceholderColor(StyleKit.loginPlaceholderTextColor)
+        self.passwordTextField.setPlaceholderColor(StyleKit.loginPlaceholderTextColor)
     }
     
     // MARK: - Actions
     
     @IBAction func login(sender: AnyObject) {
         
-        /*
-        AuthenticationController.sharedController.login(self.usernameTextField.text!.lowercaseString, password: self.passwordTextField.text!, server: serverURL, completion: { (error: NSError?) -> Void in
-            
-            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                
-                if error != nil {
-                    
-                    // override unauthorized error message
-                    let errorText: String = {
-                       
-                        if error!.code == NetworkObjects.ErrorCode.ServerStatusCodeUnauthorized.rawValue {
-                            
-                            return NSLocalizedString("Invalid username or password.", value: "Invalid username or password.", comment: "Invalid username or password.")
-                        }
-                        
-                        return error!.localizedDescription
-                    }()
-                    
-                    self.showErrorAlert(errorText, retryHandler: { () -> Void in
-                        
-                        self.login(self)
-                    })
-                    
-                    return
-                }
-                
-                // present split VC
-                
-                self.performSegueWithIdentifier(R.segue.loginSegue, sender: self)
-            })
-        })
-        */
+        
     }
     
     // MARK: - Segues
