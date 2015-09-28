@@ -19,7 +19,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - IB Outlets
     
-    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet var textFields: [HoshiTextField]!
     
     @IBOutlet weak var usernameTextField: HoshiTextField!
     
@@ -31,11 +31,9 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var registerButton: UIButton!
     
-    // MARK: - Properties
-    
-    private(set) var dataValidated = false
-    
-    let progressHUD = JGProgressHUD(style: .Dark)
+    // MARK: - Private Properties
+        
+    private let progressHUD = JGProgressHUD(style: .Dark)
     
     // MARK: - Initialization
     
@@ -77,7 +75,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         
         // create user
         
-        NewRequest({ () -> (Resource, ValuesObject) in
+        NewRequest({
             
             try Store.create(Model.User.entityName, initialValues: values)
             
@@ -91,13 +89,16 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                 
                 controller.tableView.scrollEnabled = true
                 
-            }, success: { [weak self] (Resource) -> () in
+            }, success: { [weak self] (resource, values) -> () in
                 
                 guard let controller = self else { return }
                 
                 controller.progressHUD.dismiss()
                 
-                
+                controller.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    
+                    
+                })
         })
     }
     
@@ -125,13 +126,66 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func textFieldValueDidChange(sender: UITextField) {
         
-        
+        self.validateFields()
     }
     
     // MARK: - Methods
     
     func validateFields() {
         
+        var canRegister = true
         
+        for textField in self.textFields {
+            
+            // validate
+            
+            let textFieldValid: Bool
+            
+            switch textField {
+                
+            case usernameTextField:
+                
+                textFieldValid = Model.User.Validate.username(self.usernameTextField.text!)
+                
+            case emailTextField:
+                
+                textFieldValid = Model.User.Validate.email(self.emailTextField.text!)
+                
+            case passwordTextField:
+                
+                textFieldValid = Model.User.Validate.password(self.passwordTextField.text!)
+                
+            case confirmPasswordTextField:
+                
+                textFieldValid = self.passwordTextField.text == self.confirmPasswordTextField.text
+                    && Model.User.Validate.password(self.passwordTextField.text!)
+                
+            default: textFieldValid = false
+            }
+            
+            if textFieldValid == false { canRegister = false }
+            
+            // determine color
+            
+            let newTextFieldColor: UIColor
+            
+            if textFieldValid || textField.text!.utf8.count == 0 {
+                
+                newTextFieldColor = StyleKit.registrationTextColor
+            }
+            else {
+                
+                newTextFieldColor = StyleKit.registrationRed
+            }
+            
+            // set only if different
+            
+            if textField.placeholderColor != newTextFieldColor {
+                
+                textField.placeholderColor = newTextFieldColor
+            }
+        }
+        
+        self.registerButton.enabled = canRegister
     }
 }

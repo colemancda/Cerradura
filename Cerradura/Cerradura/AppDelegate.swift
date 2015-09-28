@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ConfigureAppearance()
         
         // Initialize client
-        let _ = Store
+        print("Using Server URL: \(Store.serverURL)")
         
         return true
     }

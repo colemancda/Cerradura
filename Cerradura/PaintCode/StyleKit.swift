@@ -21,6 +21,7 @@ public class StyleKit : NSObject {
         static let placeholderGrey: UIColor = UIColor(red: 0.902, green: 0.902, blue: 0.902, alpha: 1.000)
         static let registrationBlue: UIColor = UIColor(red: 0.110, green: 0.573, blue: 0.914, alpha: 1.000)
         static let registrationRed: UIColor = UIColor(red: 1.000, green: 0.160, blue: 0.160, alpha: 1.000)
+        static let registrationTextColor: UIColor = UIColor(red: 0.416, green: 0.475, blue: 0.537, alpha: 1.000)
         static var imageOfPunkuDoorWhiteLarge: UIImage?
         static var punkuDoorWhiteLargeTargets: [AnyObject]?
         static var imageOfLockTabBarIconSelected: UIImage?
@@ -39,6 +40,7 @@ public class StyleKit : NSObject {
     public class var placeholderGrey: UIColor { return Cache.placeholderGrey }
     public class var registrationBlue: UIColor { return Cache.registrationBlue }
     public class var registrationRed: UIColor { return Cache.registrationRed }
+    public class var registrationTextColor: UIColor { return Cache.registrationTextColor }
 
     //// Drawing Methods
 
