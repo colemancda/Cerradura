@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
         
         // start network activity indicator manager
-        NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true
+        //NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true
         
         // set app appearance
         ConfigureAppearance()

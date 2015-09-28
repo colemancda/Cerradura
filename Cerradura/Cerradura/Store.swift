@@ -7,9 +7,11 @@
 //
 
 import Foundation
-import CoreData
+import SwiftFoundation
+import CoreModel
 import NetworkObjects
 import CoreCerradura
+import CoreData
 
 // MARK: - Extensions
 
