@@ -24,13 +24,13 @@
 		6E6E488C1BB8F22C0000674F /* SwiftCF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48891BB8F2230000674F /* SwiftCF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E6E48901BB8FF480000674F /* TextFieldEffects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E488D1BB8FF380000674F /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E6E48931BB926640000674F /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48911BB9265B0000674F /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E6E48971BB934F40000674F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E062ECC1B20DE92004DBAB7 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
 		6E94F01A1BB7E28100C4BE24 /* Permission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E94F0191BB7E28100C4BE24 /* Permission.storyboard */; settings = {ASSET_TAGS = (); }; };
 		6E94F0241BB7E8C000C4BE24 /* b64.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01B1BB7E8BF00C4BE24 /* b64.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F0251BB7E8C000C4BE24 /* CoreModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01C1BB7E8C000C4BE24 /* CoreModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F0261BB7E8C000C4BE24 /* JSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01D1BB7E8C000C4BE24 /* JSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F0271BB7E8C000C4BE24 /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01E1BB7E8C000C4BE24 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F0281BB7E8C000C4BE24 /* NetworkObjects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01F1BB7E8C000C4BE24 /* NetworkObjects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E94F0291BB7E8C000C4BE24 /* NetworkObjectsUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F0201BB7E8C000C4BE24 /* NetworkObjectsUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F02B1BB7E8C000C4BE24 /* SwiftFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F0221BB7E8C000C4BE24 /* SwiftFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F02C1BB7E8C000C4BE24 /* SwiftWebSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F0231BB7E8C000C4BE24 /* SwiftWebSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EAE1E111BB7AC2A00F18F8A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE1E101BB7AC2A00F18F8A /* Preferences.swift */; settings = {ASSET_TAGS = (); }; };
@@ -96,7 +96,6 @@
 				6E94F0271BB7E8C000C4BE24 /* KeychainAccess.framework in Embed Frameworks */,
 				6E94F0281BB7E8C000C4BE24 /* NetworkObjects.framework in Embed Frameworks */,
 				6E6E488C1BB8F22C0000674F /* SwiftCF.framework in Embed Frameworks */,
-				6E94F0291BB7E8C000C4BE24 /* NetworkObjectsUI.framework in Embed Frameworks */,
 				6E94F02B1BB7E8C000C4BE24 /* SwiftFoundation.framework in Embed Frameworks */,
 				6E94F02C1BB7E8C000C4BE24 /* SwiftWebSocket.framework in Embed Frameworks */,
 				6E10FCF21BB54969007CB984 /* CoreCerradura.framework in Embed Frameworks */,
@@ -138,7 +137,6 @@
 		6E94F01D1BB7E8C000C4BE24 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../../Carthage/Build/iOS/JSON.framework; sourceTree = "<group>"; };
 		6E94F01E1BB7E8C000C4BE24 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = ../../Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		6E94F01F1BB7E8C000C4BE24 /* NetworkObjects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkObjects.framework; path = ../../Carthage/Build/iOS/NetworkObjects.framework; sourceTree = "<group>"; };
-		6E94F0201BB7E8C000C4BE24 /* NetworkObjectsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkObjectsUI.framework; path = ../../Carthage/Build/iOS/NetworkObjectsUI.framework; sourceTree = "<group>"; };
 		6E94F0221BB7E8C000C4BE24 /* SwiftFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftFoundation.framework; path = ../../Carthage/Build/iOS/SwiftFoundation.framework; sourceTree = "<group>"; };
 		6E94F0231BB7E8C000C4BE24 /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = ../../Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
 		6E94F02D1BB88E7400C4BE24 /* MainStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboard.swift; sourceTree = "<group>"; };
@@ -200,9 +198,9 @@
 			children = (
 				6E94F02D1BB88E7400C4BE24 /* MainStoryboard.swift */,
 				6E6E48851BB8EE920000674F /* RegisterViewController.swift */,
+				6E0C9BC41B1F3C540018450C /* LoginViewController.swift */,
 				6EAED16F1B21254C0049CC35 /* AuthenticationController.swift */,
 				6EB586341B2CE4AE009E7250 /* ManagedObjectController.swift */,
-				6E0C9BC41B1F3C540018450C /* LoginViewController.swift */,
 				6E225A631B2895AF00E80F99 /* SettingsViewController.swift */,
 				6E11F2C81B2D3AA8004C53D9 /* LocalLockViewController.swift */,
 				6E93CE601B29022D004C7D93 /* Fetched Results View Controllers */,
@@ -294,7 +292,6 @@
 				6E94F01C1BB7E8C000C4BE24 /* CoreModel.framework */,
 				6E94F01E1BB7E8C000C4BE24 /* KeychainAccess.framework */,
 				6E94F01F1BB7E8C000C4BE24 /* NetworkObjects.framework */,
-				6E94F0201BB7E8C000C4BE24 /* NetworkObjectsUI.framework */,
 				6E94F0231BB7E8C000C4BE24 /* SwiftWebSocket.framework */,
 				6EDF7C1E1BB65CE400245473 /* OpenSSL */,
 				6E10FCE31BB54952007CB984 /* CoreCerradura.xcodeproj */,
@@ -543,6 +540,7 @@
 				6E062ED21B20E357004DBAB7 /* Authentication.swift in Sources */,
 				6EAE1E111BB7AC2A00F18F8A /* Preferences.swift in Sources */,
 				6E0C9BC51B1F3C540018450C /* LoginViewController.swift in Sources */,
+				6E6E48971BB934F40000674F /* Store.swift in Sources */,
 				6EAE1E161BB7CC4A00F18F8A /* PermissionsViewController.swift in Sources */,
 				6E225A641B2895AF00E80F99 /* SettingsViewController.swift in Sources */,
 				6E11B2E61AFE6A9400EEAF37 /* AppDelegate.swift in Sources */,

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NetworkObjectsUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,23 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // print app info
         print("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
         
-        // start network activity indicator manager
-        //NetworkActivityIndicatorManager.sharedManager.managingNetworkActivityIndicator = true
-        
         // set app appearance
         ConfigureAppearance()
-        
-        // load authentication manager
-        //AuthenticationController.sharedController.delegate = self
-                
-        /*
-        // show logged in UI cache if the user is logged in
-        if AuthenticationController.sharedController.isAuthenticated {
-            
-            let loginVC = self.window!.rootViewController as! LoginViewController
-            
-            loginVC.performSegueWithIdentifier(R.segue.loginSegue, sender: self)
-        }*/
         
         return true
     }

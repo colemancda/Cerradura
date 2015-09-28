@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
-import TextFieldEffects
 import SwiftFoundation
 import CoreModel
 import NetworkObjects
 import CoreCerradura
 import JGProgressHUD
+import TextFieldEffects
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
@@ -31,11 +31,19 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var registerButton: UIButton!
     
+    // MARK: - Properties
+    
+    private(set) var dataValidated = false
+    
+    let progressHUD = JGProgressHUD(style: .Dark)
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.validateFields()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,6 +55,8 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Actions
     
     @IBAction func cancel(sender: AnyObject) {
+        
+        progressHUD.dismissAnimated(true)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -61,7 +71,9 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         values[Model.User.Attribute.Email.name] = .Attribute(.String(self.emailTextField.text!))
         values[Model.User.Attribute.Password.name] = .Attribute(.String(self.passwordTextField.text!))
         
-        
+        self.view.endEditing(true)
+        progressHUD.showInView(self.view, animated: true)
+        self.tableView.scrollEnabled = false
     }
     
     // MARK: - UITextFieldDelegate
@@ -87,6 +99,13 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func textFieldValueDidChange(sender: UITextField) {
+        
+        
+    }
+    
+    // MARK: - Methods
+    
+    func validateFields() {
         
         
     }

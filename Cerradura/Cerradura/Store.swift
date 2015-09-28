@@ -13,8 +13,27 @@ import NetworkObjects
 import CoreCerradura
 import CoreData
 
-// MARK: - Extensions
+/// **Cerradura** request queue
+let RequestQueue: NSOperationQueue = {
+   
+    let queue = NSOperationQueue()
+    
+    queue.name = "Cerradura Request Queue"
+    
+    return queue
+}()
 
+let Store: NetworkObjects.Client.HTTP = {
+    
+    guard let serverURL = Preference.ServerURL.value as? String
+        else { fatalError("ServerURL Preference is nil") }
+    
+    let client = Client.HTTP(serverURL: serverURL, model: Model.entities, HTTPClient: HTTP.Client())
+    
+    return client
+}()
+
+/*
 internal extension NetworkObjects.Store {
     
     /** Shared store that may be nil. App must ensure that this class property is initialized before use. */
@@ -23,7 +42,7 @@ internal extension NetworkObjects.Store {
     private static var persistentStore: NSPersistentStore!
     
     /** Creates a Store for use with the Cerradura App. */
-    class func loadSharedStore(username: String, password: String, server serverURL: NSURL) {
+    func loadSharedStore(username: String, password: String, server serverURL: NSURL) {
         
         let prettyPrintJSON: Bool
         
@@ -71,6 +90,7 @@ internal extension NetworkObjects.Store {
         self.sharedStore = nil
     }
 }
+*/
 
 // MARK: - Private Constants
 
