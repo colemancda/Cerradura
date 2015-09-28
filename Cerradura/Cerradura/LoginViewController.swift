@@ -15,7 +15,7 @@ import CoreCerradura
 import JGProgressHUD
 import TextFieldEffects
 
-class LoginViewController: UIViewController {
+class LoginViewController: UITableViewController {
     
     // MARK: - IB Outlets
     
@@ -23,16 +23,26 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - Private Properties
+    
+    private let progressHUD = JGProgressHUD(style: .Dark)
+    
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.usernameTextField.setPlaceholderColor(StyleKit.loginPlaceholderTextColor)
-        self.passwordTextField.setPlaceholderColor(StyleKit.loginPlaceholderTextColor)
+        
     }
     
     // MARK: - Actions
+        
+    @IBAction func cancel(sender: AnyObject) {
+        
+        progressHUD.dismissAnimated(false)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func login(sender: AnyObject) {
         
