@@ -95,9 +95,12 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                 
                 controller.progressHUD.dismiss()
                 
-                controller.dismissViewControllerAnimated(true, completion: { () -> Void in
+                controller.dismissViewControllerAnimated(true, completion: {
                     
-                    
+                    controller.presentingViewController!.dismissViewControllerAnimated(true, completion: {
+                        
+                        
+                    })
                 })
         })
     }
@@ -106,7 +109,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        let index = self.textFields.indexOf(textField)!
+        let index = self.textFields.indexOf(textField as! HoshiTextField)!
         
         guard index != self.textFields.count - 1 else {
             
