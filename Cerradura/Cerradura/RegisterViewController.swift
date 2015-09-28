@@ -13,6 +13,7 @@ import SwiftFoundation
 import CoreModel
 import NetworkObjects
 import CoreCerradura
+import JGProgressHUD
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
     

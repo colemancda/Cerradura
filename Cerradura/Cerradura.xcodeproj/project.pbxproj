@@ -22,8 +22,8 @@
 		6E5C5C471B27633700E9D549 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C5C461B27633700E9D549 /* StyleKit.swift */; };
 		6E6E48861BB8EE920000674F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48851BB8EE920000674F /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6E6E488C1BB8F22C0000674F /* SwiftCF.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48891BB8F2230000674F /* SwiftCF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E6E488F1BB8FF480000674F /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E488D1BB8FF380000674F /* TextFieldEffects.framework */; };
 		6E6E48901BB8FF480000674F /* TextFieldEffects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E488D1BB8FF380000674F /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E6E48931BB926640000674F /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48911BB9265B0000674F /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F01A1BB7E28100C4BE24 /* Permission.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E94F0191BB7E28100C4BE24 /* Permission.storyboard */; settings = {ASSET_TAGS = (); }; };
 		6E94F0241BB7E8C000C4BE24 /* b64.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01B1BB7E8BF00C4BE24 /* b64.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E94F0251BB7E8C000C4BE24 /* CoreModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94F01C1BB7E8C000C4BE24 /* CoreModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -90,6 +90,7 @@
 			files = (
 				6E94F0241BB7E8C000C4BE24 /* b64.framework in Embed Frameworks */,
 				6E6E48901BB8FF480000674F /* TextFieldEffects.framework in Embed Frameworks */,
+				6E6E48931BB926640000674F /* JGProgressHUD.framework in Embed Frameworks */,
 				6E94F0251BB7E8C000C4BE24 /* CoreModel.framework in Embed Frameworks */,
 				6E94F0261BB7E8C000C4BE24 /* JSON.framework in Embed Frameworks */,
 				6E94F0271BB7E8C000C4BE24 /* KeychainAccess.framework in Embed Frameworks */,
@@ -129,6 +130,7 @@
 		6E6E48851BB8EE920000674F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6E6E48891BB8F2230000674F /* SwiftCF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCF.framework; path = ../../Carthage/Build/iOS/SwiftCF.framework; sourceTree = "<group>"; };
 		6E6E488D1BB8FF380000674F /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = ../../Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
+		6E6E48911BB9265B0000674F /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = ../../Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		6E93CE721B29063C004C7D93 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		6E94F0191BB7E28100C4BE24 /* Permission.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Permission.storyboard; sourceTree = "<group>"; };
 		6E94F01B1BB7E8BF00C4BE24 /* b64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = b64.framework; path = ../../Carthage/Build/iOS/b64.framework; sourceTree = "<group>"; };
@@ -159,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EDF7C1B1BB65CA900245473 /* libcrypto.a in Frameworks */,
-				6E6E488F1BB8FF480000674F /* TextFieldEffects.framework in Frameworks */,
 				6EDF7C1C1BB65CA900245473 /* libssl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +285,7 @@
 		6E4F727A1B2BA117002EA01F /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				6E6E48911BB9265B0000674F /* JGProgressHUD.framework */,
 				6E6E488D1BB8FF380000674F /* TextFieldEffects.framework */,
 				6E6E48891BB8F2230000674F /* SwiftCF.framework */,
 				6E94F01B1BB7E8BF00C4BE24 /* b64.framework */,
@@ -683,6 +685,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -707,6 +710,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
