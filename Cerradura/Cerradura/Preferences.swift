@@ -16,9 +16,9 @@ public struct Preference {
     public static let UserID = UserPreference<NSString>(key: "UserID")
 }
 
-public struct UserPreference<T: AnyObject> {
+public final class UserPreference<T: AnyObject> {
     
-    public var key: String
+    public let key: String
     
     public init(key: String, defaultValue: T? = nil) {
         

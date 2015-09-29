@@ -26,7 +26,6 @@
 		6E6E48931BB926640000674F /* JGProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48911BB9265B0000674F /* JGProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E6E48971BB934F40000674F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E062ECC1B20DE92004DBAB7 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
 		6E6E48991BB946170000674F /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48981BB946170000674F /* ErrorAlert.swift */; settings = {ASSET_TAGS = (); }; };
-		6E6E489D1BB946870000674F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E489C1BB946870000674F /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 		6E6E48A61BB973590000674F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E062E151B208C6D004DBAB7 /* R.generated.swift */; settings = {ASSET_TAGS = (); }; };
 		6E6E48A71BB973B50000674F /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB586321B2CD9E7009E7250 /* PermissionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6E6E48A81BB973E00000674F /* MainStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E94F02D1BB88E7400C4BE24 /* MainStoryboard.swift */; settings = {ASSET_TAGS = (); }; };
@@ -138,7 +137,6 @@
 		6E6E48911BB9265B0000674F /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = ../../Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		6E6E48981BB946170000674F /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		6E6E489B1BB946330000674F /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
-		6E6E489C1BB946870000674F /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		6E6E48AB1BB990EE0000674F /* UITextFieldPlaceholderColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldPlaceholderColor.swift; sourceTree = "<group>"; };
 		6E93CE721B29063C004C7D93 /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		6E94F0191BB7E28100C4BE24 /* Permission.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Permission.storyboard; sourceTree = "<group>"; };
@@ -196,10 +194,9 @@
 		6E062ECB1B20DE7E004DBAB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6E062ECC1B20DE92004DBAB7 /* Store.swift */,
 				6E062ED11B20E357004DBAB7 /* Authentication.swift */,
 				6EAE1E101BB7AC2A00F18F8A /* Preferences.swift */,
-				6E062ECC1B20DE92004DBAB7 /* Store.swift */,
-				6E6E489C1BB946870000674F /* Request.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				6E062ED21B20E357004DBAB7 /* Authentication.swift in Sources */,
 				6EAE1E111BB7AC2A00F18F8A /* Preferences.swift in Sources */,
 				6E0C9BC51B1F3C540018450C /* LoginViewController.swift in Sources */,
-				6E6E489D1BB946870000674F /* Request.swift in Sources */,
 				6E6E48971BB934F40000674F /* Store.swift in Sources */,
 				6EAE1E161BB7CC4A00F18F8A /* PermissionsViewController.swift in Sources */,
 				6E225A641B2895AF00E80F99 /* SettingsViewController.swift in Sources */,

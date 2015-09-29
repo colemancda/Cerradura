@@ -13,63 +13,74 @@ import NetworkObjects
 import CoreCerradura
 import CoreData
 
-internal let Store: NetworkObjects.CoreDataClient<Client.HTTP> = {
+internal let Store: NetworkObjects.CoreDataClient<Client.HTTP> = CreateCoreDataStore()
+
+private func CreateCoreDataStore() -> NetworkObjects.CoreDataClient<Client.HTTP> {
     
     guard let serverURL = Preference.ServerURL.value as? String
         else { fatalError("ServerURL Preference is nil") }
     
     let client = Client.HTTP(serverURL: serverURL, model: Model.entities, HTTPClient: HTTP.Client())
     
-    let store = CoreDataClient(managedObjectModel: CoreCerradura.ManagedObjectModel(), client: client)
-    
     // add authentication handler
     
+    client.willSendRequest = { (request) in
+        
+        var headers = [String: String]()
+        
+        if let credentials = Authentication.sharedAuthentication.credentials {
+            
+            let authenticationContext = RequestAuthenticationContext(request: request)
+            
+            headers[RequestHeader.Date.rawValue] = authenticationContext.dateString
+            
+            let token = authenticationContext.generateToken(credentials.username, secret: credentials.password)
+            
+            headers[RequestHeader.Authorization.rawValue] = token
+        }
+        
+        return headers
+    }
     
+    let store = CoreDataClient(managedObjectModel: CoreCerradura.ManagedObjectModel(), client: client)
     
     return store
-}()
+}
 
 private var SQLiteStore: NSPersistentStore?
 
 /** Loads the persistent store for use with the Cerradura App. */
-func LoadPersistentStore() {
+func LoadPersistentStore(userID: String) throws {
     
-    // load SQLite
+    let url = SQLiteStoreFileURL(userID)
     
-    do { SQLiteStore = try Store.managedObjectContext.persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: SQLiteStoreFileURL, options: nil) }
-        
-    catch {
-        
-        // Log error, try to delete file, and crash
-        
-        print("Failed to load SQLite file. \(error)")
-        
-        RemovePersistentStore()
-        
-        fatalError()
-    }
+    // load SQLite store
+    
+    SQLiteStore = try Store.managedObjectContext.persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
 }
 
-func RemovePersistentStore() {
+func RemovePersistentStore(userID: String) throws {
     
-    if NSFileManager.defaultManager().fileExistsAtPath(SQLiteStoreFileURL.path!) {
+    let url = SQLiteStoreFileURL(userID)
+    
+    if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
         
         // delete file
         
-        try! NSFileManager.defaultManager().removeItemAtURL(SQLiteStoreFileURL)
+        try NSFileManager.defaultManager().removeItemAtURL(url)
     }
     
     SQLiteStore = nil
 }
 
-internal let SQLiteStoreFileURL: NSURL = {
+internal func SQLiteStoreFileURL(userID: String) -> NSURL {
     
     let cacheURL = try! NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory,
         inDomain: NSSearchPathDomainMask.UserDomainMask,
         appropriateForURL: nil,
         create: false)
     
-    let fileURL = cacheURL.URLByAppendingPathComponent("data.sqlite")
+    let fileURL = cacheURL.URLByAppendingPathComponent(userID + ".sqlite")
     
     return fileURL
-    }()
+}

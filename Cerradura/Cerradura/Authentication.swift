@@ -16,48 +16,38 @@ public final class Authentication {
     
     public static let sharedAuthentication = Authentication()
     
-    /** Key for storing the password in the keychain. */
-    public static let keychainPasswordKey = "Password"
-    
-    /** Key for storing the username in the keychain. */
-    public static let keychainUsernameKey = "Username"
-    
     // MARK: - Properties
     
-    /** Username and password credentials. */
-    public var credentials: (String, String)? {
+    public private(set) var credentials: Credential?
+    
+    // MARK: - Functions
+    
+    public func loadCredentials() -> Bool {
         
-        get {
-            
-            let username = self.keychain[Authentication.keychainUsernameKey]
-            
-            let password = self.keychain[Authentication.keychainPasswordKey]
-            
-            if username == nil || password == nil {
-                
-                return nil
-            }
-            
-            return (username!, password!)
-        }
+        guard let username = self.keychain[Authentication.KeychainKey.Username.rawValue],
+            let password = self.keychain[Authentication.KeychainKey.Password.rawValue],
+            let userID = Preference.UserID.value as String?
+            else { return false }
         
-        set {
-            
-            if self.credentials == nil {
-                
-                self.keychain[Authentication.keychainUsernameKey] = nil
-                
-                self.keychain[Authentication.keychainPasswordKey] = nil
-                
-                return
-            }
-            
-            let (username, password) = self.credentials!
-            
-            self.keychain[Authentication.keychainUsernameKey] = username
-            
-            self.keychain[Authentication.keychainPasswordKey] = password
-        }
+        self.credentials = Credential(username: username, password: password, userID: userID)
+        
+        return true
+    }
+    
+    public func setCredentials(credentials: Credential) {
+        
+        self.keychain[Authentication.KeychainKey.Username.rawValue] = credentials.username
+        self.keychain[Authentication.KeychainKey.Password.rawValue] = credentials.password
+        Preference.UserID.value = credentials.userID
+        
+        self.credentials = credentials
+    }
+    
+    public func removeCredentials() {
+        
+        self.keychain[Authentication.KeychainKey.Username.rawValue] = nil
+        self.keychain[Authentication.KeychainKey.Password.rawValue] = nil
+        Preference.UserID.value = nil
     }
     
     // MARK: - Private Properties
@@ -71,9 +61,9 @@ public final class Authentication {
         
         // set keychain
         
-        if accessGroup != nil {
+        if let accessGroup = accessGroup {
             
-            self.keychain = Keychain(service: keychainIdentifier, accessGroup: accessGroup!)
+            self.keychain = Keychain(service: keychainIdentifier, accessGroup: accessGroup)
         }
         else {
             
@@ -83,3 +73,32 @@ public final class Authentication {
     
     
 }
+
+public extension Authentication {
+    
+    public enum KeychainKey: String {
+        
+        case Username
+        case Password
+    }
+}
+
+public extension Authentication {
+    
+    public struct Credential {
+        
+        public var username: String
+        
+        public var password: String
+        
+        public var userID: String
+        
+        public init(username: String, password: String, userID: String) {
+            
+            self.username = username
+            self.password = password
+            self.userID = userID
+        }
+    }
+}
+

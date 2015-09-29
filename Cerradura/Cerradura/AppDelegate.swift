@@ -24,17 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set app appearance
         ConfigureAppearance()
         
-        // add SQLite store
-        LoadPersistentStore()
-        
-        if Authentication.sharedAuthentication.credentials != nil {
+        if let credentials = Authentication.sharedAuthentication.credentials {
             
+            // load cache SQLite
+            do { try LoadPersistentStore(credentials.userID) }
             
+            catch {
+                
+                print("Could not load cached user cache")
+                
+                try! RemovePersistentStore(credentials.userID)
+                
+                fatalError()
+            }
             
-            //R.storyboard.main.
-        }
-        else {
-            
+            // show logged in UI
             
         }
         

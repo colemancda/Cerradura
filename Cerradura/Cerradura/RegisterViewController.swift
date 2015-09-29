@@ -59,44 +59,62 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         
         var values = ValuesObject()
         
-        values[Model.User.Attribute.Username.name] = .Attribute(.String(self.usernameTextField.text!))
-        values[Model.User.Attribute.Email.name] = .Attribute(.String(self.emailTextField.text!))
-        values[Model.User.Attribute.Password.name] = .Attribute(.String(self.passwordTextField.text!))
+        let username = self.usernameTextField.text!
+        let password = self.passwordTextField.text!
+        let email = self.emailTextField.text!
+        
+        values[Model.User.Attribute.Username.name] = .Attribute(.String(username))
+        values[Model.User.Attribute.Password.name] = .Attribute(.String(password))
+        values[Model.User.Attribute.Email.name] = .Attribute(.String(email))
         
         self.view.endEditing(true)
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
         
-        // create user
-        
-        NewRequest({
+        Store.create(Model.User.entityName, initialValues: values) { [weak self] (response) in
             
-            try Store.create(Model.User.entityName, initialValues: values)
-            
-            }, error: { [weak self] (error) -> () in
+            NSOperationQueue.mainQueue().addOperationWithBlock({
                 
                 guard let controller = self else { return }
                 
-                controller.showErrorAlert("\(error)")
-                
-                controller.progressHUD.dismissAnimated(false)
-                
-                controller.tableView.scrollEnabled = true
-                
-            }, success: { [weak self] (resource, values) -> () in
-                
-                guard let controller = self else { return }
-                
-                controller.progressHUD.dismiss()
-                
-                controller.dismissViewControllerAnimated(true, completion: {
+                switch response {
                     
-                    controller.presentingViewController!.dismissViewControllerAnimated(true, completion: {
+                case let .Error(error):
+                    
+                    controller.showErrorAlert("\(error)")
+                    
+                    controller.progressHUD.dismissAnimated(false)
+                    
+                    controller.tableView.scrollEnabled = true
+                    
+                case let .Value(newUser):
+                    
+                    controller.progressHUD.dismiss()
+                    
+                    // save user ID and credentials
+                    
+                    let userID = newUser.valueForKey(CoreDataResourceIDAttributeName) as! String
+                    
+                    let credentials = Authentication.Credential(username: username, password: password, userID: userID)
+                    
+                    Authentication.sharedAuthentication.setCredentials(credentials)
+                    
+                    // Create SQLite cache file for the new user
+                    
+                    try! LoadPersistentStore(userID)
+                    
+                    // show logged in view
+                    
+                    controller.dismissViewControllerAnimated(true, completion: {
                         
-                        
+                        controller.presentingViewController!.dismissViewControllerAnimated(true, completion: {
+                            
+                            
+                        })
                     })
-                })
-        })
+                }
+            })
+        }
     }
     
     // MARK: - UITextFieldDelegate

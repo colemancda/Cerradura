@@ -57,3 +57,4 @@ public struct HTTPAuthenticationContext: AuthenticationContext {
 // MARK: - Private Constants
 
 private let HTTPDateFormatter = DateFormatter(format: "EEE',' dd' 'MMM' 'yyyy HH':'mm':'ss zzz")
+
