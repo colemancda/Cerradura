@@ -13,84 +13,56 @@ import NetworkObjects
 import CoreCerradura
 import CoreData
 
-let Store: NetworkObjects.Client.HTTP = {
+internal let Store: NetworkObjects.CoreDataClient<Client.HTTP> = {
     
     guard let serverURL = Preference.ServerURL.value as? String
         else { fatalError("ServerURL Preference is nil") }
     
     let client = Client.HTTP(serverURL: serverURL, model: Model.entities, HTTPClient: HTTP.Client())
     
-    return client
+    let store = CoreDataClient(managedObjectModel: CoreCerradura.ManagedObjectModel(), client: client)
+    
+    // add authentication handler
+    
+    
+    
+    return store
 }()
 
-var managedObjectContext: NSManagedObjectContext!
+private var SQLiteStore: NSPersistentStore?
 
-var persistentStore: NSPersistentStore!
-
-private var privateManagedObjectContext: NSManagedObjectContext!
-
-/*
-internal extension NetworkObjects.Store {
+/** Loads the persistent store for use with the Cerradura App. */
+func LoadPersistentStore() {
     
-    /** Shared store that may be nil. App must ensure that this class property is initialized before use. */
-    private(set) static var sharedStore: Store!
+    // load SQLite
     
-    private static var persistentStore: NSPersistentStore!
-    
-    /** Creates a Store for use with the Cerradura App. */
-    func loadSharedStore(username: String, password: String, server serverURL: NSURL) {
+    do { SQLiteStore = try Store.managedObjectContext.persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: SQLiteStoreFileURL, options: nil) }
         
-        let prettyPrintJSON: Bool
-        
-        #if DEBUG
-            prettyPrintJSON = true
-            #else
-            prettyPrintJSON = false
-        #endif
-        
-        self.sharedStore = self.init(managedObjectContextConcurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType, serverURL: serverURL, prettyPrintJSON: prettyPrintJSON, username: username, password: password)
-        
-        // load SQLite
-        
-        var addPersistentStoreError: NSError?
-        
-        self.persistentStore = self.sharedStore.managedObjectContext.persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: SharedStoreFileURL, options: nil, error: &addPersistentStoreError)
+    catch {
         
         // Log error, try to delete file, and crash
-        if persistentStore == nil {
-            
-            print("Failed to load SQLite file.\n\(addPersistentStoreError)")
-            
-            self.removeSharedStore()
-            
-            abort()
-        }
-    }
-    
-    class func removeSharedStore() {
         
-        if NSFileManager.defaultManager().fileExistsAtPath(SharedStoreFileURL.path!) {
-            
-            // delete file
-            
-            var deleteError: NSError?
-            
-            NSFileManager.defaultManager().removeItemAtURL(SharedStoreFileURL, error: &deleteError)
-            
-            if deleteError != nil {
-                
-                fatalError("Could not delete old SQLite file.\n\(deleteError!)")
-            }
-        }
+        print("Failed to load SQLite file. \(error)")
         
-        self.sharedStore = nil
+        RemovePersistentStore()
+        
+        fatalError()
     }
 }
-*/
 
-// MARK: - Private Constants
+func RemovePersistentStore() {
+    
+    if NSFileManager.defaultManager().fileExistsAtPath(SQLiteStoreFileURL.path!) {
+        
+        // delete file
+        
+        try! NSFileManager.defaultManager().removeItemAtURL(SQLiteStoreFileURL)
+    }
+    
+    SQLiteStore = nil
+}
 
-internal let SharedStoreFileURL: NSURL = {
+internal let SQLiteStoreFileURL: NSURL = {
     
     let cacheURL = try! NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory,
         inDomain: NSSearchPathDomainMask.UserDomainMask,

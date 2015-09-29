@@ -19,14 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Launching Cerradura v\(AppVersion) Build \(AppBuild)")
         
         // Initialize client
-        print("Using Server URL: \(Store.serverURL)")
+        print("Using Server URL: \(Store.client.serverURL)")
         
         // set app appearance
         ConfigureAppearance()
         
+        // add SQLite store
+        LoadPersistentStore()
+        
         if Authentication.sharedAuthentication.credentials != nil {
             
+            
+            
             //R.storyboard.main.
+        }
+        else {
+            
+            
         }
         
         return true
