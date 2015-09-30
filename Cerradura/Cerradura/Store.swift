@@ -42,7 +42,17 @@ private func CreateCoreDataStore() -> NetworkObjects.CoreDataClient<Client.HTTP>
         return headers
     }
     
-    let store = CoreDataClient(managedObjectModel: CoreCerradura.ManagedObjectModel(), client: client)
+    let managedObjectModel = NSManagedObjectModel(contentsOfURL: NSBundle.mainBundle().URLForResource("Model", withExtension: "mom")!)!
+    
+    // Temporary fix for Momc
+    do {
+        
+        let permissionEntity = managedObjectModel.entitiesByName["Per"]!
+        
+        permissionEntity.name = Model.Permission.entityName
+    }
+    
+    let store = CoreDataClient(managedObjectModel: managedObjectModel, client: client)
     
     return store
 }
