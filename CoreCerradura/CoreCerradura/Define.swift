@@ -12,7 +12,17 @@ import CoreData
 /** The managed object model for the CoreCerradura framework. */
 public func ManagedObjectModel() -> NSManagedObjectModel {
     
-    return NSManagedObjectModel(contentsOfURL: NSBundle(identifier: CoreCerradura.BundleIdentifier)!.URLForResource("Model", withExtension: "momd")!)!
+    let managedObjectModel = NSManagedObjectModel(contentsOfURL: NSBundle(identifier: CoreCerradura.BundleIdentifier)!.URLForResource("Model", withExtension: "momd")!)!
+    
+    // Temporary fix for Momc
+    do {
+        
+        let permissionEntity = managedObjectModel.entitiesByName["Per"]!
+        
+        permissionEntity.name = Model.Permission.entityName
+    }
+    
+    return managedObjectModel
 }
 
 // MARK: - Internal
