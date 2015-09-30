@@ -15,7 +15,6 @@
 		6E10FCDE1BB54612007CB984 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDC1BB54612007CB984 /* libssl.a */; settings = {ASSET_TAGS = (); }; };
 		6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253941BAE7B1E00D1B37D /* libcrypto.a */; };
 		6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253951BAE7B1E00D1B37D /* libssl.a */; };
-		6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		6E2253C11BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; settings = {ASSET_TAGS = (); }; };
 		6E2253C21BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; settings = {ASSET_TAGS = (); }; };
 		6E4642F41AD9E045005BDBA7 /* CoreCerradura.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642F31AD9E045005BDBA7 /* CoreCerradura.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -50,7 +49,8 @@
 		6E9821311AE2D5B400D393DF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821301AE2D5B400D393DF /* Action.swift */; };
 		6E9821331AE2D5B400D393DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821321AE2D5B400D393DF /* User.swift */; };
 		6E9821351AE2D5B500D393DF /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821341AE2D5B500D393DF /* Lock.swift */; };
-		6EAE1E0B1BB7324E00F18F8A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		6EBC5BD31BBBB9FD00A2636D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		6EBC5BD41BBBBA5E00A2636D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
 		6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; settings = {ASSET_TAGS = (); }; };
@@ -432,6 +432,7 @@
 				6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */,
 				6E7474751B3B0AD80039596D /* HTTPAuthenticationContext.swift in Sources */,
 				6E74746E1B3B0AAB0039596D /* RequestHeader.swift in Sources */,
+				6EBC5BD41BBBBA5E00A2636D /* Model.xcdatamodeld in Sources */,
 				6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */,
 				6ED5F0BA1BAE3557009DC5CB /* ActionStatus.swift in Sources */,
 				6E6E48951BB92E6D0000674F /* Validate.swift in Sources */,
@@ -443,7 +444,6 @@
 				6ED5F0BD1BAE35CC009DC5CB /* PermissionType.swift in Sources */,
 				6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */,
 				6E7474681B3B0AAB0039596D /* LockMode.swift in Sources */,
-				6E22539A1BAE7B4F00D1B37D /* Model.xcdatamodeld in Sources */,
 				6E74746A1B3B0AAB0039596D /* LockCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +469,7 @@
 				6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */,
 				6E7474761B3B0AD80039596D /* HTTPAuthenticationContext.swift in Sources */,
 				6E74746F1B3B0AAB0039596D /* RequestHeader.swift in Sources */,
+				6EBC5BD31BBBB9FD00A2636D /* Model.xcdatamodeld in Sources */,
 				6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */,
 				6ED5F0BB1BAE3557009DC5CB /* ActionStatus.swift in Sources */,
 				6E6E48961BB92E6D0000674F /* Validate.swift in Sources */,
@@ -478,7 +479,6 @@
 				6E95D2031B2B2EBD000DD4DA /* Lock.swift in Sources */,
 				6E95D2041B2B2EBD000DD4DA /* Action.swift in Sources */,
 				6ED5F0BE1BAE35CC009DC5CB /* PermissionType.swift in Sources */,
-				6EAE1E0B1BB7324E00F18F8A /* Model.xcdatamodeld in Sources */,
 				6ED5F0B81BAE353D009DC5CB /* ActionType.swift in Sources */,
 				6E7474691B3B0AAB0039596D /* LockMode.swift in Sources */,
 				6E74746B1B3B0AAB0039596D /* LockCommand.swift in Sources */,

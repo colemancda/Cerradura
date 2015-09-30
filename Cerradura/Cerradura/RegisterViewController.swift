@@ -73,7 +73,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.tableView.scrollEnabled = false
         
         // Create SQLite cache file for the new user
-        
         try! LoadPersistentStore(username)
         
         Store.create(Model.User.entityName, initialValues: values) { [weak self] (response) in

@@ -48,6 +48,9 @@ public func AuthenticateWithHeader(header: String, identifierKey: String, secret
     
     let fetchResults = try context.store.fetch(fetchRequest)
     
+    // cant have multiple users with the same username
+    assert(fetchResults.count <= 1)
+    
     guard let authenticatedResource = fetchResults.first else { return nil }
     
     let values = try context.store.values(authenticatedResource)

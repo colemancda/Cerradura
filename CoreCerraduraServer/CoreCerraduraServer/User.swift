@@ -25,6 +25,19 @@ extension CoreCerradura.Model.User: ServerModel {
     
     public static func canCreate(initialValues: ValuesObject, context: Server.RequestContext) throws -> Int   {
         
+        // dont allow same usernames
+        guard let username = initialValues[Model.User.Attribute.Username.name]?.rawValue as? String
+            else { return HTTP.StatusCode.BadRequest.rawValue }
+        
+        do {
+            
+            var fetchRequest = FetchRequest(entityName: Model.User.entityName)
+            
+            fetchRequest.predicate = Predicate.Comparison(ComparisonPredicate(propertyName: Model.User.Attribute.Username.name, value: Value.Attribute(AttributeValue.String(username))))
+            
+            try context.store.fetch(fetchRequest)
+        }
+        
         return HTTP.StatusCode.OK.rawValue
     }
     

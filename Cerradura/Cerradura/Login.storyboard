@@ -248,6 +248,9 @@
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="Log In"/>
+                                                    <connections>
+                                                        <action selector="login:" destination="oUY-KS-03N" eventType="touchUpInside" id="D59-Kb-LRG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>
@@ -268,7 +271,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Log In" id="S0X-kL-OcZ">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="I06-mp-Jxc">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="I06-mp-Jxc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0H-Gm-UH6">
                                 <rect key="frame" x="20" y="11" width="19" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -282,6 +285,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="j65-NQ-60J" id="L88-PG-or1"/>
+                        <outlet property="usernameTextField" destination="u8b-Gf-enD" id="KaJ-34-oRr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Gq-sM-bSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -510,7 +517,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign Up" id="u0d-MX-BDt">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="HpF-M2-m47">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="HpF-M2-m47">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QOR-za-y7b">
                                 <rect key="frame" x="20" y="11" width="19" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

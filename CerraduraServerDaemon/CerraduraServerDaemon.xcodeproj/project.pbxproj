@@ -21,6 +21,7 @@
 		6E4642941AD95552005BDBA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4642931AD95552005BDBA7 /* main.m */; };
 		6E4642E11AD9649B005BDBA7 /* CerraduraServerDaemon in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E4642901AD95552005BDBA7 /* CerraduraServerDaemon */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6E6E48A51BB959C80000674F /* SwiftCF.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6E48A41BB959C60000674F /* SwiftCF.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6EBC5BCF1BBBA31B00A2636D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC5BC91BBBA30F00A2636D /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		6E4642D71AD96422005BDBA7 /* CerraduraServerDaemon.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CerraduraServerDaemon.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4642DA1AD96422005BDBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6E48A41BB959C60000674F /* SwiftCF.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCF.framework; path = ../Carthage/Build/Mac/SwiftCF.framework; sourceTree = "<group>"; };
+		6EBC5BC81BBBA30F00A2636D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6ED5F0D11BAE73EC009DC5CB /* CoreCerraduraServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreCerraduraServer.xcodeproj; path = ../CoreCerraduraServer/CoreCerraduraServer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				6E4642931AD95552005BDBA7 /* main.m */,
+				6EBC5BC91BBBA30F00A2636D /* Model.xcdatamodeld */,
 			);
 			path = CerraduraServerDaemon;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBC5BCF1BBBA31B00A2636D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +568,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6EBC5BC91BBBA30F00A2636D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6EBC5BC81BBBA30F00A2636D /* Model.xcdatamodel */,
+			);
+			currentVersion = 6EBC5BC81BBBA30F00A2636D /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../../CoreCerradura/CoreCerradura/Model.xcdatamodeld;
+			sourceTree = "<group>";
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6E4642881AD95552005BDBA7 /* Project object */;
 }

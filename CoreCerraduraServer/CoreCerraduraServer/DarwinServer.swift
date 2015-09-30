@@ -44,7 +44,7 @@ public func StoreForRequest(request: RequestMessage) -> CoreModel.Store {
 
 public let PersistentStoreCoordinator: NSPersistentStoreCoordinator = {
     
-    let managedObjectModel = CoreCerradura.ManagedObjectModel()
+    let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil)!
     
     // add resource ID attribute
     managedObjectModel.addResourceIDAttribute(CoreCerradura.CoreDataResourceIDAttributeName)

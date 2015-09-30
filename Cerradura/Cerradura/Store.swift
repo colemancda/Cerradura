@@ -42,7 +42,9 @@ private func CreateCoreDataStore() -> NetworkObjects.CoreDataClient<Client.HTTP>
         return headers
     }
     
-    let store = CoreDataClient(managedObjectModel: CoreCerradura.ManagedObjectModel(), client: client)
+    let model = NSManagedObjectModel(contentsOfURL: NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")!)!
+    
+    let store = CoreDataClient(managedObjectModel: model, client: client)
     
     return store
 }
