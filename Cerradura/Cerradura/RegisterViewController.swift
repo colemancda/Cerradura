@@ -72,9 +72,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
         
-        // Create SQLite cache file for the new user
-        try! LoadPersistentStore(username)
-        
         Store.create(Model.User.entityName, initialValues: values) { [weak self] (response) in
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
@@ -90,9 +87,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                     // hide HUD
                     controller.progressHUD.dismissAnimated(false)
                     controller.tableView.scrollEnabled = true
-                    
-                    // remove SQLite
-                    try! RemovePersistentStore(username)
                     
                 case let .Value(newUser):
                     

@@ -48,6 +48,9 @@ extension CoreCerradura.Model.User: ServerModel {
     
     public static func canPerformFetchRequest(fetchRequest: FetchRequest, context: Server.RequestContext) throws -> Int   {
         
+        guard let _ = context.userInfo[ServerUserInfoKey.AuthenticatedUser.rawValue] as? Resource
+            else { return HTTP.StatusCode.Unauthorized.rawValue }
+        
         return HTTP.StatusCode.OK.rawValue
     }
     
@@ -55,7 +58,7 @@ extension CoreCerradura.Model.User: ServerModel {
         
         let dateCreated = Date()
         
-        initialValues[CoreCerradura.Model.User.Attribute.Created.name] = Value.Attribute(.Date(dateCreated))
+        initialValues[Model.User.Attribute.Created.name] = .Attribute(.Date(dateCreated))
         
         return initialValues
     }

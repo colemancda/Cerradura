@@ -60,18 +60,18 @@ private func CreateCoreDataStore() -> NetworkObjects.CoreDataClient<Client.HTTP>
 private var SQLiteStore: NSPersistentStore?
 
 /** Loads the persistent store for use with the Cerradura App. */
-func LoadPersistentStore(username: String) throws {
+func LoadPersistentStore() throws {
     
-    let url = SQLiteStoreFileURL(username)
+    let url = SQLiteStoreFileURL
     
     // load SQLite store
     
     SQLiteStore = try Store.managedObjectContext.persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
 }
 
-func RemovePersistentStore(username: String) throws {
+func RemovePersistentStore() throws {
     
-    let url = SQLiteStoreFileURL(username)
+    let url = SQLiteStoreFileURL
     
     if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
         
@@ -83,14 +83,14 @@ func RemovePersistentStore(username: String) throws {
     SQLiteStore = nil
 }
 
-internal func SQLiteStoreFileURL(username: String) -> NSURL {
+internal let SQLiteStoreFileURL: NSURL = {
     
     let cacheURL = try! NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.CachesDirectory,
         inDomain: NSSearchPathDomainMask.UserDomainMask,
         appropriateForURL: nil,
         create: false)
     
-    let fileURL = cacheURL.URLByAppendingPathComponent(username + ".sqlite")
+    let fileURL = cacheURL.URLByAppendingPathComponent(".sqlite")
     
     return fileURL
-}
+}()

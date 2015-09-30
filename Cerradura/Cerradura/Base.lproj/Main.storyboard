@@ -143,9 +143,6 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="bMJ-la-Dsp" kind="unwind" identifier="LogoutSegue" unwindAction="logoutUnwindSegue:" id="i30-c0-hOC"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -163,7 +160,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c81-VR-BNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="bMJ-la-Dsp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2131" y="969"/>
         </scene>
@@ -231,7 +227,7 @@
         <!--Split View Controller-->
         <scene sceneID="bJ1-zt-2xS">
             <objects>
-                <splitViewController id="Mie-zY-Cnu" sceneMemberID="viewController">
+                <splitViewController modalTransitionStyle="flipHorizontal" id="Mie-zY-Cnu" sceneMemberID="viewController">
                     <connections>
                         <segue destination="vuf-Dr-0ST" kind="relationship" relationship="masterViewController" id="ZSj-K5-YQs"/>
                         <segue destination="Tp0-Cg-so2" kind="relationship" relationship="detailViewController" id="4Gv-NT-yJi"/>

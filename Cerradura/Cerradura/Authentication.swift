@@ -24,10 +24,10 @@ public final class Authentication {
     
     public func loadCredentials() -> Bool {
         
-        guard let username = self.keychain[Authentication.KeychainKey.Username.rawValue],
-            let password = self.keychain[Authentication.KeychainKey.Password.rawValue],
+        guard let username = try! self.keychain.get(Authentication.KeychainKey.Username.rawValue),
+            let password = try! self.keychain.get(Authentication.KeychainKey.Username.rawValue),
             let userID = Preference.UserID.value as String?
-            else { return false }
+            else { self.credentials = nil; return false }
         
         self.credentials = Credential(username: username, password: password, userID: userID)
         
@@ -36,8 +36,8 @@ public final class Authentication {
     
     public func setCredentials(credentials: Credential) {
         
-        self.keychain[Authentication.KeychainKey.Username.rawValue] = credentials.username
-        self.keychain[Authentication.KeychainKey.Password.rawValue] = credentials.password
+        try! self.keychain.set(credentials.username, key: KeychainKey.Username.rawValue)
+        try! self.keychain.set(credentials.password, key: KeychainKey.Password.rawValue)
         Preference.UserID.value = credentials.userID
         
         self.credentials = credentials
@@ -45,8 +45,8 @@ public final class Authentication {
     
     public func removeCredentials() {
         
-        self.keychain[Authentication.KeychainKey.Username.rawValue] = nil
-        self.keychain[Authentication.KeychainKey.Password.rawValue] = nil
+        try! self.keychain.remove(KeychainKey.Username.rawValue)
+        try! self.keychain.remove(KeychainKey.Password.rawValue)
         Preference.UserID.value = nil
     }
     

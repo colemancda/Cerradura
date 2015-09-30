@@ -60,9 +60,6 @@ class LoginViewController: UITableViewController {
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
         
-        // Create SQLite cache file for the new user
-        try! LoadPersistentStore(username)
-        
         // search for user with username
         Store.search(fetchRequest) { [weak self] (response: ErrorValue<[User]>) in
             
@@ -81,9 +78,6 @@ class LoginViewController: UITableViewController {
                     // hide HUD
                     controller.progressHUD.dismissAnimated(false)
                     
-                    // remove SQLite
-                    try! RemovePersistentStore(username)
-                    
                 case let .Value(results):
                     
                     // hide HUD
@@ -93,9 +87,6 @@ class LoginViewController: UITableViewController {
                         
                         // hide HUD
                         controller.progressHUD.dismissAnimated(false)
-                        
-                        // remove SQLite
-                        try! RemovePersistentStore(username)
                         
                         let errorText = NSLocalizedString("Could not fetch user profile",
                             comment: "Could not fetch user profile")
