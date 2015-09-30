@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set app appearance
         ConfigureAppearance()
         
+        // handle previous session
         if let credentials = Authentication.sharedAuthentication.credentials {
             
             // load cache SQLite
@@ -31,15 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             catch {
                 
-                print("Could not load cached user cache")
+                print("Could not load cached SQLite store")
                 
-                try! RemovePersistentStore(credentials.userID)
+                Authentication.sharedAuthentication.removeCredentials()
+                
+                try! RemovePersistentStore(credentials.username)
                 
                 fatalError()
             }
             
             // show logged in UI
+            let loggedInVC = R.storyboard.main.initialViewController!
             
+            self.window!.rootViewController!.presentViewController(loggedInVC, animated: false, completion: nil)
         }
         
         return true

@@ -55,10 +55,5 @@ class LoginViewController: UITableViewController {
         
         
     }
-    
-    @IBAction func logoutSegue(segue: UIStoryboardSegue) {
-        
-        
-    }
 }
 

@@ -67,9 +67,14 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         values[Model.User.Attribute.Password.name] = .Attribute(.String(password))
         values[Model.User.Attribute.Email.name] = .Attribute(.String(email))
         
+        // show HUD
         self.view.endEditing(true)
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
+        
+        // Create SQLite cache file for the new user
+        
+        try! LoadPersistentStore(username)
         
         Store.create(Model.User.entityName, initialValues: values) { [weak self] (response) in
             
@@ -83,12 +88,16 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                     
                     controller.showErrorAlert("\(error)")
                     
+                    // hide HUD
                     controller.progressHUD.dismissAnimated(false)
-                    
                     controller.tableView.scrollEnabled = true
+                    
+                    // remove SQLite
+                    try! RemovePersistentStore(username)
                     
                 case let .Value(newUser):
                     
+                    // hide HUD
                     controller.progressHUD.dismiss()
                     
                     // save user ID and credentials
@@ -99,18 +108,15 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                     
                     Authentication.sharedAuthentication.setCredentials(credentials)
                     
-                    // Create SQLite cache file for the new user
-                    
-                    try! LoadPersistentStore(userID)
-                    
                     // show logged in view
+                    
+                    let presentingVC = controller.presentingViewController!
                     
                     controller.dismissViewControllerAnimated(true, completion: {
                         
-                        controller.presentingViewController!.dismissViewControllerAnimated(true, completion: {
-                            
-                            
-                        })
+                        let loggedInVC = R.storyboard.main.initialViewController!
+                        
+                        presentingVC.presentViewController(loggedInVC, animated: true, completion: nil)
                     })
                 }
             })
