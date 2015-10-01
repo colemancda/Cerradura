@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Carthage/Checkouts/SwiftFoundation/SwiftFoundation/SwiftFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MyPlayground.playground">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/NetworkObjects/NetworkObjects/NetworkObjects.xcodeproj">
    </FileRef>
    <FileRef

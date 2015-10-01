@@ -36,9 +36,8 @@ class SettingsViewController: UITableViewController {
         
         // show confirmation dialog
         
-        
-        
-        //AuthenticationController.sharedController.logout()
+        // logout
+        self.logoutFromMainStoryboard()
     }
     
     // MARK: - UITableViewDelegate

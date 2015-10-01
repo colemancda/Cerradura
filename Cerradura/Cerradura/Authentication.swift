@@ -25,11 +25,10 @@ public final class Authentication {
     public func loadCredentials() -> Bool {
         
         guard let username = try! self.keychain.get(Authentication.KeychainKey.Username.rawValue),
-            let password = try! self.keychain.get(Authentication.KeychainKey.Username.rawValue),
-            let userID = Preference.UserID.value as String?
+            let password = try! self.keychain.get(Authentication.KeychainKey.Username.rawValue)
             else { self.credentials = nil; return false }
         
-        self.credentials = Credential(username: username, password: password, userID: userID)
+        self.credentials = Credential(username: username, password: password)
         
         return true
     }
@@ -38,7 +37,6 @@ public final class Authentication {
         
         try! self.keychain.set(credentials.username, key: KeychainKey.Username.rawValue)
         try! self.keychain.set(credentials.password, key: KeychainKey.Password.rawValue)
-        Preference.UserID.value = credentials.userID
         
         self.credentials = credentials
     }
@@ -89,13 +87,10 @@ public extension Authentication {
         
         public var password: String
         
-        public var userID: String
-        
-        public init(username: String, password: String, userID: String) {
+        public init(username: String, password: String) {
             
             self.username = username
             self.password = password
-            self.userID = userID
         }
     }
 }

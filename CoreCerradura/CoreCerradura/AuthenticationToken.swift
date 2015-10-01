@@ -26,17 +26,9 @@ public extension AuthenticationContext {
         
         do {
             
-            let hmacContext = UnsafeMutablePointer<HMAC_CTX>()
-            
-            HMAC_CTX_init(hmacContext)
-            
             let secretData = secret.toUTF8Data()
             
-            HMAC_Init_ex(hmacContext, secretData, Int32(secretData.count), EVP_sha512(), nil)
-            
-            let identifierData = identifier.toUTF8Data()
-            
-            HMAC_Update(hmacContext, identifierData, identifierData.count)
+            let stringToSignData = stringToSign.toUTF8Data()
             
             let digestLength = Int(SHA512_DIGEST_LENGTH)
             
@@ -46,18 +38,9 @@ public extension AuthenticationContext {
             
             var resultLength = UInt32(digestLength) // SHA512 digest length
             
-            HMAC_Final(hmacContext, result, &resultLength)
+            HMAC(EVP_sha512(), secretData, Int32(secretData.count), stringToSignData, stringToSignData.count, result, &resultLength)
             
-            var resultData = Data()
-            
-            for byteIndex in 0...Int(resultLength) - 1 {
-                
-                let byte = result[byteIndex]
-                
-                resultData.append(byte)
-            }
-            
-            assert(resultData.count == Int(resultLength))
+            let resultData = DataFromBytePointer(result, length: digestLength)
             
             signature = resultData
         }
@@ -70,5 +53,13 @@ public extension AuthenticationContext {
         return base64Signature
     }
 }
+
+private let EnginesLoaded: Bool = {
+    
+    ENGINE_load_builtin_engines()
+    ENGINE_register_all_complete()
+    
+    return true
+}()
 
 

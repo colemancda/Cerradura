@@ -60,6 +60,10 @@ class LoginViewController: UITableViewController {
         progressHUD.showInView(self.view, animated: true)
         self.tableView.scrollEnabled = false
         
+        // set credentials
+        let credentials = Authentication.Credential(username: username, password: password)
+        Authentication.sharedAuthentication.setCredentials(credentials)
+        
         // search for user with username
         Store.search(fetchRequest) { [weak self] (response: ErrorValue<[User]>) in
             
@@ -72,6 +76,8 @@ class LoginViewController: UITableViewController {
                 switch response {
                     
                 case let .Error(error):
+                    
+                    Authentication.sharedAuthentication.removeCredentials()
                     
                     let errorText: String
                     
@@ -113,6 +119,8 @@ class LoginViewController: UITableViewController {
                     
                     guard let authenticatedUser: User = results.first else {
                         
+                        Authentication.sharedAuthentication.removeCredentials()
+                        
                         // hide HUD
                         controller.progressHUD.dismissAnimated(false)
                         
@@ -127,9 +135,11 @@ class LoginViewController: UITableViewController {
                     // hide HUD
                     controller.progressHUD.dismiss()
                     
-                    // save user ID and credentials
+                    // save user ID
                     
                     let userID = authenticatedUser.valueForKey(CoreDataResourceIDAttributeName) as! String
+                    
+                    Preference.UserID.value = userID
                     
                     // show logged in view
                     

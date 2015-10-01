@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CoreData
+import SwiftFoundation
+import NetworkObjects
 
 extension UIViewController {
     
@@ -28,9 +30,6 @@ extension UIViewController {
             self.showViewController(detailController, sender: self)
         }
     }
-}
-
-extension UIViewController {
     
     func handleManagedObjectDeletionInMainStoryboard() {
         
@@ -58,5 +57,57 @@ extension UIViewController {
                 self.navigationController!.popToRootViewControllerAnimated(true)
             }
         }
+    }
+    
+    func handleErrorInMainStoryboard(error: ErrorType) {
+        
+        let errorText: String
+        
+        do { throw error }
+            
+        catch is NSURLError {
+            
+            errorText = (error as NSError).localizedDescription
+        }
+            
+        catch let Client.Error.ErrorStatusCode(statusCode) {
+            
+            guard statusCode != HTTP.StatusCode.Unauthorized.rawValue else {
+                
+                errorText = NSLocalizedString("You have been logged out.",
+                    comment: "401 Logout")
+                
+                self.showErrorAlert(errorText, okHandler: {
+                    
+                    self.logoutFromMainStoryboard()
+                })
+                
+                return
+            }
+            
+            errorText = "\(error)"
+        }
+            
+        catch {
+            
+            errorText = "\(error)"
+        }
+        
+        self.showErrorAlert(errorText)
+    }
+    
+    func logoutFromMainStoryboard() {
+        
+        // reset credentials
+        Authentication.sharedAuthentication.removeCredentials()
+        Preference.UserID.value = nil
+        
+        // reset Core Data stack
+        try! RemovePersistentStore()
+        try! LoadPersistentStore()
+        Store.managedObjectContext.reset()
+        
+        // dismiss splitVC
+        self.splitViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

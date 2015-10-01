@@ -95,11 +95,13 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
                     
                     // save user ID and credentials
                     
-                    let userID = newUser.valueForKey(CoreDataResourceIDAttributeName) as! String
+                    let userID = newUser.valueForKey(CoreDataResourceIDAttributeName) as! NSString
                     
-                    let credentials = Authentication.Credential(username: username, password: password, userID: userID)
+                    let credentials = Authentication.Credential(username: username, password: password)
                     
                     Authentication.sharedAuthentication.setCredentials(credentials)
+                    
+                    Preference.UserID.value = userID
                     
                     // show logged in view
                     
