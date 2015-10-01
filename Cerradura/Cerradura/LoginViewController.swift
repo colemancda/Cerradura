@@ -73,10 +73,38 @@ class LoginViewController: UITableViewController {
                     
                 case let .Error(error):
                     
-                    controller.showErrorAlert("\(error)")
+                    let errorText: String
+                    
+                    do { throw error }
+                    
+                    catch is NSURLError {
+                        
+                        errorText = (error as NSError).localizedDescription
+                    }
+                    
+                    catch let Client.Error.ErrorStatusCode(statusCode) {
+                        
+                        if statusCode == HTTP.StatusCode.Unauthorized.rawValue {
+                            
+                            errorText = NSLocalizedString("Incorrect username or password.",
+                                comment: "Incorrect Login Credentials")
+                        }
+                        else {
+                            
+                            errorText = "\(error)"
+                        }
+                    }
+                    
+                    catch {
+                        
+                        errorText = "\(error)"
+                    }
                     
                     // hide HUD
                     controller.progressHUD.dismissAnimated(false)
+                    
+                    // show error
+                    controller.showErrorAlert(errorText)
                     
                 case let .Value(results):
                     
@@ -102,10 +130,6 @@ class LoginViewController: UITableViewController {
                     // save user ID and credentials
                     
                     let userID = authenticatedUser.valueForKey(CoreDataResourceIDAttributeName) as! String
-                    
-                    let credentials = Authentication.Credential(username: username, password: password, userID: userID)
-                    
-                    Authentication.sharedAuthentication.setCredentials(credentials)
                     
                     // show logged in view
                     
