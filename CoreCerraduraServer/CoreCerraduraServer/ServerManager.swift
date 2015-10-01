@@ -74,7 +74,7 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
     
     // MARK: - ServerDelegate
     
-    public func server<T : ServerType>(server: T, statusCodeForRequest context: Server.RequestContext) throws -> Int  {
+    public func server<T : ServerType>(server: T, statusCodeForRequest context: Server.RequestContext) -> Int  {
         
         // get user authentication
         

@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		6E05BD311AF65763008FFF84 /* AuthenticationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E05BD301AF65763008FFF84 /* AuthenticationToken.swift */; };
 		6E0AB66E1AE4502D00AAAF50 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E98212E1AE2D5B400D393DF /* Permission.swift */; };
-		6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
-		6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; settings = {ASSET_TAGS = (); }; };
-		6E10FCDD1BB54612007CB984 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDB1BB54612007CB984 /* libcrypto.a */; settings = {ASSET_TAGS = (); }; };
-		6E10FCDE1BB54612007CB984 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDC1BB54612007CB984 /* libssl.a */; settings = {ASSET_TAGS = (); }; };
+		6E10FCD01BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; };
+		6E10FCD11BB372C3007CB984 /* RequestAuthenticationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10FCCF1BB372C3007CB984 /* RequestAuthenticationContext.swift */; };
+		6E10FCDD1BB54612007CB984 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDB1BB54612007CB984 /* libcrypto.a */; };
+		6E10FCDE1BB54612007CB984 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E10FCDC1BB54612007CB984 /* libssl.a */; };
 		6E2253961BAE7B1E00D1B37D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253941BAE7B1E00D1B37D /* libcrypto.a */; };
 		6E2253971BAE7B1E00D1B37D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2253951BAE7B1E00D1B37D /* libssl.a */; };
-		6E2253C11BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; settings = {ASSET_TAGS = (); }; };
-		6E2253C21BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; settings = {ASSET_TAGS = (); }; };
-		6E22CDA31BBBCDE600E5FCC2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		6E22CDA81BBBD06C00E5FCC2 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D77B41AE9DF3C00370898 /* Define.swift */; settings = {ASSET_TAGS = (); }; };
+		6E2253C11BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; };
+		6E2253C21BAF6AE500D1B37D /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2253C01BAF6AE500D1B37D /* Archive.swift */; };
+		6E22CDA31BBBCDE600E5FCC2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E46431E1AD9E953005BDBA7 /* Model.xcdatamodeld */; };
+		6E22CDA81BBBD06C00E5FCC2 /* Define.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D77B41AE9DF3C00370898 /* Define.swift */; };
 		6E4642F41AD9E045005BDBA7 /* CoreCerradura.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4642F31AD9E045005BDBA7 /* CoreCerradura.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E4642FA1AD9E045005BDBA7 /* CoreCerradura.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4642EE1AD9E045005BDBA7 /* CoreCerradura.framework */; };
 		6E4643011AD9E045005BDBA7 /* CoreCerraduraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4643001AD9E045005BDBA7 /* CoreCerraduraTests.swift */; };
-		6E6E48951BB92E6D0000674F /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48941BB92E6D0000674F /* Validate.swift */; settings = {ASSET_TAGS = (); }; };
-		6E6E48961BB92E6D0000674F /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48941BB92E6D0000674F /* Validate.swift */; settings = {ASSET_TAGS = (); }; };
+		6E6E48951BB92E6D0000674F /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48941BB92E6D0000674F /* Validate.swift */; };
+		6E6E48961BB92E6D0000674F /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E48941BB92E6D0000674F /* Validate.swift */; };
 		6E7474681B3B0AAB0039596D /* LockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474641B3B0AAB0039596D /* LockMode.swift */; };
 		6E7474691B3B0AAB0039596D /* LockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474641B3B0AAB0039596D /* LockMode.swift */; };
 		6E74746A1B3B0AAB0039596D /* LockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7474651B3B0AAB0039596D /* LockCommand.swift */; };
@@ -50,14 +50,14 @@
 		6E9821311AE2D5B400D393DF /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821301AE2D5B400D393DF /* Action.swift */; };
 		6E9821331AE2D5B400D393DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821321AE2D5B400D393DF /* User.swift */; };
 		6E9821351AE2D5B500D393DF /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9821341AE2D5B500D393DF /* Lock.swift */; };
-		6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0B81BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0BA1BAE3557009DC5CB /* ActionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B91BAE3557009DC5CB /* ActionStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0BB1BAE3557009DC5CB /* ActionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B91BAE3557009DC5CB /* ActionStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0BD1BAE35CC009DC5CB /* PermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0BC1BAE35CC009DC5CB /* PermissionType.swift */; settings = {ASSET_TAGS = (); }; };
-		6ED5F0BE1BAE35CC009DC5CB /* PermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0BC1BAE35CC009DC5CB /* PermissionType.swift */; settings = {ASSET_TAGS = (); }; };
+		6ED5F0B41BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; };
+		6ED5F0B51BAE2C35009DC5CB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B31BAE2C35009DC5CB /* Model.swift */; };
+		6ED5F0B71BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; };
+		6ED5F0B81BAE353D009DC5CB /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B61BAE353D009DC5CB /* ActionType.swift */; };
+		6ED5F0BA1BAE3557009DC5CB /* ActionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B91BAE3557009DC5CB /* ActionStatus.swift */; };
+		6ED5F0BB1BAE3557009DC5CB /* ActionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0B91BAE3557009DC5CB /* ActionStatus.swift */; };
+		6ED5F0BD1BAE35CC009DC5CB /* PermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0BC1BAE35CC009DC5CB /* PermissionType.swift */; };
+		6ED5F0BE1BAE35CC009DC5CB /* PermissionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5F0BC1BAE35CC009DC5CB /* PermissionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -598,6 +598,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/Mac,
@@ -624,6 +625,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					$SRCROOT/../Carthage/Build/Mac,
