@@ -80,7 +80,15 @@ func RemovePersistentStore() throws {
         try NSFileManager.defaultManager().removeItemAtURL(url)
     }
     
-    SQLiteStore = nil
+    if let store = SQLiteStore {
+        
+        guard let psc = Store.managedObjectContext.persistentStoreCoordinator
+            else { fatalError() }
+        
+        try psc.removePersistentStore(store)
+        
+        SQLiteStore = nil
+    }
 }
 
 internal let SQLiteStoreFileURL: NSURL = {
@@ -90,7 +98,7 @@ internal let SQLiteStoreFileURL: NSURL = {
         appropriateForURL: nil,
         create: false)
     
-    let fileURL = cacheURL.URLByAppendingPathComponent(".sqlite")
+    let fileURL = cacheURL.URLByAppendingPathComponent("data.sqlite")
     
     return fileURL
 }()

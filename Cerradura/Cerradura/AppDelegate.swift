@@ -38,15 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError()
         }
         
-        // attempt to load stored credentials
-        if Authentication.sharedAuthentication.loadCredentials() {
-            
-            // show logged in UI
-            let loggedInVC = R.storyboard.main.initialViewController!
-            
-            self.window!.rootViewController!.presentViewController(loggedInVC, animated: false, completion: nil)
-        }
-        
         return true
     }
 
