@@ -57,7 +57,7 @@ public final class Authentication {
     
     // MARK: - Initialization
     
-    public init(keychainIdentifier: String = NSBundle.mainBundle().infoDictionary![kCFBundleIdentifierKey as String] as! String, accessGroup: String? = nil) {
+    public init(keychainIdentifier: String = NSBundle.mainBundle().valueForKey("infoDictionary")![kCFBundleIdentifierKey as String] as! String, accessGroup: String? = nil) {
         
         // set keychain
         
@@ -70,8 +70,6 @@ public final class Authentication {
             self.keychain = Keychain(service: keychainIdentifier)
         }
     }
-    
-    
 }
 
 public extension Authentication {
