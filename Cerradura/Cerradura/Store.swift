@@ -36,7 +36,7 @@ private func CreateCoreDataStore() -> NetworkObjects.CoreDataClient<Client.HTTP>
             
             let token = authenticationContext.generateToken(credentials.username, secret: credentials.password)
             
-            headers[RequestHeader.Authorization.rawValue] = token
+            headers[RequestHeader.Authorization.rawValue] = "{\(credentials.username):\(token)}"
         }
         
         return headers

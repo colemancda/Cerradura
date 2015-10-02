@@ -9,7 +9,7 @@
 import Foundation
 
 /** Version of the app. */
-public let AppVersion = NSBundle.mainBundle().valueForKey("infoDictionary")!["CFBundleShortVersionString"] as! String
+public let AppVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
 
 /** Build of the app. */
-public let AppBuild = NSBundle.mainBundle().valueForKey("infoDictionary")!["CFBundleVersion"] as! String
+public let AppBuild = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
