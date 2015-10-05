@@ -83,10 +83,10 @@ public final class ServerManager: ServerDataSource, ServerDelegate {
             let authenticatedUser: Resource
             
             do {
-                guard let resource = try AuthenticateWithHeader(RequestHeader.Authorization.rawValue,
-                identifierKey: CoreCerradura.Model.User.Attribute.Username.name,
-                secretKey: CoreCerradura.Model.User.Attribute.Password.name,
-                entityName: CoreCerradura.Model.User.entityName,
+                guard let resource = try AuthenticateWithHeader(RequestHeader.Authorization.rawValue, identifierHeader: RequestHeader.User.rawValue,
+                    identifierKey: CoreCerradura.Model.User.Attribute.Username.name,
+                    secretKey: CoreCerradura.Model.User.Attribute.Password.name,
+                    entityName: CoreCerradura.Model.User.entityName,
                     context: context)
                     
                 else { return HTTP.StatusCode.Unauthorized.rawValue }

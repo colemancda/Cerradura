@@ -26,19 +26,21 @@ public extension AuthenticationContext {
         
         do {
             
+            let digestLength = Int(SHA256_DIGEST_LENGTH)
+            
+            let algorithm = EVP_sha256()
+            
             let secretData = secret.toUTF8Data()
             
             let stringToSignData = stringToSign.toUTF8Data()
-            
-            let digestLength = Int(SHA512_DIGEST_LENGTH)
             
             let result = UnsafeMutablePointer<Byte>.alloc(digestLength)
             
             defer { result.dealloc(digestLength) }
             
-            var resultLength = UInt32(digestLength) // SHA512 digest length
+            var resultLength = UInt32(digestLength) // SHA256 digest length
             
-            HMAC(EVP_sha512(), secretData, Int32(secretData.count), stringToSignData, stringToSignData.count, result, &resultLength)
+            HMAC(algorithm, secretData, Int32(secretData.count), stringToSignData, stringToSignData.count, result, &resultLength)
             
             let resultData = DataFromBytePointer(result, length: digestLength)
             
@@ -53,13 +55,5 @@ public extension AuthenticationContext {
         return base64Signature
     }
 }
-
-private let EnginesLoaded: Bool = {
-    
-    ENGINE_load_builtin_engines()
-    ENGINE_register_all_complete()
-    
-    return true
-}()
 
 

@@ -11,16 +11,14 @@ import CoreModel
 import NetworkObjects
 import CoreCerradura
 
-public func AuthenticateWithHeader(header: String, identifierKey: String, secretKey: String, entityName: String, context: Server.RequestContext) throws -> Resource? {
+public func AuthenticateWithHeader(header: String, identifierHeader: String, identifierKey: String, secretKey: String, entityName: String, context: Server.RequestContext) throws -> Resource? {
     
     // parse authentication header
     
-    guard let authorizationHeader = context.requestMessage.metadata[header],
+    guard let token = context.requestMessage.metadata[header],
         let dateHeader = context.requestMessage.metadata[RequestHeader.Date.rawValue],
         let authenticationContext = RequestAuthenticationContext(request: context.requestMessage.request, dateString: dateHeader),
-        let header = JSON.Value(string: authorizationHeader)?.objectValue where header.count == 1,
-        let (identifier, tokenJSON) = header.first,
-        let token = tokenJSON.rawValue as? String
+        let identifier = context.requestMessage.metadata[identifierHeader]
         else { return nil }
     
     // check that authentication has not expired
